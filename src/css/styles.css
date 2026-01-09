@@ -847,3 +847,14 @@ main {
 .contact-region {
     color: var(--color-text-light);
 }
+
+.footer-info {
+    flex: 1;
+}
+
+.footer-cta {
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    line-height: var(--line-height-base);
+    margin-bottom: 0;
+}

@@ -1,15 +1,15 @@
 {
   "active": true,
-  "spec": "015-impressum-dund-datenschutz-erstellen",
+  "spec": "020-es-soll-eine-seperate-seite-namens-kontakt-geben-u",
   "state": "building",
   "subtasks": {
-    "completed": 3,
-    "total": 4,
+    "completed": 1,
+    "total": 3,
     "in_progress": 1,
     "failed": 0
   },
   "phase": {
-    "current": "Build and Verify",
+    "current": "Navigation Update",
     "id": null,
     "total": 1
   },
@@ -18,8 +18,8 @@
     "max": 1
   },
   "session": {
-    "number": 608,
-    "started_at": "2026-01-09T19:54:14.631935"
+    "number": 2,
+    "started_at": "2026-01-09T21:57:23.490385"
   },
-  "last_update": "2026-01-09T21:03:49.369868"
+  "last_update": "2026-01-09T21:58:57.841284"
 }

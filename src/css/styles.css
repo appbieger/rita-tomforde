@@ -751,6 +751,11 @@ main {
     box-shadow: var(--shadow-md);
 }
 
+.photo-gallery-item:focus-within {
+    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+}
+
 .photo-gallery-item img,
 .photo-gallery-item picture {
     display: block;

@@ -4,7 +4,7 @@
             <div class="footer-contact">
                 <h3>Kontakt</h3>
                 <p class="contact-name">{{ site.contact.name }}</p>
-                <p class="contact-address">{{ site.contact.address }}, {{ site.contact.city }}</p>
+                <p class="contact-address"><a href="https://maps.google.com/?q={{ (site.contact.address ~ ', ' ~ site.contact.city) | urlencode }}" class="address-link" target="_blank" rel="noopener" aria-label="Öffne {{ site.contact.address }}, {{ site.contact.city }} in Google Maps">{{ site.contact.address }}, {{ site.contact.city }}</a></p>
                 <div class="contact-icons">
                     <a href="tel:{{ site.contact.phone | replace(' ', '') }}" class="contact-icon contact-icon--phone" aria-label="Anrufen: {{ site.contact.phone }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

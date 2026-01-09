@@ -1,0 +1,370 @@
+{
+  "feature": "Photo Gallery Integration with Responsive Images",
+  "workflow_type": "feature",
+  "workflow_rationale": "Adding new photo gallery functionality with image processing capabilities to existing Eleventy site - requires new dependency, configuration, templates, data files, and styles",
+  "phases": [
+    {
+      "id": "phase-1-setup",
+      "name": "Dependency Installation",
+      "type": "setup",
+      "description": "Install @11ty/eleventy-img package for image processing",
+      "depends_on": [],
+      "parallel_safe": true,
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Install @11ty/eleventy-img npm package",
+          "service": "main",
+          "files_to_modify": ["package.json", "package-lock.json"],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "grep -q '@11ty/eleventy-img' package.json && echo 'OK' || echo 'MISSING'",
+            "expected": "OK"
+          },
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "phase-2-config",
+      "name": "Image Shortcode Configuration",
+      "type": "implementation",
+      "description": "Configure eleventy-img async shortcode in eleventy.config.js with alt text validation",
+      "depends_on": ["phase-1-setup"],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-2-1",
+          "description": "Add imageShortcode function with alt text validation and responsive image generation",
+          "service": "main",
+          "files_to_modify": ["eleventy.config.js"],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "grep -q 'addNunjucksAsyncShortcode' eleventy.config.js && grep -q 'eleventy-img' eleventy.config.js && echo 'OK' || echo 'MISSING'",
+            "expected": "OK"
+          },
+          "status": "pending",
+          "implementation_details": {
+            "shortcode_name": "image",
+            "formats": ["webp", "jpeg"],
+            "widths": [300, 600, 900],
+            "outputDir": "./_site/img/",
+            "urlPath": "/rita-tomforde/img/",
+            "attributes": ["loading='lazy'", "decoding='async'"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "phase-3-assets",
+      "name": "Sample Images Download",
+      "type": "implementation",
+      "description": "Download 12 sample images from reference repository to src/images/gallery/",
+      "depends_on": [],
+      "parallel_safe": true,
+      "subtasks": [
+        {
+          "id": "subtask-3-1",
+          "description": "Download sample images from tannerdolby/eleventy-photo-gallery repository",
+          "service": "main",
+          "files_to_modify": [],
+          "files_to_create": [
+            "src/images/gallery/highway-water.jpg",
+            "src/images/gallery/boardwalk.jpg",
+            "src/images/gallery/business-center.jpg",
+            "src/images/gallery/empty-road.jpg",
+            "src/images/gallery/gas-station.jpg",
+            "src/images/gallery/glass-jar.jpg",
+            "src/images/gallery/highrises-night.jpg",
+            "src/images/gallery/light-streaks.jpg",
+            "src/images/gallery/music-hall.jpg",
+            "src/images/gallery/terrace-window.jpg",
+            "src/images/gallery/water-drop.jpg",
+            "src/images/gallery/benches.jpg"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "ls src/images/gallery/*.jpg 2>/dev/null | wc -l | tr -d ' '",
+            "expected": "12"
+          },
+          "status": "pending",
+          "notes": "Download from https://raw.githubusercontent.com/tannerdolby/eleventy-photo-gallery/master/src/images/"
+        }
+      ]
+    },
+    {
+      "id": "phase-4-data",
+      "name": "Gallery Data File",
+      "type": "implementation",
+      "description": "Create gallery.json with image metadata including alt text and credits",
+      "depends_on": ["phase-3-assets"],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-4-1",
+          "description": "Create src/_data/gallery.json with image metadata array",
+          "service": "main",
+          "files_to_modify": [],
+          "files_to_create": ["src/_data/gallery.json"],
+          "patterns_from": ["src/_data/paintings.json"],
+          "verification": {
+            "type": "command",
+            "command": "node -e \"const g=require('./src/_data/gallery.json'); console.log(g.images && g.images.length === 12 && g.images.every(i => i.src && i.alt) ? 'OK' : 'INVALID')\"",
+            "expected": "OK"
+          },
+          "status": "pending",
+          "implementation_details": {
+            "required_fields": ["src", "alt", "title", "credit", "linkToAuthor"],
+            "structure": "{\"images\": [{...}, ...]}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "phase-5-template",
+      "name": "Gallery Page Template",
+      "type": "implementation",
+      "description": "Create gallery.njk page template with image shortcode usage",
+      "depends_on": ["phase-2-config", "phase-4-data"],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-5-1",
+          "description": "Create src/gallery.njk template with responsive gallery grid",
+          "service": "main",
+          "files_to_modify": [],
+          "files_to_create": ["src/gallery.njk"],
+          "patterns_from": ["src/index.njk"],
+          "verification": {
+            "type": "command",
+            "command": "grep -q 'layout: base.njk' src/gallery.njk && grep -q 'image' src/gallery.njk && echo 'OK' || echo 'MISSING'",
+            "expected": "OK"
+          },
+          "status": "pending",
+          "implementation_details": {
+            "layout": "base.njk",
+            "title": "Fotogalerie",
+            "permalink": "/gallery/",
+            "loop_pattern": "{% for image in gallery.images %}",
+            "shortcode_usage": "{% image 'src/images/gallery/' + image.src, image.alt %}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "phase-6-styles",
+      "name": "Gallery CSS Styles",
+      "type": "implementation",
+      "description": "Add photo gallery CSS styles to styles.css using existing design system variables",
+      "depends_on": [],
+      "parallel_safe": true,
+      "subtasks": [
+        {
+          "id": "subtask-6-1",
+          "description": "Add .photo-gallery-grid and related CSS styles",
+          "service": "main",
+          "files_to_modify": ["src/css/styles.css"],
+          "files_to_create": [],
+          "patterns_from": ["src/css/styles.css"],
+          "verification": {
+            "type": "command",
+            "command": "grep -q 'photo-gallery' src/css/styles.css && echo 'OK' || echo 'MISSING'",
+            "expected": "OK"
+          },
+          "status": "pending",
+          "implementation_details": {
+            "classes": [".photo-gallery-grid", ".photo-gallery-item", ".photo-gallery-credit"],
+            "use_variables": ["--spacing-md", "--radius-md", "--shadow-sm", "--transition-fast", "--color-background"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "phase-7-navigation",
+      "name": "Navigation Update",
+      "type": "implementation",
+      "description": "Add Fotogalerie link to navigation menu",
+      "depends_on": ["phase-5-template"],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-7-1",
+          "description": "Add 'Fotogalerie' link to nav.njk pointing to /gallery/",
+          "service": "main",
+          "files_to_modify": ["src/_includes/nav.njk"],
+          "files_to_create": [],
+          "patterns_from": ["src/_includes/nav.njk"],
+          "verification": {
+            "type": "command",
+            "command": "grep -q 'gallery' src/_includes/nav.njk && echo 'OK' || echo 'MISSING'",
+            "expected": "OK"
+          },
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "phase-8-integration",
+      "name": "Build & Integration Verification",
+      "type": "integration",
+      "description": "Verify complete build and end-to-end functionality",
+      "depends_on": ["phase-5-template", "phase-6-styles", "phase-7-navigation"],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-8-1",
+          "description": "Run npm build and verify responsive images are generated",
+          "all_services": true,
+          "files_to_modify": [],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "npm run build && ls _site/img/*.webp 2>/dev/null | head -1 | xargs -I {} sh -c 'test -f \"{}\" && echo OK || echo MISSING'",
+            "expected": "OK"
+          },
+          "status": "pending"
+        },
+        {
+          "id": "subtask-8-2",
+          "description": "Verify gallery page HTML is generated",
+          "all_services": true,
+          "files_to_modify": [],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "test -f _site/gallery/index.html && grep -q 'picture' _site/gallery/index.html && echo 'OK' || echo 'MISSING'",
+            "expected": "OK"
+          },
+          "status": "pending"
+        },
+        {
+          "id": "subtask-8-3",
+          "description": "Visual verification of gallery page in browser",
+          "all_services": true,
+          "files_to_modify": [],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:8080/rita-tomforde/gallery/",
+            "checks": [
+              "Gallery page renders without errors",
+              "All 12 images display in grid layout",
+              "Images are responsive (resize browser)",
+              "No console errors",
+              "Navigation link to gallery works"
+            ]
+          },
+          "status": "pending"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_phases": 8,
+    "total_subtasks": 10,
+    "services_involved": ["main"],
+    "parallelism": {
+      "max_parallel_phases": 3,
+      "parallel_groups": [
+        {
+          "phases": ["phase-1-setup", "phase-3-assets", "phase-6-styles"],
+          "reason": "No dependencies - can run in parallel at start"
+        }
+      ],
+      "recommended_workers": 1,
+      "speedup_estimate": "Sequential recommended - single service with config dependencies"
+    },
+    "startup_command": "source auto-claude/.venv/bin/activate && python auto-claude/run.py --spec 007 --parallel 1"
+  },
+  "verification_strategy": {
+    "risk_level": "medium",
+    "skip_validation": false,
+    "test_creation_phase": "post_implementation",
+    "test_types_required": ["unit", "integration"],
+    "security_scanning_required": false,
+    "staging_deployment_required": false,
+    "acceptance_criteria": [
+      "npm run build completes without errors",
+      "Responsive images generated in _site/img/",
+      "Gallery page accessible at /rita-tomforde/gallery/",
+      "All images have alt text (accessibility)",
+      "Lazy loading attributes present on images",
+      "No browser console errors"
+    ],
+    "verification_steps": [
+      {
+        "name": "Build Verification",
+        "command": "npm run build",
+        "expected_outcome": "Exit code 0, no errors",
+        "type": "build",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "Image Generation Check",
+        "command": "ls _site/img/*.webp | wc -l",
+        "expected_outcome": "Multiple WebP files generated",
+        "type": "integration",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "Gallery Page Check",
+        "command": "test -f _site/gallery/index.html",
+        "expected_outcome": "Gallery HTML file exists",
+        "type": "integration",
+        "required": true,
+        "blocking": true
+      }
+    ],
+    "reasoning": "Medium risk - adds image processing which can affect build performance and requires configuration. Build verification is critical."
+  },
+  "qa_acceptance": {
+    "unit_tests": {
+      "required": false,
+      "commands": [],
+      "minimum_coverage": null,
+      "notes": "Static site - no unit testing framework configured"
+    },
+    "integration_tests": {
+      "required": true,
+      "commands": ["npm run build"],
+      "services_to_test": ["main"]
+    },
+    "e2e_tests": {
+      "required": true,
+      "commands": [],
+      "flows": ["navigate-to-gallery", "view-responsive-images"]
+    },
+    "browser_verification": {
+      "required": true,
+      "pages": [
+        {
+          "url": "http://localhost:8080/rita-tomforde/gallery/",
+          "checks": ["renders", "no-console-errors", "images-display", "grid-responsive"]
+        },
+        {
+          "url": "http://localhost:8080/rita-tomforde/",
+          "checks": ["gallery-link-visible", "gallery-link-works"]
+        }
+      ]
+    },
+    "build_verification": {
+      "required": true,
+      "checks": ["build-succeeds", "images-generated", "gallery-html-exists"]
+    }
+  },
+  "qa_signoff": null,
+  "created_at": "2026-01-09T17:00:00.000Z",
+  "updated_at": "2026-01-09T17:00:00.000Z",
+  "status": "pending",
+  "planStatus": "complete"
+}

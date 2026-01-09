@@ -1,0 +1,88 @@
+{
+  "complexity": "standard",
+  "workflow_type": "feature",
+  "confidence": 0.85,
+  "reasoning": "Integrating a photo gallery from a reference Eleventy project into an existing Eleventy site. This requires adding the @11ty/eleventy-img plugin for image optimization, creating enhanced gallery templates with lightbox functionality, and adapting the reference implementation. The existing site already has gallery infrastructure (paintings.json, gallery section), making this a well-scoped enhancement rather than a greenfield feature.",
+
+  "analysis": {
+    "scope": {
+      "estimated_files": 8,
+      "estimated_services": 1,
+      "is_cross_cutting": false,
+      "notes": "Files to modify: eleventy.config.js, index.njk (gallery section), styles.css, main.js, paintings.json/gallery data, possibly new gallery page template. Single frontend/static site service."
+    },
+    "integrations": {
+      "external_services": [],
+      "new_dependencies": ["@11ty/eleventy-img"],
+      "research_needed": true,
+      "notes": "@11ty/eleventy-img is the official Eleventy image plugin with excellent documentation. Need to research shortcode patterns, responsive image generation, and output directory configuration."
+    },
+    "infrastructure": {
+      "docker_changes": false,
+      "database_changes": false,
+      "config_changes": true,
+      "notes": "Only eleventy.config.js changes needed to add image shortcode. No Docker, database, or deployment infrastructure changes required."
+    },
+    "knowledge": {
+      "patterns_exist": true,
+      "research_required": true,
+      "unfamiliar_tech": ["@11ty/eleventy-img", "lightbox-implementation"],
+      "notes": "Existing Eleventy 3.x patterns in codebase. Has Nunjucks templates, passthrough copy setup, and gallery data structure. Research needed for eleventy-img shortcode syntax and lightbox/modal implementation."
+    },
+    "risk": {
+      "level": "low",
+      "concerns": [
+        "Ensuring new gallery doesn't break existing gallery display",
+        "Responsive image generation compatibility with Eleventy 3.x",
+        "Matching new gallery styling with existing design system"
+      ],
+      "notes": "Low risk - existing gallery is functional, this is an enhancement. Can fall back to existing implementation if issues arise."
+    }
+  },
+
+  "recommended_phases": [
+    "discovery",
+    "requirements",
+    "research",
+    "context",
+    "spec_writing",
+    "planning",
+    "validation"
+  ],
+
+  "flags": {
+    "needs_research": true,
+    "needs_self_critique": false,
+    "needs_infrastructure_setup": false
+  },
+
+  "validation_recommendations": {
+    "risk_level": "medium",
+    "skip_validation": false,
+    "minimal_mode": false,
+    "test_types_required": ["unit", "integration"],
+    "security_scan_required": false,
+    "staging_deployment_required": false,
+    "reasoning": "Gallery integration modifies multiple files and adds image processing. Requires build verification to ensure images are processed correctly and gallery renders properly. No security concerns as this is purely frontend/static content."
+  },
+
+  "task_specific_notes": {
+    "reference_repo": "https://github.com/tannerdolby/eleventy-photo-gallery",
+    "key_features_to_implement": [
+      "Responsive image generation with @11ty/eleventy-img",
+      "Gallery grid with lightbox/modal functionality",
+      "Image optimization (WebP, multiple sizes)",
+      "Individual image detail pages (optional)"
+    ],
+    "existing_infrastructure": [
+      "Eleventy 3.x site with Nunjucks templates",
+      "Gallery section already exists in index.njk",
+      "paintings.json data file with image metadata",
+      "CSS design system with gallery-grid styles",
+      "Static images in src/images/gallery/"
+    ],
+    "integration_approach": "Enhance existing gallery section with eleventy-img optimization and add lightbox functionality, rather than replacing entire gallery structure"
+  },
+
+  "created_at": "2025-01-09T16:45:00Z"
+}

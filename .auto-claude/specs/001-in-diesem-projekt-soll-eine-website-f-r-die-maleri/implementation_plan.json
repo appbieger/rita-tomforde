@@ -423,8 +423,9 @@
             "command": "cd /Users/yaron/rita-tomfordede && cat src/index.njk | grep -E 'Aktuelles|M\u00e4rz 2026|Mai 2026'",
             "expected": "Contains Aktuelles section with 2026 events"
           },
-          "status": "pending",
-          "notes": "Section id=aktuelles with March 2026 Kultur-Pop-up-Store (Vernissage 5. M\u00e4rz) and May 17, 2026 KreARTiv-Markt"
+          "status": "completed",
+          "notes": "Added Aktuelles (Current Events) section with two 2026 exhibitions: M\u00e4rz 2026 Kultur-Pop-up-Store in Stade and 17. Mai 2026 KreARTiv-Markt am URLA-HUS. Verification passed - all content is present.",
+          "updated_at": "2026-01-09T13:24:40.859400+00:00"
         }
       ]
     },
@@ -452,8 +453,9 @@
             "command": "cd /Users/yaron/rita-tomfordede && cat src/_data/paintings.json | grep 'paintings'",
             "expected": "Contains paintings array"
           },
-          "status": "pending",
-          "notes": "Structure: {paintings: [{id, title, image, description, technique, year, available}]}. Include 3-6 placeholder entries."
+          "status": "completed",
+          "notes": "Created paintings.json with 6 sample gallery entries including various techniques (Acryl auf Leinwand, Mixed Media), German titles and descriptions. Verification passed. Committed as 8481aaa.",
+          "updated_at": "2026-01-09T13:25:46.335448+00:00"
         },
         {
           "id": "subtask-5-2",
@@ -833,6 +835,6 @@
   "status": "in_progress",
   "planStatus": "in_progress",
   "updated_at": "2026-01-09T13:00:58.919Z",
-  "last_updated": "2026-01-09T13:23:29.200830+00:00",
+  "last_updated": "2026-01-09T13:25:46.335455+00:00",
   "recoveryNote": "Task recovered from stuck state at 2026-01-09T13:00:58.859Z"
 }

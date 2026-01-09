@@ -203,11 +203,35 @@
         }
       ],
       "status": "completed"
+    },
+    "subtask-4-7": {
+      "attempts": [
+        {
+          "session": 18,
+          "timestamp": "2026-01-09T14:24:49.952099",
+          "approach": "Implemented: Add Aktuelles (Current Events) section with 2026 exhibitions",
+          "success": true,
+          "error": null
+        }
+      ],
+      "status": "completed"
+    },
+    "subtask-5-1": {
+      "attempts": [
+        {
+          "session": 19,
+          "timestamp": "2026-01-09T14:25:54.118653",
+          "approach": "Implemented: Create paintings.json with sample/placeholder gallery data",
+          "success": true,
+          "error": null
+        }
+      ],
+      "status": "completed"
     }
   },
   "stuck_subtasks": [],
   "metadata": {
     "created_at": "2026-01-09T14:01:00.504758",
-    "last_updated": "2026-01-09T14:23:40.226508"
+    "last_updated": "2026-01-09T14:25:54.118672"
   }
 }

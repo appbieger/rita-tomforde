@@ -131,3 +131,54 @@ title: Willkommen
         </div>
     </div>
 </section>
+
+{# ============================================================================
+   Galerie (Gallery) Section
+   ============================================================================ #}
+<section id="galerie" class="content-section">
+    <div class="container">
+        <header class="section-header">
+            <h2 class="section-title">Galerie</h2>
+        </header>
+        <div class="section-content">
+            <p class="gallery-intro">Hier zeige ich Ihnen einige meiner aktuell verkäuflichen Bilder. Bei Interesse an einem Original freue ich mich auf Ihre Kontaktaufnahme.</p>
+
+            {% if paintings.paintings.length > 0 %}
+            <div class="gallery-grid">
+                {% for painting in paintings.paintings %}
+                {% if painting.available %}
+                <article class="gallery-item" id="{{ painting.id }}">
+                    <div class="gallery-image-wrapper">
+                        <img
+                            src="{{ painting.image | url }}"
+                            alt="{{ painting.title }}"
+                            loading="lazy"
+                            class="gallery-image"
+                            onerror="this.parentElement.classList.add('image-error')"
+                        >
+                        <div class="gallery-image-placeholder" aria-hidden="true">
+                            <span>Bild</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item-info">
+                        <h3 class="gallery-item-title">{{ painting.title }}</h3>
+                        <p class="gallery-item-technique">{{ painting.technique }}, {{ painting.year }}</p>
+                        {% if painting.description %}
+                        <p class="gallery-item-description">{{ painting.description }}</p>
+                        {% endif %}
+                    </div>
+                </article>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="gallery-empty">Bilder werden bald hinzugefügt.</p>
+            {% endif %}
+
+            <div class="gallery-cta">
+                <p>Möchten Sie eines meiner Bilder im Original betrachten?</p>
+                <p>Ich freue mich auf Ihren Besuch in meinem Atelier in Reith. Bitte kontaktieren Sie mich für einen Termin.</p>
+            </div>
+        </div>
+    </div>
+</section>

@@ -466,9 +466,24 @@ main {
 .hero {
     position: relative;
     padding: var(--spacing-xl) 0;
-    background-color: var(--color-background-alt);
+    background-image: url('../images/gallery/painting-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     text-align: center;
     overflow: hidden;
+}
+
+/* Semi-transparent overlay for text readability */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
 }
 
 .hero-content {
@@ -484,14 +499,16 @@ main {
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-heading);
     margin-bottom: var(--spacing-sm);
-    color: var(--color-primary);
+    color: var(--color-secondary);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
     font-size: var(--font-size-medium);
     font-weight: var(--font-weight-normal);
-    color: var(--color-text-light);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: var(--spacing-lg);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .hero-image {

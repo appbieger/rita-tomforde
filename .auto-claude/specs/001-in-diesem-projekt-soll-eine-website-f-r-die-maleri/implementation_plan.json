@@ -537,8 +537,9 @@
             "command": "cd /Users/yaron/rita-tomfordede && cat eleventy.config.js | grep 'js'",
             "expected": "Contains js passthrough copy"
           },
-          "status": "pending",
-          "notes": "Add addPassthroughCopy for src/js"
+          "status": "completed",
+          "notes": "Added eleventyConfig.addPassthroughCopy(\"src/js\") to eleventy.config.js following existing pattern for css and images.",
+          "updated_at": "2026-01-09T13:30:55.113896+00:00"
         },
         {
           "id": "subtask-6-3",
@@ -838,6 +839,6 @@
   "status": "in_progress",
   "planStatus": "in_progress",
   "updated_at": "2026-01-09T13:00:58.919Z",
-  "last_updated": "2026-01-09T13:30:10.416215+00:00",
+  "last_updated": "2026-01-09T13:30:55.113905+00:00",
   "recoveryNote": "Task recovered from stuck state at 2026-01-09T13:00:58.859Z"
 }

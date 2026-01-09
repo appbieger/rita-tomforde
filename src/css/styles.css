@@ -876,3 +876,9 @@ main {
         align-items: center;
     }
 }
+
+.copyright {
+    font-size: var(--font-size-small);
+    color: var(--color-text-light);
+    margin-bottom: 0;
+}

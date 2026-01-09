@@ -909,6 +909,55 @@ main {
 }
 
 /* ==========================================================================
+   Gallery Call-to-Action
+   ========================================================================== */
+
+.gallery-cta {
+    background-color: var(--color-background-alt);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    border: 1px solid var(--color-border);
+}
+
+.gallery-cta p {
+    font-size: var(--font-size-medium);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+}
+
+.gallery-cta p:last-child {
+    margin-bottom: 0;
+}
+
+.gallery-cta a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    font-weight: var(--font-weight-bold);
+    transition: color var(--transition-fast);
+}
+
+.gallery-cta a:hover,
+.gallery-cta a:focus {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* Gallery Call-to-Action Responsive Adjustments */
+@media (max-width: 767px) {
+    .gallery-cta {
+        padding: var(--spacing-md);
+        margin-top: var(--spacing-md);
+    }
+
+    .gallery-cta p {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-sm);
+    }
+}
+
+/* ==========================================================================
    12. Footer
    ========================================================================== */
 

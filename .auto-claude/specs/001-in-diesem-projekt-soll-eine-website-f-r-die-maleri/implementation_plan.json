@@ -316,7 +316,7 @@
             "expected": "Contains layout: base.njk and hero text"
           },
           "status": "completed",
-          "notes": "Created src/index.njk with frontmatter (layout: base.njk, title: Willkommen) and hero section containing Atelier Rita Tomforde title, Freischaffende Künstlerin / Malerei subtitle, and portrait placeholder. Verification passed - file contains layout: base.njk and Atelier Rita Tomforde. Committed with hash 4474e67.",
+          "notes": "Created src/index.njk with frontmatter (layout: base.njk, title: Willkommen) and hero section containing Atelier Rita Tomforde title, Freischaffende K\u00fcnstlerin / Malerei subtitle, and portrait placeholder. Verification passed - file contains layout: base.njk and Atelier Rita Tomforde. Committed with hash 4474e67.",
           "updated_at": "2026-01-09T13:16:47.053430+00:00"
         },
         {
@@ -339,7 +339,7 @@
         },
         {
           "id": "subtask-4-3",
-          "description": "Add Über mich (About) section with full biography",
+          "description": "Add \u00dcber mich (About) section with full biography",
           "service": "eleventy-site",
           "files_to_modify": [
             "src/index.njk"
@@ -348,11 +348,11 @@
           "patterns_from": [],
           "verification": {
             "type": "command",
-            "command": "cd /Users/yaron/rita-tomfordede && cat src/index.njk | grep -E 'Über mich|ueber-mich'",
-            "expected": "Contains Über mich section"
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/index.njk | grep -E '\u00dcber mich|ueber-mich'",
+            "expected": "Contains \u00dcber mich section"
           },
           "status": "completed",
-          "notes": "Added full biography \"Über mich\" section with 3 paragraphs covering: 30-year artistic journey from silk painting to acrylic, art training since 2000, and preferred techniques with acrylics and mixed media. Section follows existing pattern with proper German content.",
+          "notes": "Added full biography \"\u00dcber mich\" section with 3 paragraphs covering: 30-year artistic journey from silk painting to acrylic, art training since 2000, and preferred techniques with acrylics and mixed media. Section follows existing pattern with proper German content.",
           "updated_at": "2026-01-09T13:19:04.882177+00:00"
         },
         {
@@ -393,7 +393,7 @@
         },
         {
           "id": "subtask-4-6",
-          "description": "Add Bisherige Präsentationen (Past Exhibitions) section with list",
+          "description": "Add Bisherige Pr\u00e4sentationen (Past Exhibitions) section with list",
           "service": "eleventy-site",
           "files_to_modify": [
             "src/index.njk"
@@ -402,11 +402,11 @@
           "patterns_from": [],
           "verification": {
             "type": "command",
-            "command": "cd /Users/yaron/rita-tomfordede && cat src/index.njk | grep -E 'Präsentationen|Aquarell-Club'",
-            "expected": "Contains Präsentationen section with exhibitions"
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/index.njk | grep -E 'Pr\u00e4sentationen|Aquarell-Club'",
+            "expected": "Contains Pr\u00e4sentationen section with exhibitions"
           },
           "status": "completed",
-          "notes": "Added Bisherige Präsentationen section with id=\"ausstellungen\" containing: Aquarell-Club Altes Land group exhibitions (Burgmannshof Horneburg, Museum Harsefeld, Sparkasse Altes Land Jork) and additional exhibitions (Wassermühle Ovelgönne, Jack-Pott Klein-Reith, Kunsthandwerksmarkt Brest, KreARTiv-Märkte URLA-HUS Ohrel). Verification passed - grep finds Präsentationen and Aquarell-Club. Committed with hash fd9d35f.",
+          "notes": "Added Bisherige Pr\u00e4sentationen section with id=\"ausstellungen\" containing: Aquarell-Club Altes Land group exhibitions (Burgmannshof Horneburg, Museum Harsefeld, Sparkasse Altes Land Jork) and additional exhibitions (Wasserm\u00fchle Ovelg\u00f6nne, Jack-Pott Klein-Reith, Kunsthandwerksmarkt Brest, KreARTiv-M\u00e4rkte URLA-HUS Ohrel). Verification passed - grep finds Pr\u00e4sentationen and Aquarell-Club. Committed with hash fd9d35f.",
           "updated_at": "2026-01-09T13:23:29.200823+00:00"
         },
         {
@@ -420,11 +420,11 @@
           "patterns_from": [],
           "verification": {
             "type": "command",
-            "command": "cd /Users/yaron/rita-tomfordede && cat src/index.njk | grep -E 'Aktuelles|März 2026|Mai 2026'",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/index.njk | grep -E 'Aktuelles|M\u00e4rz 2026|Mai 2026'",
             "expected": "Contains Aktuelles section with 2026 events"
           },
           "status": "completed",
-          "notes": "Added Aktuelles (Current Events) section with two 2026 exhibitions: März 2026 Kultur-Pop-up-Store in Stade and 17. Mai 2026 KreARTiv-Markt am URLA-HUS. Verification passed - all content is present.",
+          "notes": "Added Aktuelles (Current Events) section with two 2026 exhibitions: M\u00e4rz 2026 Kultur-Pop-up-Store in Stade and 17. Mai 2026 KreARTiv-Markt am URLA-HUS. Verification passed - all content is present.",
           "updated_at": "2026-01-09T13:24:40.859400+00:00"
         }
       ]
@@ -684,13 +684,13 @@
             "checks": [
               "Hero section with Atelier Rita Tomforde title",
               "Navigation links visible",
-              "All 8 content sections present (Willkommen, Über mich, Inspiration, Dankbarkeit, Präsentationen, Aktuelles, Galerie)",
+              "All 8 content sections present (Willkommen, \u00dcber mich, Inspiration, Dankbarkeit, Pr\u00e4sentationen, Aktuelles, Galerie)",
               "Footer with contact info",
               "No console errors"
             ]
           },
           "status": "completed",
-          "notes": "Static verification complete: All 8 sections verified present and correctly implemented (Hero with \"Atelier Rita Tomforde\", Navigation with 7 links, Willkommen, Über mich, Inspiration, Dankbarkeit, Präsentationen, Aktuelles, Galerie). Footer has contact info. CSS and JS properly configured. Manual browser testing documented for dev server (npm run dev blocked in sandbox). Commit: d385e08",
+          "notes": "Static verification complete: All 8 sections verified present and correctly implemented (Hero with \"Atelier Rita Tomforde\", Navigation with 7 links, Willkommen, \u00dcber mich, Inspiration, Dankbarkeit, Pr\u00e4sentationen, Aktuelles, Galerie). Footer has contact info. CSS and JS properly configured. Manual browser testing documented for dev server (npm run dev blocked in sandbox). Commit: d385e08",
           "updated_at": "2026-01-09T13:40:32.975869+00:00"
         },
         {
@@ -731,9 +731,8 @@
               "Contact CTA visible"
             ]
           },
-          "status": "completed",
-          "notes": "Verified gallery section displays paintings from data file. Fixed CSS class naming inconsistencies (gallery-image → gallery-item-image, gallery-item-technique → gallery-item-meta). All verification criteria met: ✅ Gallery grid displays paintings from paintings.json via Nunjucks loop; ✅ Images load with lazy loading and placeholder fallback on error; ✅ Painting titles and technique/year info visible; ✅ Contact CTA visible with invitation to Atelier in Reith. Commit: 5a7d341",
-          "updated_at": "2026-01-09T13:45:47.536084+00:00"
+          "status": "pending",
+          "notes": "Verify data-driven gallery renders correctly"
         }
       ]
     }
@@ -844,49 +843,10 @@
       "checks": []
     }
   },
-  "qa_signoff": {
-    "status": "approved",
-    "timestamp": "2026-01-09T15:00:00.000Z",
-    "qa_session": 1,
-    "report_file": "qa_report.md",
-    "tests_passed": {
-      "code_review": "30/30 subtasks complete",
-      "templates": "All Nunjucks templates verified",
-      "url_filters": "All 15 href/src attributes use | url filter",
-      "css": "1206 lines, responsive design verified",
-      "javascript": "IIFE, strict mode, mobile nav toggle",
-      "deployment": "GitHub Actions workflow valid, .nojekyll present",
-      "security": "No vulnerabilities found"
-    },
-    "issues": [
-      {
-        "type": "minor",
-        "title": "Dead footer links",
-        "location": "src/_includes/footer.njk:20-21",
-        "fix_required": "Footer links to #impressum and #datenschutz point to non-existent sections"
-      }
-    ],
-    "manual_verification_required": "Build and browser testing (npm commands restricted in QA environment)",
-    "verified_by": "qa_agent"
-  },
-  "status": "human_review",
-  "planStatus": "review",
-  "updated_at": "2026-01-09T13:57:51.941Z",
-  "last_updated": "2026-01-09T15:00:00.000Z",
-  "recoveryNote": "Task recovered from stuck state at 2026-01-09T13:49:20.436Z",
-  "qa_iteration_history": [
-    {
-      "iteration": 1,
-      "status": "approved",
-      "timestamp": "2026-01-09T13:49:12.304988+00:00",
-      "issues": [],
-      "duration_seconds": 192.2
-    }
-  ],
-  "qa_stats": {
-    "total_iterations": 1,
-    "last_iteration": 1,
-    "last_status": "approved",
-    "issues_by_type": {}
-  }
+  "qa_signoff": null,
+  "status": "in_progress",
+  "planStatus": "in_progress",
+  "updated_at": "2026-01-09T13:00:58.919Z",
+  "last_updated": "2026-01-09T13:43:37.214923+00:00",
+  "recoveryNote": "Task recovered from stuck state at 2026-01-09T13:00:58.859Z"
 }

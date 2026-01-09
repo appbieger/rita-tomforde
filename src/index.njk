@@ -148,24 +148,19 @@ title: Willkommen
                 {% for painting in paintings.paintings %}
                 {% if painting.available %}
                 <article class="gallery-item" id="{{ painting.id }}">
-                    <div class="gallery-image-wrapper">
-                        <img
-                            src="{{ painting.image | url }}"
-                            alt="{{ painting.title }}"
-                            loading="lazy"
-                            class="gallery-image"
-                            onerror="this.parentElement.classList.add('image-error')"
-                        >
-                        <div class="gallery-image-placeholder" aria-hidden="true">
-                            <span>Bild</span>
-                        </div>
+                    <img
+                        src="{{ painting.image | url }}"
+                        alt="{{ painting.title }}"
+                        loading="lazy"
+                        class="gallery-item-image"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                    >
+                    <div class="gallery-item-placeholder" style="display:none;">
+                        <span>Bild wird geladen...</span>
                     </div>
                     <div class="gallery-item-info">
                         <h3 class="gallery-item-title">{{ painting.title }}</h3>
-                        <p class="gallery-item-technique">{{ painting.technique }}, {{ painting.year }}</p>
-                        {% if painting.description %}
-                        <p class="gallery-item-description">{{ painting.description }}</p>
-                        {% endif %}
+                        <p class="gallery-item-meta">{{ painting.technique }}, {{ painting.year }}</p>
                     </div>
                 </article>
                 {% endif %}

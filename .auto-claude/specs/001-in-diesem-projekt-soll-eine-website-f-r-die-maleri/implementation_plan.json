@@ -111,8 +111,9 @@
             "command": "cd /Users/yaron/rita-tomfordede && cat src/_data/site.json | grep 'Rita Tomforde'",
             "expected": "Contains Rita Tomforde"
           },
-          "status": "pending",
-          "notes": "Include: name, title, description, author, lang=de, contact info"
+          "status": "completed",
+          "notes": "Created src/_data/site.json with global metadata including: name, title, description (German SEO text), author (Rita Tomforde), lang (de), and contact object with name, location (Reith), and region (Altes Land / Stade). Verification passed - file contains Rita Tomforde. Committed to git.",
+          "updated_at": "2026-01-09T13:02:59.315953+00:00"
         },
         {
           "id": "subtask-2-2",
@@ -817,6 +818,6 @@
   "status": "in_progress",
   "planStatus": "in_progress",
   "updated_at": "2026-01-09T13:00:58.919Z",
-  "last_updated": "2026-01-09T13:01:54.161251+00:00",
+  "last_updated": "2026-01-09T13:02:59.315961+00:00",
   "recoveryNote": "Task recovered from stuck state at 2026-01-09T13:00:58.859Z"
 }

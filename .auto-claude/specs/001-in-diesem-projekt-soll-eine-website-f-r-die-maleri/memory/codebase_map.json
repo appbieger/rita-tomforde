@@ -1,0 +1,10 @@
+{
+  "discovered_files": {
+    "src/_data/site.json": {
+      "description": "Global site metadata file for Eleventy templates. Contains: name (Atelier Rita Tomforde), title, description, author, lang (de), and contact object with location details. Available in templates via {{ site.name }}, {{ site.title }}, etc.",
+      "category": "data-files",
+      "discovered_at": "2026-01-09T13:03:05.782665+00:00"
+    }
+  },
+  "last_updated": "2026-01-09T13:03:05.782678+00:00"
+}

@@ -5,6 +5,9 @@ node_modules/
 _site/
 dist/
 
+# 11ty cache
+.cache/
+
 # Environment files
 .env
 .env.local

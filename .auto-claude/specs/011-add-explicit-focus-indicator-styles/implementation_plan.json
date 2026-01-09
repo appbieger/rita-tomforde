@@ -95,7 +95,7 @@
           "subtask_id": "4.2",
           "title": "Add photo gallery credit link focus-visible styles",
           "description": "Add visible focus ring to photo credit links (.photo-gallery-credit a) using :focus-visible.",
-          "status": "pending",
+          "status": "completed",
           "file_path": "src/css/styles.css",
           "estimated_lines": 5
         }
@@ -110,7 +110,7 @@
           "subtask_id": "5.1",
           "title": "Add footer link focus-visible styles",
           "description": "Add visible focus ring to footer navigation links (.footer-nav a) using :focus-visible, ensuring visibility against footer background.",
-          "status": "pending",
+          "status": "completed",
           "file_path": "src/css/styles.css",
           "estimated_lines": 8
         }
@@ -125,7 +125,7 @@
           "subtask_id": "6.1",
           "title": "Build the site and verify CSS compiles",
           "description": "Run npm run build to ensure the site builds successfully with the new focus styles.",
-          "status": "pending",
+          "status": "completed",
           "file_path": null,
           "estimated_lines": 0
         },

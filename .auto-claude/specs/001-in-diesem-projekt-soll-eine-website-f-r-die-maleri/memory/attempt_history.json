@@ -191,11 +191,23 @@
         }
       ],
       "status": "completed"
+    },
+    "subtask-4-6": {
+      "attempts": [
+        {
+          "session": 17,
+          "timestamp": "2026-01-09T14:23:40.226486",
+          "approach": "Implemented: Add Bisherige Pr\u00e4sentationen (Past Exhibitions) section with list",
+          "success": true,
+          "error": null
+        }
+      ],
+      "status": "completed"
     }
   },
   "stuck_subtasks": [],
   "metadata": {
     "created_at": "2026-01-09T14:01:00.504758",
-    "last_updated": "2026-01-09T14:21:53.642802"
+    "last_updated": "2026-01-09T14:23:40.226508"
   }
 }

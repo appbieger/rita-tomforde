@@ -405,8 +405,9 @@
             "command": "cd /Users/yaron/rita-tomfordede && cat src/index.njk | grep -E 'Pr\u00e4sentationen|Aquarell-Club'",
             "expected": "Contains Pr\u00e4sentationen section with exhibitions"
           },
-          "status": "pending",
-          "notes": "Section id=ausstellungen with list of 6+ past exhibitions (Aquarell-Club Altes Land, etc.)"
+          "status": "completed",
+          "notes": "Added Bisherige Pr\u00e4sentationen section with id=\"ausstellungen\" containing: Aquarell-Club Altes Land group exhibitions (Burgmannshof Horneburg, Museum Harsefeld, Sparkasse Altes Land Jork) and additional exhibitions (Wasserm\u00fchle Ovelg\u00f6nne, Jack-Pott Klein-Reith, Kunsthandwerksmarkt Brest, KreARTiv-M\u00e4rkte URLA-HUS Ohrel). Verification passed - grep finds Pr\u00e4sentationen and Aquarell-Club. Committed with hash fd9d35f.",
+          "updated_at": "2026-01-09T13:23:29.200823+00:00"
         },
         {
           "id": "subtask-4-7",
@@ -832,6 +833,6 @@
   "status": "in_progress",
   "planStatus": "in_progress",
   "updated_at": "2026-01-09T13:00:58.919Z",
-  "last_updated": "2026-01-09T13:21:47.389110+00:00",
+  "last_updated": "2026-01-09T13:23:29.200830+00:00",
   "recoveryNote": "Task recovered from stuck state at 2026-01-09T13:00:58.859Z"
 }

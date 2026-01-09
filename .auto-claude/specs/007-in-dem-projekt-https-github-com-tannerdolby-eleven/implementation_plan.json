@@ -15,7 +15,10 @@
           "id": "subtask-1-1",
           "description": "Install @11ty/eleventy-img npm package",
           "service": "main",
-          "files_to_modify": ["package.json", "package-lock.json"],
+          "files_to_modify": [
+            "package.json",
+            "package-lock.json"
+          ],
           "files_to_create": [],
           "patterns_from": [],
           "verification": {
@@ -23,7 +26,9 @@
             "command": "grep -q '@11ty/eleventy-img' package.json && echo 'OK' || echo 'MISSING'",
             "expected": "OK"
           },
-          "status": "pending"
+          "status": "completed",
+          "notes": "Added @11ty/eleventy-img ^5.0.0 to devDependencies in package.json. Note: npm install was not available in this environment, so package-lock.json was not updated automatically. The dependency will be installed when npm install is run in the deployment environment.",
+          "updated_at": "2026-01-09T15:54:54.919932+00:00"
         }
       ]
     },
@@ -32,14 +37,18 @@
       "name": "Image Shortcode Configuration",
       "type": "implementation",
       "description": "Configure eleventy-img async shortcode in eleventy.config.js with alt text validation",
-      "depends_on": ["phase-1-setup"],
+      "depends_on": [
+        "phase-1-setup"
+      ],
       "parallel_safe": false,
       "subtasks": [
         {
           "id": "subtask-2-1",
           "description": "Add imageShortcode function with alt text validation and responsive image generation",
           "service": "main",
-          "files_to_modify": ["eleventy.config.js"],
+          "files_to_modify": [
+            "eleventy.config.js"
+          ],
           "files_to_create": [],
           "patterns_from": [],
           "verification": {
@@ -47,15 +56,27 @@
             "command": "grep -q 'addNunjucksAsyncShortcode' eleventy.config.js && grep -q 'eleventy-img' eleventy.config.js && echo 'OK' || echo 'MISSING'",
             "expected": "OK"
           },
-          "status": "pending",
+          "status": "completed",
           "implementation_details": {
             "shortcode_name": "image",
-            "formats": ["webp", "jpeg"],
-            "widths": [300, 600, 900],
+            "formats": [
+              "webp",
+              "jpeg"
+            ],
+            "widths": [
+              300,
+              600,
+              900
+            ],
             "outputDir": "./_site/img/",
             "urlPath": "/rita-tomforde/img/",
-            "attributes": ["loading='lazy'", "decoding='async'"]
-          }
+            "attributes": [
+              "loading='lazy'",
+              "decoding='async'"
+            ]
+          },
+          "notes": "Added imageShortcode function to eleventy.config.js with: (1) @11ty/eleventy-img require statement, (2) async imageShortcode function with alt text validation that throws error if missing, (3) responsive image generation with widths [300, 600, 900], formats [webp, jpeg], (4) output to _site/img/ with urlPath /rita-tomforde/img/, (5) lazy loading and async decoding attributes, (6) registered as Nunjucks async shortcode. Verification passed.",
+          "updated_at": "2026-01-09T15:56:07.144491+00:00"
         }
       ]
     },
@@ -92,8 +113,9 @@
             "command": "ls src/images/gallery/*.jpg 2>/dev/null | wc -l | tr -d ' '",
             "expected": "12"
           },
-          "status": "pending",
-          "notes": "Download from https://raw.githubusercontent.com/tannerdolby/eleventy-photo-gallery/master/src/images/"
+          "status": "completed",
+          "notes": "Downloaded 12 sample images from tannerdolby/eleventy-photo-gallery repository: highway-water.jpg, boardwalk.jpg, business-center.jpg, empty-road.jpg, gas-station.jpg, glass-jar.jpg, highrises-night.jpg, light-streaks.jpg, music-hall.jpg, terrace-window.jpg, water-drop.jpg, benches.jpg. Verification shows 13 total .jpg files (12 new + 1 existing painting-1.jpg which is used by existing paintings gallery).",
+          "updated_at": "2026-01-09T15:59:31.545950+00:00"
         }
       ]
     },
@@ -102,7 +124,9 @@
       "name": "Gallery Data File",
       "type": "implementation",
       "description": "Create gallery.json with image metadata including alt text and credits",
-      "depends_on": ["phase-3-assets"],
+      "depends_on": [
+        "phase-3-assets"
+      ],
       "parallel_safe": false,
       "subtasks": [
         {
@@ -110,18 +134,30 @@
           "description": "Create src/_data/gallery.json with image metadata array",
           "service": "main",
           "files_to_modify": [],
-          "files_to_create": ["src/_data/gallery.json"],
-          "patterns_from": ["src/_data/paintings.json"],
+          "files_to_create": [
+            "src/_data/gallery.json"
+          ],
+          "patterns_from": [
+            "src/_data/paintings.json"
+          ],
           "verification": {
             "type": "command",
             "command": "node -e \"const g=require('./src/_data/gallery.json'); console.log(g.images && g.images.length === 12 && g.images.every(i => i.src && i.alt) ? 'OK' : 'INVALID')\"",
             "expected": "OK"
           },
-          "status": "pending",
+          "status": "completed",
           "implementation_details": {
-            "required_fields": ["src", "alt", "title", "credit", "linkToAuthor"],
+            "required_fields": [
+              "src",
+              "alt",
+              "title",
+              "credit",
+              "linkToAuthor"
+            ],
             "structure": "{\"images\": [{...}, ...]}"
-          }
+          },
+          "notes": "Created src/_data/gallery.json with 12 images. Each image has src, alt, title, credit, and linkToAuthor properties following the reference project pattern.",
+          "updated_at": "2026-01-09T16:01:33.367657+00:00"
         }
       ]
     },
@@ -130,7 +166,10 @@
       "name": "Gallery Page Template",
       "type": "implementation",
       "description": "Create gallery.njk page template with image shortcode usage",
-      "depends_on": ["phase-2-config", "phase-4-data"],
+      "depends_on": [
+        "phase-2-config",
+        "phase-4-data"
+      ],
       "parallel_safe": false,
       "subtasks": [
         {
@@ -138,21 +177,27 @@
           "description": "Create src/gallery.njk template with responsive gallery grid",
           "service": "main",
           "files_to_modify": [],
-          "files_to_create": ["src/gallery.njk"],
-          "patterns_from": ["src/index.njk"],
+          "files_to_create": [
+            "src/gallery.njk"
+          ],
+          "patterns_from": [
+            "src/index.njk"
+          ],
           "verification": {
             "type": "command",
             "command": "grep -q 'layout: base.njk' src/gallery.njk && grep -q 'image' src/gallery.njk && echo 'OK' || echo 'MISSING'",
             "expected": "OK"
           },
-          "status": "pending",
+          "status": "completed",
           "implementation_details": {
             "layout": "base.njk",
             "title": "Fotogalerie",
             "permalink": "/gallery/",
             "loop_pattern": "{% for image in gallery.images %}",
             "shortcode_usage": "{% image 'src/images/gallery/' + image.src, image.alt %}"
-          }
+          },
+          "notes": "Created src/gallery.njk template with: (1) base.njk layout, (2) Fotogalerie title, (3) /gallery/ permalink, (4) photo-gallery-grid section iterating over gallery.images, (5) async image shortcode usage for responsive images, (6) photo credit links with target=\"_blank\" and rel=\"noopener noreferrer\", (7) CTA section with links back to homepage sections. Verification passed.",
+          "updated_at": "2026-01-09T16:02:46.392922+00:00"
         }
       ]
     },
@@ -168,9 +213,13 @@
           "id": "subtask-6-1",
           "description": "Add .photo-gallery-grid and related CSS styles",
           "service": "main",
-          "files_to_modify": ["src/css/styles.css"],
+          "files_to_modify": [
+            "src/css/styles.css"
+          ],
           "files_to_create": [],
-          "patterns_from": ["src/css/styles.css"],
+          "patterns_from": [
+            "src/css/styles.css"
+          ],
           "verification": {
             "type": "command",
             "command": "grep -q 'photo-gallery' src/css/styles.css && echo 'OK' || echo 'MISSING'",
@@ -178,8 +227,18 @@
           },
           "status": "pending",
           "implementation_details": {
-            "classes": [".photo-gallery-grid", ".photo-gallery-item", ".photo-gallery-credit"],
-            "use_variables": ["--spacing-md", "--radius-md", "--shadow-sm", "--transition-fast", "--color-background"]
+            "classes": [
+              ".photo-gallery-grid",
+              ".photo-gallery-item",
+              ".photo-gallery-credit"
+            ],
+            "use_variables": [
+              "--spacing-md",
+              "--radius-md",
+              "--shadow-sm",
+              "--transition-fast",
+              "--color-background"
+            ]
           }
         }
       ]
@@ -189,16 +248,22 @@
       "name": "Navigation Update",
       "type": "implementation",
       "description": "Add Fotogalerie link to navigation menu",
-      "depends_on": ["phase-5-template"],
+      "depends_on": [
+        "phase-5-template"
+      ],
       "parallel_safe": false,
       "subtasks": [
         {
           "id": "subtask-7-1",
           "description": "Add 'Fotogalerie' link to nav.njk pointing to /gallery/",
           "service": "main",
-          "files_to_modify": ["src/_includes/nav.njk"],
+          "files_to_modify": [
+            "src/_includes/nav.njk"
+          ],
           "files_to_create": [],
-          "patterns_from": ["src/_includes/nav.njk"],
+          "patterns_from": [
+            "src/_includes/nav.njk"
+          ],
           "verification": {
             "type": "command",
             "command": "grep -q 'gallery' src/_includes/nav.njk && echo 'OK' || echo 'MISSING'",
@@ -213,7 +278,11 @@
       "name": "Build & Integration Verification",
       "type": "integration",
       "description": "Verify complete build and end-to-end functionality",
-      "depends_on": ["phase-5-template", "phase-6-styles", "phase-7-navigation"],
+      "depends_on": [
+        "phase-5-template",
+        "phase-6-styles",
+        "phase-7-navigation"
+      ],
       "parallel_safe": false,
       "subtasks": [
         {
@@ -270,12 +339,18 @@
   "summary": {
     "total_phases": 8,
     "total_subtasks": 10,
-    "services_involved": ["main"],
+    "services_involved": [
+      "main"
+    ],
     "parallelism": {
       "max_parallel_phases": 3,
       "parallel_groups": [
         {
-          "phases": ["phase-1-setup", "phase-3-assets", "phase-6-styles"],
+          "phases": [
+            "phase-1-setup",
+            "phase-3-assets",
+            "phase-6-styles"
+          ],
           "reason": "No dependencies - can run in parallel at start"
         }
       ],
@@ -288,7 +363,10 @@
     "risk_level": "medium",
     "skip_validation": false,
     "test_creation_phase": "post_implementation",
-    "test_types_required": ["unit", "integration"],
+    "test_types_required": [
+      "unit",
+      "integration"
+    ],
     "security_scanning_required": false,
     "staging_deployment_required": false,
     "acceptance_criteria": [
@@ -336,35 +414,55 @@
     },
     "integration_tests": {
       "required": true,
-      "commands": ["npm run build"],
-      "services_to_test": ["main"]
+      "commands": [
+        "npm run build"
+      ],
+      "services_to_test": [
+        "main"
+      ]
     },
     "e2e_tests": {
       "required": true,
       "commands": [],
-      "flows": ["navigate-to-gallery", "view-responsive-images"]
+      "flows": [
+        "navigate-to-gallery",
+        "view-responsive-images"
+      ]
     },
     "browser_verification": {
       "required": true,
       "pages": [
         {
           "url": "http://localhost:8080/rita-tomforde/gallery/",
-          "checks": ["renders", "no-console-errors", "images-display", "grid-responsive"]
+          "checks": [
+            "renders",
+            "no-console-errors",
+            "images-display",
+            "grid-responsive"
+          ]
         },
         {
           "url": "http://localhost:8080/rita-tomforde/",
-          "checks": ["gallery-link-visible", "gallery-link-works"]
+          "checks": [
+            "gallery-link-visible",
+            "gallery-link-works"
+          ]
         }
       ]
     },
     "build_verification": {
       "required": true,
-      "checks": ["build-succeeds", "images-generated", "gallery-html-exists"]
+      "checks": [
+        "build-succeeds",
+        "images-generated",
+        "gallery-html-exists"
+      ]
     }
   },
   "qa_signoff": null,
   "created_at": "2026-01-09T17:00:00.000Z",
   "updated_at": "2026-01-09T17:00:00.000Z",
   "status": "pending",
-  "planStatus": "complete"
+  "planStatus": "complete",
+  "last_updated": "2026-01-09T16:02:46.392931+00:00"
 }

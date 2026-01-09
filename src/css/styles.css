@@ -670,3 +670,96 @@ main {
     color: var(--color-text-light);
     font-size: var(--font-size-base);
 }
+
+/* ==========================================================================
+   11. Photo Gallery
+   ========================================================================== */
+
+.photo-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.photo-gallery-item {
+    background-color: var(--color-background);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.photo-gallery-item:hover,
+.photo-gallery-item:focus-within {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.photo-gallery-item img,
+.photo-gallery-item picture {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.photo-gallery-item picture img {
+    width: 100%;
+    height: 100%;
+}
+
+.photo-gallery-caption {
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.photo-gallery-title {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.photo-gallery-credit {
+    font-size: var(--font-size-small);
+    color: var(--color-text-light);
+}
+
+.photo-gallery-credit a {
+    color: var(--color-text-light);
+    text-decoration: underline;
+    transition: color var(--transition-fast);
+}
+
+.photo-gallery-credit a:hover,
+.photo-gallery-credit a:focus {
+    color: var(--color-accent);
+}
+
+/* Photo Gallery Empty State */
+.photo-gallery-empty {
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+    color: var(--color-text-light);
+}
+
+/* Photo Gallery Responsive Adjustments */
+@media (max-width: 767px) {
+    .photo-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .photo-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .photo-gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-lg);
+    }
+}

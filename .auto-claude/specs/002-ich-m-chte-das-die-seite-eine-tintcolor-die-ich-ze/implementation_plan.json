@@ -1,0 +1,39 @@
+{
+  "feature": "Central Tint Color System",
+  "description": "Add centrally configurable tint color with bright pink as initial value",
+  "created_at": "2026-01-09T14:09:19.267Z",
+  "updated_at": "2026-01-09T15:15:00.000Z",
+  "status": "ready",
+  "planStatus": "complete",
+  "spec_name": "central-tint-color",
+  "workflow_type": "simple",
+  "total_phases": 1,
+  "recommended_workers": 1,
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Implementation",
+      "description": "Add central tint color CSS variable with bright pink value",
+      "depends_on": [],
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Add --color-tint CSS variable to :root and wire it to --color-accent",
+          "service": "frontend",
+          "status": "pending",
+          "files_to_create": [],
+          "files_to_modify": ["src/css/styles.css"],
+          "patterns_from": [],
+          "verification": {
+            "type": "manual",
+            "run": "npm run dev and verify accent elements display bright pink color"
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "complexity": "simple",
+    "estimated_sessions": 1
+  }
+}

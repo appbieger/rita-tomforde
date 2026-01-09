@@ -1,0 +1,25 @@
+<header class="site-header">
+    <nav class="main-nav" role="navigation" aria-label="Hauptnavigation">
+        <div class="nav-container">
+            <a href="{{ '/' | url }}" class="nav-logo" aria-label="Startseite">
+                <span class="nav-title">{{ site.name }}</span>
+            </a>
+
+            <button class="hamburger" aria-label="Navigation umschalten" aria-expanded="false" aria-controls="nav-menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="{{ '/' | url }}#willkommen">Willkommen</a></li>
+                <li><a href="{{ '/' | url }}#ueber-mich">Über mich</a></li>
+                <li><a href="{{ '/' | url }}#inspiration">Inspiration</a></li>
+                <li><a href="{{ '/' | url }}#dankbarkeit">Dankbarkeit</a></li>
+                <li><a href="{{ '/' | url }}#ausstellungen">Ausstellungen</a></li>
+                <li><a href="{{ '/' | url }}#aktuelles">Aktuelles</a></li>
+                <li><a href="{{ '/' | url }}#galerie">Galerie</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>

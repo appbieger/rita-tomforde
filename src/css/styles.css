@@ -289,6 +289,12 @@ main {
     color: var(--color-accent);
 }
 
+.nav-logo:focus-visible {
+    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+    border-radius: var(--radius-sm);
+}
+
 .nav-title {
     font-family: var(--font-family-headings);
     font-size: var(--font-size-medium);

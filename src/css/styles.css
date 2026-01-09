@@ -466,7 +466,7 @@ main {
 .hero {
     position: relative;
     padding: var(--spacing-xl) 0;
-    background-image: url('/images/gallery/painting-1.jpg');
+    background-image: url('../images/gallery/painting-1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

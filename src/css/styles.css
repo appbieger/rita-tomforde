@@ -799,3 +799,19 @@ main {
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
 }
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Tablet and desktop: side-by-side layout */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}

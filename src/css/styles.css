@@ -994,12 +994,181 @@ main {
 }
 
 /* ==========================================================================
-   15. Print Styles
+   15. Footer
+   ========================================================================== */
+
+.site-footer {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: var(--spacing-lg) 0;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    text-align: center;
+}
+
+/* Footer branding */
+.footer-brand {
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-title {
+    font-family: var(--font-family-headings);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-tagline {
+    font-size: var(--font-size-small);
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
+}
+
+/* Footer contact info */
+.footer-contact {
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-contact p {
+    font-size: var(--font-size-small);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-contact p:last-child {
+    margin-bottom: 0;
+}
+
+.footer-contact a {
+    color: var(--color-secondary);
+    text-decoration: underline;
+    transition: color var(--transition-fast);
+}
+
+.footer-contact a:hover,
+.footer-contact a:focus {
+    color: var(--color-accent);
+}
+
+/* Footer navigation / legal links */
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm) var(--spacing-md);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav li {
+    margin: 0;
+}
+
+.footer-nav a {
+    display: inline-block;
+    padding: var(--spacing-xs) 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--font-size-small);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+    color: var(--color-accent);
+}
+
+/* Footer divider */
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: var(--spacing-md) 0;
+    border: none;
+}
+
+/* Footer bottom / copyright */
+.footer-bottom {
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-copyright {
+    font-size: var(--font-size-small);
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0;
+}
+
+/* Footer responsive adjustments */
+@media (min-width: 768px) {
+    .site-footer {
+        padding: var(--spacing-xl) 0 var(--spacing-lg);
+    }
+
+    .footer-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+        gap: var(--spacing-lg);
+    }
+
+    .footer-brand {
+        flex: 1;
+        min-width: 200px;
+        margin-bottom: 0;
+    }
+
+    .footer-contact {
+        flex: 1;
+        min-width: 200px;
+        margin-bottom: 0;
+    }
+
+    .footer-nav {
+        justify-content: flex-end;
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .footer-bottom {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-content {
+        gap: var(--spacing-xl);
+    }
+
+    .footer-title {
+        font-size: calc(var(--font-size-medium) * 1.1);
+    }
+}
+
+/* ==========================================================================
+   16. Print Styles
    ========================================================================== */
 
 @media print {
-    /* Hide navigation and interactive elements */
+    /* Hide navigation, footer, and interactive elements */
     .site-header,
+    .site-footer,
     .hamburger,
     .nav-overlay {
         display: none;

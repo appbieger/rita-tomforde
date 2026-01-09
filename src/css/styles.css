@@ -593,6 +593,28 @@ main {
     box-shadow: var(--shadow-md);
 }
 
+/* Über mich section - right-aligned image with text wrap */
+#ueber-mich .hero-image {
+    float: right;
+    margin: 0 0 var(--spacing-md) var(--spacing-md);
+}
+
+#ueber-mich .section-content::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* Responsive: on mobile, image is full-width above text */
+@media (max-width: 767px) {
+    #ueber-mich .hero-image {
+        float: none;
+        display: block;
+        margin: 0 auto var(--spacing-md) auto;
+        max-width: 250px;
+    }
+}
+
 .hero-image-placeholder {
     display: flex;
     align-items: center;

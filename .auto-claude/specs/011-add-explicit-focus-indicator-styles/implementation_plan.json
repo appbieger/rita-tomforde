@@ -56,7 +56,7 @@
           "subtask_id": "3.1",
           "title": "Add nav-logo focus-visible styles",
           "description": "Add visible focus ring to the navigation logo link (.nav-logo) using :focus-visible with appropriate offset for padding.",
-          "status": "pending",
+          "status": "completed",
           "file_path": "src/css/styles.css",
           "estimated_lines": 6
         },

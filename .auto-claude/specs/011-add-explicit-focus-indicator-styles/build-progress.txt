@@ -130,3 +130,38 @@
 - Phase 3: Add navigation-specific focus styles (.nav-logo, .nav-menu a, .hamburger)
 
 ---
+### Session 5 - 2026-01-09
+
+**Task:** Subtask 3.1 - Add nav-logo focus-visible styles
+
+**Implementation Completed:**
+- Added :focus-visible styles to .nav-logo at lines 292-296
+- Implemented visible focus ring using design tokens:
+  - `outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color)`
+  - `outline-offset: var(--focus-ring-offset)`
+  - `border-radius: var(--radius-sm)` for polished appearance
+- Follows same pattern as base link focus-visible styles
+- Total: 6 lines added (3 properties + rule selector + blank lines)
+
+**Key Features:**
+- Uses :focus-visible for keyboard-only focus indication
+- 2px solid #FF1493 outline with 2px offset for clear visibility
+- Border radius maintains consistency with other focus indicators
+- Ensures navigation logo is clearly visible when focused via keyboard
+
+**Commit:** 212dcd5 - "auto-claude: 3.1 - Add visible focus ring to the navigation logo link"
+
+**Verification:**
+- ✅ Focus-visible styles added to .nav-logo element
+- ✅ Uses design tokens for consistency
+- ✅ Follows existing code patterns and formatting
+- ✅ Clean commit with descriptive message
+
+**Status:** Phase 3 - 1/3 subtasks complete
+
+**Next Steps:**
+- Subtask 3.2: Add focus-visible styles for nav-menu links (.nav-menu a)
+- Subtask 3.3: Add focus-visible styles for hamburger button (.hamburger)
+
+---
+

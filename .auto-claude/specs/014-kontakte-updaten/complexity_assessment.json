@@ -1,0 +1,62 @@
+{
+  "complexity": "simple",
+  "workflow_type": "simple",
+  "confidence": 0.95,
+  "reasoning": "This is a straightforward data update task affecting only 2 files: site.json (contact data) and footer.njk (display template). No external integrations, no infrastructure changes, no new dependencies. Clear existing patterns in the codebase.",
+
+  "analysis": {
+    "scope": {
+      "estimated_files": 2,
+      "estimated_services": 1,
+      "is_cross_cutting": false,
+      "notes": "Changes limited to src/_data/site.json (data source) and src/_includes/footer.njk (display template)"
+    },
+    "integrations": {
+      "external_services": [],
+      "new_dependencies": [],
+      "research_needed": false,
+      "notes": "No external services involved. Instagram and WhatsApp are just links, not API integrations."
+    },
+    "infrastructure": {
+      "docker_changes": false,
+      "database_changes": false,
+      "config_changes": false,
+      "notes": "No infrastructure changes. This is a static site (11ty/Eleventy) with data in JSON files."
+    },
+    "knowledge": {
+      "patterns_exist": true,
+      "research_required": false,
+      "unfamiliar_tech": [],
+      "notes": "Contact data structure already exists in site.json. Footer template already renders contact info. Just need to extend with new fields."
+    },
+    "risk": {
+      "level": "low",
+      "concerns": ["Phone number formatting for tel: links", "WhatsApp link format"],
+      "notes": "Minor risk of incorrect link formatting, but easily tested visually."
+    }
+  },
+
+  "recommended_phases": [
+    "discovery",
+    "quick_spec",
+    "validation"
+  ],
+
+  "flags": {
+    "needs_research": false,
+    "needs_self_critique": false,
+    "needs_infrastructure_setup": false
+  },
+
+  "validation_recommendations": {
+    "risk_level": "low",
+    "skip_validation": false,
+    "minimal_mode": true,
+    "test_types_required": [],
+    "security_scan_required": false,
+    "staging_deployment_required": false,
+    "reasoning": "Simple data update affecting only static content display. Manual visual verification sufficient. No functional code changes that require automated testing."
+  },
+
+  "created_at": "2026-01-09T12:00:00Z"
+}

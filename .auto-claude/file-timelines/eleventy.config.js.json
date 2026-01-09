@@ -1,0 +1,28 @@
+{
+  "file_path": "eleventy.config.js",
+  "main_branch_history": [],
+  "task_views": {
+    "001-in-diesem-projekt-soll-eine-website-f-r-die-maleri": {
+      "task_id": "001-in-diesem-projekt-soll-eine-website-f-r-die-maleri",
+      "branch_point": {
+        "commit_hash": "a1e1f8f98bc4dec609009c950f3b41c1f48916ab",
+        "content": "",
+        "timestamp": "2026-01-09T14:00:59.976628"
+      },
+      "worktree_state": {
+        "content": "module.exports = function(eleventyConfig) {\n  // Passthrough copy for static assets\n  eleventyConfig.addPassthroughCopy(\"src/css\");\n  eleventyConfig.addPassthroughCopy(\"src/images\");\n  eleventyConfig.addPassthroughCopy(\"src/js\");\n\n  // Return the configuration object\n  return {\n    // Template formats to process\n    templateFormats: [\"njk\", \"md\", \"html\"],\n\n    // Default template engine for Markdown files\n    markdownTemplateEngine: \"njk\",\n\n    // Default template engine for HTML files\n    htmlTemplateEngine: \"njk\",\n\n    // Path prefix for GitHub Pages deployment\n    // This ensures all URLs work correctly when deployed to https://[username].github.io/rita-tomforde/\n    pathPrefix: \"/rita-tomforde/\",\n\n    // Directory configuration\n    dir: {\n      input: \"src\",\n      output: \"_site\",\n      includes: \"_includes\",\n      data: \"_data\"\n    }\n  };\n};\n",
+        "last_modified": "2026-01-09T15:03:46.414511"
+      },
+      "task_intent": {
+        "title": "001-in-diesem-projekt-soll-eine-website-f-r-die-maleri",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-09T14:01:00.296151",
+  "last_updated": "2026-01-09T14:01:00.311246"
+}

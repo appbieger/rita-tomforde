@@ -1,0 +1,28 @@
+{
+  "file_path": ".auto-claude/specs/001-in-diesem-projekt-soll-eine-website-f-r-die-maleri/memory/gotchas.md",
+  "main_branch_history": [],
+  "task_views": {
+    "001-in-diesem-projekt-soll-eine-website-f-r-die-maleri": {
+      "task_id": "001-in-diesem-projekt-soll-eine-website-f-r-die-maleri",
+      "branch_point": {
+        "commit_hash": "a1e1f8f98bc4dec609009c950f3b41c1f48916ab",
+        "content": "",
+        "timestamp": "2026-01-09T14:00:59.976628"
+      },
+      "worktree_state": {
+        "content": "# Gotchas & Pitfalls\n\nThings to watch out for in this codebase.\n\n## [2026-01-09 13:36]\nnpm and npx commands are blocked in the sandbox environment - build verification requires manual execution outside the sandbox\n\n_Context: subtask-8-1: Run production build and verify output - Cannot execute npm run build due to sandbox command restrictions_\n",
+        "last_modified": "2026-01-09T15:03:46.398632"
+      },
+      "task_intent": {
+        "title": "001-in-diesem-projekt-soll-eine-website-f-r-die-maleri",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-09T14:01:00.115175",
+  "last_updated": "2026-01-09T14:01:00.130558"
+}

@@ -1,0 +1,28 @@
+{
+  "file_path": ".auto-claude/specs/001-in-diesem-projekt-soll-eine-website-f-r-die-maleri/project_index.json",
+  "main_branch_history": [],
+  "task_views": {
+    "001-in-diesem-projekt-soll-eine-website-f-r-die-maleri": {
+      "task_id": "001-in-diesem-projekt-soll-eine-website-f-r-die-maleri",
+      "branch_point": {
+        "commit_hash": "a1e1f8f98bc4dec609009c950f3b41c1f48916ab",
+        "content": "",
+        "timestamp": "2026-01-09T14:00:59.976628"
+      },
+      "worktree_state": {
+        "content": "{\n  \"project_root\": \"/Users/yaron/rita-tomfordede\",\n  \"project_type\": \"single\",\n  \"services\": {\n    \"eleventy-site\": {\n      \"path\": \".\",\n      \"tech_stack\": [\"javascript\", \"eleventy\", \"nunjucks\", \"css\"],\n      \"port\": 8080,\n      \"dev_command\": \"npm run dev\",\n      \"build_command\": \"npm run build\",\n      \"test_command\": \"npm run build\"\n    }\n  },\n  \"infrastructure\": {\n    \"docker\": false,\n    \"database\": null,\n    \"hosting\": \"github-pages\",\n    \"ci_cd\": \"github-actions\"\n  },\n  \"conventions\": {\n    \"templating\": \"nunjucks\",\n    \"css\": \"vanilla-css-custom-properties\",\n    \"language\": \"de\",\n    \"linter\": null,\n    \"formatter\": null,\n    \"testing\": \"build-verification\"\n  },\n  \"directory_structure\": {\n    \"input\": \"src/\",\n    \"output\": \"_site/\",\n    \"data\": \"src/_data/\",\n    \"includes\": \"src/_includes/\",\n    \"assets\": \"src/images/\",\n    \"styles\": \"src/css/\"\n  },\n  \"key_files\": {\n    \"config\": \"eleventy.config.js\",\n    \"package\": \"package.json\",\n    \"base_layout\": \"src/_includes/base.njk\",\n    \"main_page\": \"src/index.njk\",\n    \"gallery_data\": \"src/_data/paintings.json\",\n    \"site_data\": \"src/_data/site.json\",\n    \"deploy_workflow\": \".github/workflows/deploy.yml\"\n  }\n}\n",
+        "last_modified": "2026-01-09T15:03:46.406801"
+      },
+      "task_intent": {
+        "title": "001-in-diesem-projekt-soll-eine-website-f-r-die-maleri",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-09T14:01:00.177251",
+  "last_updated": "2026-01-09T14:01:00.191179"
+}

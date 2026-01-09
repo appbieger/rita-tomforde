@@ -1,0 +1,45 @@
+{
+  "project_root": "/Users/yaron/rita-tomfordede",
+  "project_type": "single",
+  "services": {
+    "eleventy-site": {
+      "path": ".",
+      "tech_stack": ["javascript", "eleventy", "nunjucks", "css"],
+      "port": 8080,
+      "dev_command": "npm run dev",
+      "build_command": "npm run build",
+      "test_command": "npm run build"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": null,
+    "hosting": "github-pages",
+    "ci_cd": "github-actions"
+  },
+  "conventions": {
+    "templating": "nunjucks",
+    "css": "vanilla-css-custom-properties",
+    "language": "de",
+    "linter": null,
+    "formatter": null,
+    "testing": "build-verification"
+  },
+  "directory_structure": {
+    "input": "src/",
+    "output": "_site/",
+    "data": "src/_data/",
+    "includes": "src/_includes/",
+    "assets": "src/images/",
+    "styles": "src/css/"
+  },
+  "key_files": {
+    "config": "eleventy.config.js",
+    "package": "package.json",
+    "base_layout": "src/_includes/base.njk",
+    "main_page": "src/index.njk",
+    "gallery_data": "src/_data/paintings.json",
+    "site_data": "src/_data/site.json",
+    "deploy_workflow": ".github/workflows/deploy.yml"
+  }
+}

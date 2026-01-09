@@ -1,0 +1,28 @@
+{
+  "file_path": ".auto-claude/specs/001-in-diesem-projekt-soll-eine-website-f-r-die-maleri/task_metadata.json",
+  "main_branch_history": [],
+  "task_views": {
+    "001-in-diesem-projekt-soll-eine-website-f-r-die-maleri": {
+      "task_id": "001-in-diesem-projekt-soll-eine-website-f-r-die-maleri",
+      "branch_point": {
+        "commit_hash": "a1e1f8f98bc4dec609009c950f3b41c1f48916ab",
+        "content": "",
+        "timestamp": "2026-01-09T14:00:59.976628"
+      },
+      "worktree_state": {
+        "content": "{\n  \"sourceType\": \"manual\",\n  \"model\": \"opus\",\n  \"thinkingLevel\": \"high\",\n  \"isAutoProfile\": true,\n  \"phaseModels\": {\n    \"spec\": \"opus\",\n    \"planning\": \"opus\",\n    \"coding\": \"opus\",\n    \"qa\": \"opus\"\n  },\n  \"phaseThinking\": {\n    \"spec\": \"ultrathink\",\n    \"planning\": \"high\",\n    \"coding\": \"low\",\n    \"qa\": \"low\"\n  },\n  \"attachedImages\": [\n    {\n      \"id\": \"img-1767959337673-i1qdzen\",\n      \"filename\": \"Bild 09.01.26 um 12.17.jpeg\",\n      \"mimeType\": \"image/jpeg\",\n      \"size\": 24176,\n      \"path\": \"attachments/Bild 09.01.26 um 12.17.jpeg\"\n    }\n  ],\n  \"requireReviewBeforeCoding\": true\n}",
+        "last_modified": "2026-01-09T15:03:46.413269"
+      },
+      "task_intent": {
+        "title": "001-in-diesem-projekt-soll-eine-website-f-r-die-maleri",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-09T14:01:00.264415",
+  "last_updated": "2026-01-09T14:01:00.279963"
+}

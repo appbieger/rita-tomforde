@@ -1,0 +1,28 @@
+{
+  "file_path": "package.json",
+  "main_branch_history": [],
+  "task_views": {
+    "001-in-diesem-projekt-soll-eine-website-f-r-die-maleri": {
+      "task_id": "001-in-diesem-projekt-soll-eine-website-f-r-die-maleri",
+      "branch_point": {
+        "commit_hash": "a1e1f8f98bc4dec609009c950f3b41c1f48916ab",
+        "content": "",
+        "timestamp": "2026-01-09T14:00:59.976628"
+      },
+      "worktree_state": {
+        "content": "{\n  \"name\": \"rita-tomfordede\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Portfolio website for German painter Rita Tomforde - built with Eleventy\",\n  \"main\": \"eleventy.config.js\",\n  \"scripts\": {\n    \"dev\": \"npx @11ty/eleventy --serve\",\n    \"build\": \"npx @11ty/eleventy\",\n    \"build:prod\": \"ELEVENTY_ENV=production npx @11ty/eleventy\"\n  },\n  \"keywords\": [\n    \"eleventy\",\n    \"11ty\",\n    \"portfolio\",\n    \"artist\",\n    \"static-site\"\n  ],\n  \"author\": \"Rita Tomforde\",\n  \"license\": \"ISC\",\n  \"devDependencies\": {\n    \"@11ty/eleventy\": \"^3.0.0\"\n  }\n}\n",
+        "last_modified": "2026-01-09T15:03:46.415305"
+      },
+      "task_intent": {
+        "title": "001-in-diesem-projekt-soll-eine-website-f-r-die-maleri",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-09T14:01:00.311866",
+  "last_updated": "2026-01-09T14:01:00.326767"
+}

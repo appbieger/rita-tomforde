@@ -1024,6 +1024,70 @@ main {
     color: var(--color-text-light);
 }
 
+/* Social/Contact Icons */
+.contact-icons {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.contact-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: color var(--transition-fast), transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.contact-icon svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+/* Phone icon - default black color */
+.contact-icon--phone {
+    color: var(--color-primary);
+}
+
+.contact-icon--phone:hover,
+.contact-icon--phone:focus {
+    color: var(--color-accent);
+    transform: scale(1.1);
+}
+
+/* WhatsApp icon - brand green color */
+.contact-icon--whatsapp {
+    color: #25D366;
+}
+
+.contact-icon--whatsapp:hover,
+.contact-icon--whatsapp:focus {
+    color: var(--color-accent);
+    transform: scale(1.1);
+}
+
+/* Instagram icon - brand gradient approximated with purple/pink */
+.contact-icon--instagram {
+    color: #E4405F;
+}
+
+.contact-icon--instagram:hover,
+.contact-icon--instagram:focus {
+    color: var(--color-accent);
+    transform: scale(1.1);
+}
+
+/* Focus visible styles for accessibility */
+.contact-icon:focus-visible {
+    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+}
+
 .footer-info {
     flex: 1;
 }
@@ -1096,6 +1160,11 @@ main {
     .footer-info,
     .footer-bottom {
         text-align: center;
+    }
+
+    /* Center social icons on mobile */
+    .contact-icons {
+        justify-content: center;
     }
 
     /* Reduce padding on mobile for better use of space */

@@ -1,0 +1,49 @@
+{
+  "feature": "kontakte-updaten",
+  "spec_name": "kontakte-updaten",
+  "workflow_type": "simple",
+  "total_phases": 1,
+  "recommended_workers": 1,
+  "status": "ready",
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Implementation",
+      "description": "Update contact information in data file and footer template",
+      "depends_on": [],
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Update site.json with full contact details (instagram, address, phone, whatsapp)",
+          "service": "data",
+          "status": "pending",
+          "files_to_create": [],
+          "files_to_modify": ["src/_data/site.json"],
+          "patterns_from": [],
+          "verification": {
+            "type": "manual",
+            "run": "Check site.json contains all contact fields"
+          }
+        },
+        {
+          "id": "subtask-1-2",
+          "description": "Update footer.njk to display new contact information",
+          "service": "frontend",
+          "status": "pending",
+          "files_to_create": [],
+          "files_to_modify": ["src/_includes/footer.njk"],
+          "patterns_from": [],
+          "verification": {
+            "type": "manual",
+            "run": "npm start and verify footer displays all contact info"
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "created_at": "2026-01-09T18:27:29.365Z",
+    "complexity": "simple",
+    "estimated_sessions": 1
+  }
+}

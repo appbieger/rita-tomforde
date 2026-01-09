@@ -296,6 +296,7 @@ main {
     font-weight: var(--font-weight-normal);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    white-space: nowrap;
     transition: color var(--transition-fast);
 }
 

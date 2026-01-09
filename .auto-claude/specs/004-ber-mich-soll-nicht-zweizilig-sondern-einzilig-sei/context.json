@@ -1,0 +1,13 @@
+{
+  "task_description": "Fix 'Über mich' navigation item to display on a single line instead of wrapping to two lines by adding white-space: nowrap to nav links CSS",
+  "scoped_services": [],
+  "files_to_modify": [
+    "src/css/styles.css"
+  ],
+  "files_to_reference": [],
+  "patterns": {
+    "css": "Navigation styling uses .nav-menu a selector around line 290-300"
+  },
+  "service_contexts": {},
+  "created_at": "2025-01-09T00:00:00.000Z"
+}

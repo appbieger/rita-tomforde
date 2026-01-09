@@ -65,6 +65,12 @@
     --z-fixed: 300;
     --z-modal: 400;
     --z-overlay: 500;
+
+    /* Focus / Accessibility */
+    --focus-ring-color: var(--color-accent);
+    --focus-ring-width: 2px;
+    --focus-ring-style: solid;
+    --focus-ring-offset: 2px;
 }
 
 /* ==========================================================================

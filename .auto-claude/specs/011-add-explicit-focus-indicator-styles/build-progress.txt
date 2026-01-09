@@ -1,0 +1,132 @@
+# Build Progress: Add Explicit Focus Indicator Styles
+
+## Status: In Progress - Phase 1 Complete
+
+### Session 1 - 2026-01-09
+
+**Task:** Create implementation plan for adding explicit focus indicator styles
+
+**Analysis Completed:**
+- Reviewed spec.md - need to add visible :focus outlines/rings for keyboard navigation
+- Analyzed src/css/styles.css (781 lines) - found existing :focus styles only change color
+- Identified all interactive elements needing focus styles:
+  - Base links (a)
+  - Navigation: .nav-logo, .nav-menu a, .hamburger button
+  - Gallery: .photo-gallery-item, .photo-gallery-credit a
+  - Footer: .footer-nav a
+  - Form controls: button, input, textarea, select
+
+**Key Decisions:**
+- Use :focus-visible (not :focus) for keyboard-only focus indication
+- Add CSS custom properties for focus ring consistency
+- Use --color-tint (#FF1493) as focus color for visibility
+- Add outline with offset for clean appearance
+
+**Implementation Plan Created:**
+- 6 phases, 10 subtasks
+- All changes in src/css/styles.css
+- Estimated ~60 new lines of CSS
+
+**Next Steps:**
+- Phase 1: Add focus design tokens to :root
+- Phase 2: Add base focus-visible styles
+- Phase 3-5: Component-specific focus styles
+- Phase 6: Build and test
+
+---
+
+### Session 2 - 2026-01-09
+
+**Task:** Subtask 1.1 - Add focus design tokens to CSS custom properties
+
+**Implementation Completed:**
+- Added Focus / Accessibility section to :root CSS custom properties
+- Added four design tokens:
+  - `--focus-ring-color: var(--color-accent)` - Uses #FF1493 for visibility
+  - `--focus-ring-width: 2px` - Standard visible width
+  - `--focus-ring-style: solid` - Solid line style
+  - `--focus-ring-offset: 2px` - Gap between element and ring
+- Follows existing CSS custom properties pattern
+- Total: 6 lines added (4 properties + section comment + blank line)
+
+**Commit:** a3943b0 - "auto-claude: 1.1 - Add focus design tokens to CSS custom properties"
+
+**Verification:**
+- ✅ Design tokens added to :root section
+- ✅ Uses accent color for good contrast/visibility
+- ✅ Follows existing code patterns and formatting
+- ✅ Clean commit with descriptive message
+
+**Status:** Phase 1 complete (1/1 subtasks done)
+
+**Next Steps:**
+- Phase 2: Add base focus-visible styles for links, buttons, and form controls (2 subtasks)
+
+---
+
+### Session 3 - 2026-01-09
+
+**Task:** Subtask 2.1 - Add base link focus-visible styles
+
+**Implementation Completed:**
+- Added :focus-visible styles to base anchor (a) elements at line 170-174
+- Implemented visible focus ring using design tokens:
+  - `outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color)`
+  - `outline-offset: var(--focus-ring-offset)`
+  - `border-radius: var(--radius-sm)` for polished appearance
+- Preserved existing :focus color change (color: var(--color-accent))
+- Total: 6 lines added (3 properties + rule selector + blank lines)
+
+**Key Features:**
+- Uses :focus-visible for keyboard-only focus indication (not triggered by mouse clicks)
+- 2px solid #FF1493 outline with 2px offset for clear visibility
+- Maintains existing hover and focus color change behavior
+- Adds visual focus indicator for WCAG 2.1 compliance
+
+**Commit:** 38858ff - "auto-claude: 2.1 - Update the base anchor (a) styles to include a visible focus ring using :focus-visible"
+
+**Verification:**
+- ✅ Focus-visible styles added to base anchor elements
+- ✅ Existing :focus color change preserved
+- ✅ Uses design tokens for consistency
+- ✅ Follows existing code patterns and formatting
+- ✅ Clean commit with descriptive message
+
+**Status:** Phase 2 - 1/2 subtasks complete
+
+**Next Steps:**
+- Subtask 2.2: Add focus-visible styles for buttons, inputs, textareas, and select elements
+
+---
+
+### Session 4 - 2026-01-09
+
+**Task:** Subtask 2.2 - Add base button and input focus-visible styles
+
+**Implementation Completed:**
+- Added :focus-visible styles to form controls (button, input, textarea, select) at lines 176-183
+- Added "Form control focus styles" comment for organization
+- Implemented visible focus ring using design tokens:
+  - `outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color)`
+  - `outline-offset: var(--focus-ring-offset)`
+- Grouped all form control selectors together for efficiency
+- Total: 8 lines added (comment + 4 selectors + 2 properties + blank lines)
+
+**Key Features:**
+- Uses :focus-visible for keyboard-only focus indication (not triggered by mouse clicks)
+- 2px solid #FF1493 outline with 2px offset for clear visibility
+- Consistent styling with link focus indicators
+- Applies to all standard form control types for comprehensive coverage
+
+**Verification:**
+- ✅ Focus-visible styles added for button, input, textarea, select elements
+- ✅ Uses design tokens for consistency
+- ✅ Follows existing code patterns and formatting
+- ✅ No debugging statements or errors
+
+**Status:** Phase 2 complete (2/2 subtasks done)
+
+**Next Steps:**
+- Phase 3: Add navigation-specific focus styles (.nav-logo, .nav-menu a, .hamburger)
+
+---

@@ -696,10 +696,17 @@ main {
     padding: var(--spacing-md);
     margin-bottom: var(--spacing-md);
     box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .event:last-child {
     margin-bottom: 0;
+}
+
+.event:hover,
+.event:focus-within {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
 }
 
 .event h3 {

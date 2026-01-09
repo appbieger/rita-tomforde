@@ -29,7 +29,9 @@ title: Willkommen
         <header class="section-header">
             <h2 class="section-title">Über mich</h2>
         </header>
-        {% image "src/images/portraits/rita-tomforde.jpg", "Porträt der Künstlerin Rita Tomforde" %}
+        <div class="hero-image-wrapper">
+            {% image "src/images/portraits/rita-tomforde.jpg", "Porträt der Künstlerin Rita Tomforde" %}
+        </div>
         <div class="section-content">
             <p>Für Kunst und künstlerische Gestaltung in jeder Form hatte ich schon immer großes Interesse. Etwa vor 30 Jahren fing ich an, selbst hobbymäßig künstlerisch tätig zu werden, zunächst mit Seidenmalerei. Nach einigen Jahren hatte ich genug Tücher bemalt im Schrank und an gute Freundinnen und Verwandte verschenkt und versuchte dann zuerst auf Seide Bilder zu malen. Dies ist nicht leicht, weil die Seide sehr fließend ist. So kam ich auf die Idee lieber auf Papier bzw. Leinwand malen lernen zu wollen.</p>
 
@@ -140,7 +142,11 @@ title: Willkommen
                 {% for painting in paintings.paintings %}
                 {% if painting.available %}
                 <article class="gallery-item" id="{{ painting.id }}">
+                    {% if painting.image.endsWith('.svg') %}
+                    <img src="{{ painting.image | url }}" alt="{{ painting.title }}" loading="lazy" class="gallery-item-image">
+                    {% else %}
                     {% image "src" + painting.image, painting.title %}
+                    {% endif %}
                     <div class="gallery-item-info">
                         <h3 class="gallery-item-title">{{ painting.title }}</h3>
                         <p class="gallery-item-meta">{{ painting.technique }}, {{ painting.year }}</p>

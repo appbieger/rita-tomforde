@@ -593,6 +593,16 @@ main {
     box-shadow: var(--shadow-md);
 }
 
+.hero-image-wrapper picture,
+.hero-image-wrapper img {
+    display: block;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
 .hero-image-placeholder {
     display: flex;
     align-items: center;
@@ -621,6 +631,11 @@ main {
         max-width: 350px;
         width: 350px;
         height: auto;
+    }
+
+    .hero-image-wrapper picture,
+    .hero-image-wrapper img {
+        max-width: 350px;
     }
 
     .hero-image-placeholder {

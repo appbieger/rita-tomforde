@@ -15,6 +15,10 @@ module.exports = function(eleventyConfig) {
     // Default template engine for HTML files
     htmlTemplateEngine: "njk",
 
+    // Path prefix for GitHub Pages deployment
+    // This ensures all URLs work correctly when deployed to https://[username].github.io/rita-tomforde/
+    pathPrefix: "/rita-tomforde/",
+
     // Directory configuration
     dir: {
       input: "src",

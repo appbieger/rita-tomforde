@@ -1,0 +1,26 @@
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-contact">
+                <h3>Kontakt</h3>
+                <p class="contact-name">{{ site.contact.name }}</p>
+                <p class="contact-location">Atelier in {{ site.contact.location }}</p>
+                <p class="contact-region">{{ site.contact.region }}</p>
+            </div>
+
+            <div class="footer-info">
+                <p class="footer-cta">Interessiert an meinen Bildern? Kontaktieren Sie mich gerne.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">&copy; {{ page.date.getFullYear() if page.date else "2026" }} {{ site.author }}. Alle Rechte vorbehalten.</p>
+            <nav class="footer-nav" aria-label="Rechtliche Hinweise">
+                <ul>
+                    <li><a href="{{ '/' | url }}#impressum">Impressum</a></li>
+                    <li><a href="{{ '/' | url }}#datenschutz">Datenschutz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>

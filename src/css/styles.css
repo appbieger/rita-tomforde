@@ -797,6 +797,12 @@ main {
     color: var(--color-accent);
 }
 
+.photo-gallery-credit a:focus-visible {
+    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+    border-radius: var(--radius-sm);
+}
+
 /* Photo Gallery Empty State */
 .photo-gallery-empty {
     text-align: center;

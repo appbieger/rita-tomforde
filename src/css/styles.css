@@ -780,3 +780,13 @@ main {
         gap: var(--spacing-lg);
     }
 }
+
+/* ==========================================================================
+   12. Footer
+   ========================================================================== */
+
+.site-footer {
+    background-color: var(--color-background-alt);
+    border-top: 1px solid var(--color-border);
+    padding: var(--spacing-section) 0;
+}

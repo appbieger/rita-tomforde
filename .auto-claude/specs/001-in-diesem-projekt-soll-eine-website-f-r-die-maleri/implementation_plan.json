@@ -1,0 +1,819 @@
+{
+  "feature": "Rita Tomforde Artist Portfolio Website",
+  "workflow_type": "feature",
+  "workflow_rationale": "Greenfield static site implementation requiring multiple components (project setup, templates, CSS, content, deployment). No existing code to migrate - building from scratch following 11ty conventions.",
+  "phases": [
+    {
+      "id": "phase-1-setup",
+      "name": "Project Setup",
+      "type": "setup",
+      "description": "Initialize 11ty project with dependencies, configuration, and directory structure",
+      "depends_on": [],
+      "parallel_safe": true,
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Create package.json with 11ty dependencies and npm scripts",
+          "service": "eleventy-site",
+          "files_to_modify": [],
+          "files_to_create": [
+            "package.json"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat package.json | grep '@11ty/eleventy'",
+            "expected": "Contains @11ty/eleventy dependency"
+          },
+          "status": "completed",
+          "notes": "Created package.json with @11ty/eleventy ^3.0.0 dependency and npm scripts (dev, build, build:prod). Committed to git.",
+          "updated_at": "2026-01-09T12:54:48.818936+00:00"
+        },
+        {
+          "id": "subtask-1-2",
+          "description": "Create eleventy.config.js with input/output directories and passthrough copy",
+          "service": "eleventy-site",
+          "files_to_modify": [],
+          "files_to_create": [
+            "eleventy.config.js"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat eleventy.config.js | grep -E 'input|output'",
+            "expected": "Contains input: src and output: _site configuration"
+          },
+          "status": "completed",
+          "notes": "Created eleventy.config.js with input: src, output: _site, passthrough copy for css and images directories. Template formats configured for njk, md, html. Committed to git.",
+          "updated_at": "2026-01-09T12:55:42.338396+00:00"
+        },
+        {
+          "id": "subtask-1-3",
+          "description": "Create directory structure (src/, _includes/, _data/, css/, images/)",
+          "service": "eleventy-site",
+          "files_to_modify": [],
+          "files_to_create": [
+            "src/_data/.gitkeep",
+            "src/_includes/.gitkeep",
+            "src/css/.gitkeep",
+            "src/images/gallery/.gitkeep",
+            "src/images/portraits/.gitkeep"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && ls -la src/_includes src/_data src/css src/images",
+            "expected": "All directories exist"
+          },
+          "status": "pending",
+          "notes": "Standard 11ty directory structure per spec.md"
+        },
+        {
+          "id": "subtask-1-4",
+          "description": "Install npm dependencies",
+          "service": "eleventy-site",
+          "files_to_modify": [],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && test -d node_modules/@11ty && echo 'OK'",
+            "expected": "OK"
+          },
+          "status": "pending",
+          "notes": "Run npm install to install 11ty and dependencies"
+        }
+      ]
+    },
+    {
+      "id": "phase-2-templates",
+      "name": "Core Templates",
+      "type": "implementation",
+      "description": "Create Nunjucks base layout and reusable component partials",
+      "depends_on": [
+        "phase-1-setup"
+      ],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-2-1",
+          "description": "Create site.json with global metadata (title, description, author, contact)",
+          "service": "eleventy-site",
+          "files_to_modify": [],
+          "files_to_create": [
+            "src/_data/site.json"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/_data/site.json | grep 'Rita Tomforde'",
+            "expected": "Contains Rita Tomforde"
+          },
+          "status": "pending",
+          "notes": "Include: name, title, description, author, lang=de, contact info"
+        },
+        {
+          "id": "subtask-2-2",
+          "description": "Create base.njk layout with HTML structure, head, and body wrapper",
+          "service": "eleventy-site",
+          "files_to_modify": [],
+          "files_to_create": [
+            "src/_includes/base.njk"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/_includes/base.njk | grep -E 'lang=\"de\"|content.*safe'",
+            "expected": "Contains lang=de and content|safe"
+          },
+          "status": "pending",
+          "notes": "Include meta viewport, charset, title from site.json, CSS link with | url filter, nav include, main content, footer include"
+        },
+        {
+          "id": "subtask-2-3",
+          "description": "Create nav.njk partial with site navigation and section links",
+          "service": "eleventy-site",
+          "files_to_modify": [],
+          "files_to_create": [
+            "src/_includes/nav.njk"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/_includes/nav.njk | grep -E 'nav|Atelier'",
+            "expected": "Contains nav element and Atelier text"
+          },
+          "status": "pending",
+          "notes": "Include logo/title, section anchor links (#willkommen, #ueber-mich, #galerie, etc), mobile hamburger menu button"
+        },
+        {
+          "id": "subtask-2-4",
+          "description": "Create footer.njk partial with contact info and copyright",
+          "service": "eleventy-site",
+          "files_to_modify": [],
+          "files_to_create": [
+            "src/_includes/footer.njk"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/_includes/footer.njk | grep -E 'footer|Rita Tomforde'",
+            "expected": "Contains footer element"
+          },
+          "status": "pending",
+          "notes": "Include contact section, copyright year, optional Impressum/Datenschutz links"
+        }
+      ]
+    },
+    {
+      "id": "phase-3-design",
+      "name": "CSS Design System",
+      "type": "implementation",
+      "description": "Create CSS stylesheet matching silke-siemers.de design with custom properties and responsive breakpoints",
+      "depends_on": [
+        "phase-2-templates"
+      ],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-3-1",
+          "description": "Create styles.css with CSS custom properties for colors, typography, and spacing",
+          "service": "eleventy-site",
+          "files_to_modify": [],
+          "files_to_create": [
+            "src/css/styles.css"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/css/styles.css | grep -E ':root|--color-|--font-'",
+            "expected": "Contains :root with custom properties"
+          },
+          "status": "pending",
+          "notes": "Variables: --color-primary (#000), --color-accent (#00d1b2), --font-family (Georgia serif), --spacing-unit (24px). Match silke-siemers.de visual style."
+        },
+        {
+          "id": "subtask-3-2",
+          "description": "Add base reset, typography styles, and container layout",
+          "service": "eleventy-site",
+          "files_to_modify": [
+            "src/css/styles.css"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/css/styles.css | grep -E 'container|max-width'",
+            "expected": "Contains container class with max-width"
+          },
+          "status": "pending",
+          "notes": "CSS reset, body typography, .container class (max-width: 1200px, centered)"
+        },
+        {
+          "id": "subtask-3-3",
+          "description": "Add navigation styles with mobile hamburger menu support",
+          "service": "eleventy-site",
+          "files_to_modify": [
+            "src/css/styles.css"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/css/styles.css | grep -E 'nav|hamburger|mobile'",
+            "expected": "Contains navigation and mobile styles"
+          },
+          "status": "pending",
+          "notes": "Header/nav styling, menu items horizontal on desktop, hamburger toggle on mobile (< 768px)"
+        },
+        {
+          "id": "subtask-3-4",
+          "description": "Add section styles (hero, content sections, gallery grid)",
+          "service": "eleventy-site",
+          "files_to_modify": [
+            "src/css/styles.css"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/css/styles.css | grep -E 'hero|section|gallery'",
+            "expected": "Contains hero, section, and gallery styles"
+          },
+          "status": "pending",
+          "notes": "Hero section (full-width, centered text), content sections (spacing, headings), gallery grid (responsive CSS Grid)"
+        },
+        {
+          "id": "subtask-3-5",
+          "description": "Add responsive media queries for tablet and desktop breakpoints",
+          "service": "eleventy-site",
+          "files_to_modify": [
+            "src/css/styles.css"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/css/styles.css | grep -E '@media.*768px|@media.*1024px'",
+            "expected": "Contains media queries for 768px and 1024px"
+          },
+          "status": "pending",
+          "notes": "Breakpoints: 768px (tablet), 1024px (desktop). Mobile-first approach."
+        },
+        {
+          "id": "subtask-3-6",
+          "description": "Add footer styles",
+          "service": "eleventy-site",
+          "files_to_modify": [
+            "src/css/styles.css"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/css/styles.css | grep 'footer'",
+            "expected": "Contains footer styles"
+          },
+          "status": "pending",
+          "notes": "Footer background, text color, links, layout"
+        }
+      ]
+    },
+    {
+      "id": "phase-4-content",
+      "name": "Content Sections",
+      "type": "implementation",
+      "description": "Create the main page with all content sections using German text from spec",
+      "depends_on": [
+        "phase-3-design"
+      ],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-4-1",
+          "description": "Create index.njk with frontmatter and hero section",
+          "service": "eleventy-site",
+          "files_to_modify": [],
+          "files_to_create": [
+            "src/index.njk"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/index.njk | grep -E 'layout.*base|Atelier Rita Tomforde'",
+            "expected": "Contains layout: base.njk and hero text"
+          },
+          "status": "pending",
+          "notes": "Frontmatter: layout: base.njk, title. Hero: Atelier Rita Tomforde, Freischaffende K\u00fcnstlerin / Malerei, portrait placeholder"
+        },
+        {
+          "id": "subtask-4-2",
+          "description": "Add Herzlich Willkommen (Welcome) section",
+          "service": "eleventy-site",
+          "files_to_modify": [
+            "src/index.njk"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/index.njk | grep 'Herzlich Willkommen'",
+            "expected": "Contains Herzlich Willkommen section"
+          },
+          "status": "pending",
+          "notes": "Section id=willkommen with welcome greeting text"
+        },
+        {
+          "id": "subtask-4-3",
+          "description": "Add \u00dcber mich (About) section with full biography",
+          "service": "eleventy-site",
+          "files_to_modify": [
+            "src/index.njk"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/index.njk | grep -E '\u00dcber mich|ueber-mich'",
+            "expected": "Contains \u00dcber mich section"
+          },
+          "status": "pending",
+          "notes": "Section id=ueber-mich with full biography text (30-year journey, silk painting to acrylic)"
+        },
+        {
+          "id": "subtask-4-4",
+          "description": "Add Inspiration section with artistic motivation text",
+          "service": "eleventy-site",
+          "files_to_modify": [
+            "src/index.njk"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/index.njk | grep 'Inspiration'",
+            "expected": "Contains Inspiration section"
+          },
+          "status": "pending",
+          "notes": "Section id=inspiration with text about themes (abstract, flowers, landscapes, emotions, Christian hope)"
+        },
+        {
+          "id": "subtask-4-5",
+          "description": "Add Dankbarkeit (Gratitude) section about retirement and studio",
+          "service": "eleventy-site",
+          "files_to_modify": [
+            "src/index.njk"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/index.njk | grep 'Dankbarkeit'",
+            "expected": "Contains Dankbarkeit section"
+          },
+          "status": "pending",
+          "notes": "Section id=dankbarkeit with text about retirement, studio evolution from basement to atelier"
+        },
+        {
+          "id": "subtask-4-6",
+          "description": "Add Bisherige Pr\u00e4sentationen (Past Exhibitions) section with list",
+          "service": "eleventy-site",
+          "files_to_modify": [
+            "src/index.njk"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/index.njk | grep -E 'Pr\u00e4sentationen|Aquarell-Club'",
+            "expected": "Contains Pr\u00e4sentationen section with exhibitions"
+          },
+          "status": "pending",
+          "notes": "Section id=ausstellungen with list of 6+ past exhibitions (Aquarell-Club Altes Land, etc.)"
+        },
+        {
+          "id": "subtask-4-7",
+          "description": "Add Aktuelles (Current Events) section with 2026 exhibitions",
+          "service": "eleventy-site",
+          "files_to_modify": [
+            "src/index.njk"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/index.njk | grep -E 'Aktuelles|M\u00e4rz 2026|Mai 2026'",
+            "expected": "Contains Aktuelles section with 2026 events"
+          },
+          "status": "pending",
+          "notes": "Section id=aktuelles with March 2026 Kultur-Pop-up-Store (Vernissage 5. M\u00e4rz) and May 17, 2026 KreARTiv-Markt"
+        }
+      ]
+    },
+    {
+      "id": "phase-5-gallery",
+      "name": "Gallery Section",
+      "type": "implementation",
+      "description": "Create data-driven gallery with paintings.json and gallery section in main page",
+      "depends_on": [
+        "phase-4-content"
+      ],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-5-1",
+          "description": "Create paintings.json with sample/placeholder gallery data",
+          "service": "eleventy-site",
+          "files_to_modify": [],
+          "files_to_create": [
+            "src/_data/paintings.json"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/_data/paintings.json | grep 'paintings'",
+            "expected": "Contains paintings array"
+          },
+          "status": "pending",
+          "notes": "Structure: {paintings: [{id, title, image, description, technique, year, available}]}. Include 3-6 placeholder entries."
+        },
+        {
+          "id": "subtask-5-2",
+          "description": "Add Galerie section with data-driven painting grid and contact CTA",
+          "service": "eleventy-site",
+          "files_to_modify": [
+            "src/index.njk"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/index.njk | grep -E 'Galerie|for painting in paintings'",
+            "expected": "Contains Galerie section with Nunjucks loop"
+          },
+          "status": "pending",
+          "notes": "Section id=galerie with intro text, {% for painting in paintings.paintings %} loop, gallery-grid class, contact CTA for Atelier in Reith"
+        },
+        {
+          "id": "subtask-5-3",
+          "description": "Copy provided attachment image to gallery folder and add placeholder images",
+          "service": "eleventy-site",
+          "files_to_modify": [],
+          "files_to_create": [
+            "src/images/gallery/painting-1.jpg"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && ls src/images/gallery/",
+            "expected": "Contains at least one image file"
+          },
+          "status": "pending",
+          "notes": "Copy .auto-claude/specs/001-*/attachments/Bild*.jpeg to src/images/gallery/. Create placeholder images for remaining slots."
+        }
+      ]
+    },
+    {
+      "id": "phase-6-interactivity",
+      "name": "JavaScript Interactivity",
+      "type": "implementation",
+      "description": "Add minimal JavaScript for mobile navigation toggle and smooth scrolling",
+      "depends_on": [
+        "phase-5-gallery"
+      ],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-6-1",
+          "description": "Create main.js with mobile hamburger menu toggle",
+          "service": "eleventy-site",
+          "files_to_modify": [],
+          "files_to_create": [
+            "src/js/main.js"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/js/main.js | grep -E 'hamburger|toggle|menu'",
+            "expected": "Contains hamburger menu toggle code"
+          },
+          "status": "pending",
+          "notes": "Add event listener for hamburger button to toggle mobile nav visibility"
+        },
+        {
+          "id": "subtask-6-2",
+          "description": "Update eleventy.config.js to passthrough copy js folder",
+          "service": "eleventy-site",
+          "files_to_modify": [
+            "eleventy.config.js"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat eleventy.config.js | grep 'js'",
+            "expected": "Contains js passthrough copy"
+          },
+          "status": "pending",
+          "notes": "Add addPassthroughCopy for src/js"
+        },
+        {
+          "id": "subtask-6-3",
+          "description": "Add script tag to base.njk for main.js",
+          "service": "eleventy-site",
+          "files_to_modify": [
+            "src/_includes/base.njk"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat src/_includes/base.njk | grep 'main.js'",
+            "expected": "Contains script tag for main.js"
+          },
+          "status": "pending",
+          "notes": "Add <script src=\"{{ '/js/main.js' | url }}\"></script> before closing body"
+        }
+      ]
+    },
+    {
+      "id": "phase-7-deployment",
+      "name": "Deployment Configuration",
+      "type": "implementation",
+      "description": "Configure GitHub Actions workflow and GitHub Pages deployment files",
+      "depends_on": [
+        "phase-6-interactivity"
+      ],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-7-1",
+          "description": "Create GitHub Actions workflow file for automated deployment",
+          "service": "eleventy-site",
+          "files_to_modify": [],
+          "files_to_create": [
+            ".github/workflows/deploy.yml"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat .github/workflows/deploy.yml | grep -E 'peaceiris|gh-pages'",
+            "expected": "Contains peaceiris/actions-gh-pages action"
+          },
+          "status": "pending",
+          "notes": "Use peaceiris/actions-gh-pages@v3, Node 20, npm ci, npm run build, publish _site directory"
+        },
+        {
+          "id": "subtask-7-2",
+          "description": "Create .nojekyll file to disable Jekyll processing",
+          "service": "eleventy-site",
+          "files_to_modify": [],
+          "files_to_create": [
+            "src/.nojekyll"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && test -f src/.nojekyll && echo 'OK'",
+            "expected": "OK"
+          },
+          "status": "pending",
+          "notes": "Empty file in src/ to be copied to _site/ output"
+        },
+        {
+          "id": "subtask-7-3",
+          "description": "Update eleventy.config.js with pathPrefix for GitHub Pages",
+          "service": "eleventy-site",
+          "files_to_modify": [
+            "eleventy.config.js"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat eleventy.config.js | grep 'pathPrefix'",
+            "expected": "Contains pathPrefix configuration"
+          },
+          "status": "pending",
+          "notes": "Set pathPrefix: process.env.ELEVENTY_ENV === 'production' ? '/rita-tomfordede/' : '/'"
+        },
+        {
+          "id": "subtask-7-4",
+          "description": "Update .gitignore for 11ty project files",
+          "service": "eleventy-site",
+          "files_to_modify": [
+            ".gitignore"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && cat .gitignore | grep -E '_site|node_modules'",
+            "expected": "Contains _site and node_modules"
+          },
+          "status": "pending",
+          "notes": "Add: _site/, node_modules/, .cache/, *.log"
+        }
+      ]
+    },
+    {
+      "id": "phase-8-integration",
+      "name": "Integration & Verification",
+      "type": "integration",
+      "description": "Verify complete site builds and runs correctly with all features working",
+      "depends_on": [
+        "phase-7-deployment"
+      ],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-8-1",
+          "description": "Run production build and verify output",
+          "all_services": true,
+          "files_to_modify": [],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "cd /Users/yaron/rita-tomfordede && npm run build && test -f _site/index.html && echo 'BUILD OK'",
+            "expected": "BUILD OK"
+          },
+          "status": "pending",
+          "notes": "npm run build should complete without errors and produce _site/index.html"
+        },
+        {
+          "id": "subtask-8-2",
+          "description": "Start dev server and verify all sections render",
+          "all_services": true,
+          "files_to_modify": [],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:8080/",
+            "checks": [
+              "Hero section with Atelier Rita Tomforde title",
+              "Navigation links visible",
+              "All 8 content sections present (Willkommen, \u00dcber mich, Inspiration, Dankbarkeit, Pr\u00e4sentationen, Aktuelles, Galerie)",
+              "Footer with contact info",
+              "No console errors"
+            ]
+          },
+          "status": "pending",
+          "notes": "Start npm run dev, open browser, verify all content sections render correctly"
+        },
+        {
+          "id": "subtask-8-3",
+          "description": "Verify responsive design at mobile and desktop breakpoints",
+          "all_services": true,
+          "files_to_modify": [],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:8080/",
+            "checks": [
+              "375px viewport: hamburger menu visible, sections stack vertically",
+              "768px viewport: appropriate tablet layout",
+              "1200px viewport: full desktop layout, gallery grid multi-column",
+              "No horizontal scroll at any size"
+            ]
+          },
+          "status": "pending",
+          "notes": "Test responsive breakpoints using browser dev tools"
+        },
+        {
+          "id": "subtask-8-4",
+          "description": "Verify gallery section displays paintings from data file",
+          "all_services": true,
+          "files_to_modify": [],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:8080/#galerie",
+            "checks": [
+              "Gallery grid displays paintings from paintings.json",
+              "Images load (or show placeholders)",
+              "Painting titles and technique info visible",
+              "Contact CTA visible"
+            ]
+          },
+          "status": "pending",
+          "notes": "Verify data-driven gallery renders correctly"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_phases": 8,
+    "total_subtasks": 30,
+    "services_involved": [
+      "eleventy-site"
+    ],
+    "parallelism": {
+      "max_parallel_phases": 1,
+      "parallel_groups": [],
+      "recommended_workers": 1,
+      "speedup_estimate": "Sequential execution (single service)"
+    },
+    "startup_command": "source auto-claude/.venv/bin/activate && python auto-claude/run.py --spec 001 --parallel 1"
+  },
+  "verification_strategy": {
+    "risk_level": "low",
+    "skip_validation": false,
+    "test_creation_phase": "post_implementation",
+    "test_types_required": [
+      "unit"
+    ],
+    "security_scanning_required": false,
+    "staging_deployment_required": false,
+    "acceptance_criteria": [
+      "npm install completes without errors",
+      "npm run build produces _site/index.html",
+      "npm run dev starts server on port 8080",
+      "All 8 content sections render with German text",
+      "CSS matches silke-siemers.de visual design",
+      "Gallery displays paintings from data file",
+      "Site is responsive at 375px, 768px, 1200px",
+      "No JavaScript console errors",
+      "GitHub Actions workflow file is valid YAML"
+    ],
+    "verification_steps": [
+      {
+        "name": "Build Verification",
+        "command": "cd /Users/yaron/rita-tomfordede && npm run build",
+        "expected_outcome": "Build completes, _site/index.html exists",
+        "type": "build",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "HTML Output Check",
+        "command": "cd /Users/yaron/rita-tomfordede && test -f _site/index.html && grep -q 'Rita Tomforde' _site/index.html && echo 'OK'",
+        "expected_outcome": "OK",
+        "type": "test",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "CSS Output Check",
+        "command": "cd /Users/yaron/rita-tomfordede && test -f _site/css/styles.css && echo 'OK'",
+        "expected_outcome": "OK",
+        "type": "test",
+        "required": true,
+        "blocking": true
+      }
+    ],
+    "reasoning": "Low risk static site with no user input, authentication, or sensitive data. Build verification sufficient for validation."
+  },
+  "qa_acceptance": {
+    "unit_tests": {
+      "required": true,
+      "commands": [
+        "npm run build"
+      ],
+      "minimum_coverage": null
+    },
+    "integration_tests": {
+      "required": false,
+      "commands": [],
+      "services_to_test": []
+    },
+    "e2e_tests": {
+      "required": false,
+      "commands": [],
+      "flows": []
+    },
+    "browser_verification": {
+      "required": true,
+      "pages": [
+        {
+          "url": "http://localhost:8080/",
+          "checks": [
+            "All sections render",
+            "Navigation works",
+            "Responsive layout",
+            "No console errors"
+          ]
+        },
+        {
+          "url": "http://localhost:8080/#galerie",
+          "checks": [
+            "Gallery grid displays",
+            "Images load or placeholder visible"
+          ]
+        }
+      ]
+    },
+    "database_verification": {
+      "required": false,
+      "checks": []
+    }
+  },
+  "qa_signoff": null,
+  "status": "in_progress",
+  "planStatus": "in_progress",
+  "updated_at": "2026-01-09T12:53:59.730Z",
+  "last_updated": "2026-01-09T12:55:42.338404+00:00"
+}

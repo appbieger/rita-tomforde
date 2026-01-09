@@ -14,7 +14,12 @@
       "description": "CSS design system with custom properties. Contains :root with design tokens: colors (--color-primary #000, --color-accent #00d1b2, etc.), typography (--font-family Georgia serif, --font-size-base 1rem), spacing (--spacing-unit 1.5rem), layout (--container-max-width 1200px), plus utility variables for transitions, shadows, radii, and z-index scale. Mobile-first approach ready for responsive breakpoints.",
       "category": "design-system",
       "discovered_at": "2026-01-09T13:08:25.986228+00:00"
+    },
+    ".github/workflows/deploy.yml": {
+      "description": "GitHub Actions workflow for automated deployment to GitHub Pages. Triggers on push to main branch or manual workflow_dispatch. Uses actions/checkout@v4, actions/setup-node@v4 (Node 20 with npm cache), npm ci, npm run build with ELEVENTY_ENV=production, and peaceiris/actions-gh-pages@v3 to publish _site to gh-pages branch.",
+      "category": "deployment",
+      "discovered_at": "2026-01-09T13:32:56.366099+00:00"
     }
   },
-  "last_updated": "2026-01-09T13:08:25.986239+00:00"
+  "last_updated": "2026-01-09T13:32:56.366112+00:00"
 }

@@ -3,23 +3,23 @@
   "spec": "001-in-diesem-projekt-soll-eine-website-f-r-die-maleri",
   "state": "building",
   "subtasks": {
-    "completed": 12,
+    "completed": 14,
     "total": 35,
     "in_progress": 1,
     "failed": 0
   },
   "phase": {
-    "current": "CSS Design System",
+    "current": "Content Sections",
     "id": null,
-    "total": 6
+    "total": 7
   },
   "workers": {
     "active": 0,
     "max": 1
   },
   "session": {
-    "number": 10,
+    "number": 12,
     "started_at": "2026-01-09T14:01:00.504973"
   },
-  "last_update": "2026-01-09T14:13:11.593017"
+  "last_update": "2026-01-09T14:15:45.123293"
 }

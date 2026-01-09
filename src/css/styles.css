@@ -815,3 +815,35 @@ main {
         align-items: flex-start;
     }
 }
+
+.footer-contact {
+    flex: 1;
+}
+
+.footer-contact h3 {
+    font-family: var(--font-family-headings);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-contact p {
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-contact p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-name {
+    font-weight: var(--font-weight-bold);
+}
+
+.contact-location,
+.contact-region {
+    color: var(--color-text-light);
+}

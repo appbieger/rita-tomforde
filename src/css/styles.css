@@ -946,3 +946,62 @@ main {
         padding-top: var(--spacing-md);
     }
 }
+
+/* ==========================================================================
+   14. Footer Tablet Responsive Styles
+   ========================================================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Tablet-specific footer adjustments */
+    .footer-content {
+        gap: var(--spacing-md);
+    }
+
+    .footer-contact h3 {
+        font-size: var(--font-size-base);
+    }
+
+    .footer-bottom {
+        gap: var(--spacing-sm);
+    }
+
+    .footer-nav ul {
+        gap: var(--spacing-sm);
+    }
+}
+
+/* ==========================================================================
+   15. Footer Desktop Responsive Styles
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+    /* Desktop footer enhancements with better spacing */
+    .site-footer {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .footer-content {
+        gap: var(--spacing-xl);
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .footer-contact h3 {
+        font-size: var(--font-size-medium);
+    }
+
+    .footer-bottom {
+        gap: var(--spacing-lg);
+        margin-top: var(--spacing-xl);
+        padding-top: var(--spacing-xl);
+    }
+
+    .footer-nav ul {
+        gap: var(--spacing-lg);
+    }
+
+    /* Better visual hierarchy on desktop */
+    .footer-contact,
+    .footer-info {
+        max-width: 45%;
+    }
+}

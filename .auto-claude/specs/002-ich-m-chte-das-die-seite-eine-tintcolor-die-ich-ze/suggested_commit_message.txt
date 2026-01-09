@@ -1,0 +1,3 @@
+feat(theme): add central tint color system
+
+Add a CSS custom property for configurable tint color with bright pink as the initial value. This enables site-wide color theming from a single location without modifying individual component styles.

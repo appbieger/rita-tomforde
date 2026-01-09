@@ -11,7 +11,8 @@
     /* Colors */
     --color-primary: #000000;
     --color-secondary: #ffffff;
-    --color-accent: #00d1b2;
+    --color-tint: #FF1493;
+    --color-accent: var(--color-tint);
     --color-text: #333333;
     --color-text-light: #666666;
     --color-background: #ffffff;

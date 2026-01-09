@@ -1,0 +1,23 @@
+{
+  "name": "rita-tomfordede",
+  "version": "1.0.0",
+  "description": "Portfolio website for German painter Rita Tomforde - built with Eleventy",
+  "main": "eleventy.config.js",
+  "scripts": {
+    "dev": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
+    "build:prod": "ELEVENTY_ENV=production npx @11ty/eleventy"
+  },
+  "keywords": [
+    "eleventy",
+    "11ty",
+    "portfolio",
+    "artist",
+    "static-site"
+  ],
+  "author": "Rita Tomforde",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

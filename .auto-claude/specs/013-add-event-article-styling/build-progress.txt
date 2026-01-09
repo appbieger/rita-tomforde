@@ -1,0 +1,144 @@
+# Build Progress: Add Event Article Styling
+
+## Completed Tasks
+
+### Subtask 2.1: Add base .event styles
+**Status:** Completed
+**Date:** 2026-01-09
+
+Successfully added CSS rules for the .event class with proper card styling:
+
+✅ Event articles have card-like appearance with:
+   - background-color: var(--color-background)
+   - border: 1px solid var(--color-border)
+   - border-radius: var(--radius-md)
+   - padding: var(--spacing-md)
+   - box-shadow: var(--shadow-sm)
+
+✅ Proper spacing between multiple event articles:
+   - margin-bottom: var(--spacing-md) for spacing
+   - Last child has margin-bottom: 0
+
+✅ Uses existing CSS custom properties following design system
+
+✅ Follows established patterns from .event-card class
+
+**Commit:** 6c96e98 - "auto-claude: 2.1 - Add CSS rules for the .event class with proper card styling"
+
+**Files Modified:**
+- src/css/styles.css (added lines 691-703)
+
+---
+
+### Subtask 2.2: Add .event heading styles
+**Status:** Completed
+**Date:** 2026-01-09
+
+Successfully added CSS styling for .event h3 headings:
+
+✅ Event headings have appropriate font size and weight:
+   - font-size: var(--font-size-medium) (1.25rem / 20px)
+   - font-weight: var(--font-weight-bold) (700)
+
+✅ Proper visual hierarchy:
+   - line-height: var(--line-height-heading) (1.2)
+   - color: var(--color-text) (#333333)
+
+✅ Proper margin below heading:
+   - margin-bottom: var(--spacing-sm) (12px)
+
+✅ Uses existing CSS custom properties following design system
+
+**Commit:** 726afc9 - "auto-claude: 2.2 - Style the h3 headings within .event articles to cr"
+
+**Files Modified:**
+- src/css/styles.css (added lines 705-711)
+
+---
+
+### Subtask 2.3: Add .event paragraph styles
+**Status:** Completed
+**Date:** 2026-01-09
+
+Successfully added CSS styling for .event paragraphs and strong elements:
+
+✅ Paragraphs have appropriate line-height and spacing:
+   - line-height: var(--line-height-base) (1.6)
+   - margin-bottom: var(--spacing-sm) (12px)
+
+✅ Strong elements (labels) are visually distinct:
+   - font-weight: var(--font-weight-bold) (700)
+   - color: var(--color-accent) (#FF1493)
+
+✅ Last paragraph has no bottom margin:
+   - .event p:last-child { margin-bottom: 0 }
+
+✅ Uses existing CSS custom properties following design system
+
+✅ Labels (Ort, Vernissage, Zeit) now styled with accent color for better scanability
+
+**Commit:** a266440 - "auto-claude: 2.3 - Style paragraphs within .event articles containing location, time, and date information"
+
+**Files Modified:**
+- src/css/styles.css (added lines 713-725)
+
+---
+
+### Subtask 2.4: Add hover/focus states
+**Status:** Completed
+**Date:** 2026-01-09
+
+Successfully added subtle interactive states to event cards:
+
+✅ Subtle hover effect:
+   - transform: translateY(-4px) for lift effect
+   - box-shadow upgrade from --shadow-sm to --shadow-md
+
+✅ Smooth transition using existing transition variables:
+   - transition: transform var(--transition-fast), box-shadow var(--transition-fast)
+
+✅ Includes :hover and :focus-within states for accessibility
+
+✅ Follows exact pattern from .photo-gallery-item hover states
+
+✅ Uses existing CSS custom properties following design system
+
+**Commit:** 7c47e1f - "auto-claude: 2.4 - Add subtle interactive states to event cards for better UX"
+
+**Files Modified:**
+- src/css/styles.css (added lines 699, 706-710)
+
+---
+
+### Subtask 2.5: Add responsive styles
+**Status:** Completed
+**Date:** 2026-01-09
+
+Successfully added responsive media queries for .event cards:
+
+✅ Mobile styles (max-width: 767px):
+   - padding: var(--spacing-sm) (12px, reduced from 24px)
+   - margin-bottom: var(--spacing-sm) (12px, reduced from 24px)
+   - h3 font-size: var(--font-size-base) (16px, reduced from 20px)
+
+✅ Desktop styles (min-width: 1024px):
+   - padding: var(--spacing-lg) (48px, increased from 24px)
+
+✅ Follows established breakpoint patterns (767px, 1024px)
+
+✅ Uses existing CSS custom properties following design system
+
+✅ Event cards are optimized for mobile readability and enhanced spacing on desktop
+
+**Commit:** 67ef673 - "auto-claude: 2.5 - Add media queries to adjust event card styling for mobile and tablet breakpoints"
+
+**Files Modified:**
+- src/css/styles.css (added lines 827-848)
+
+---
+
+## Next Steps
+
+The following subtasks are pending:
+- 3.1: Build and visual verification
+- 3.2: Cross-browser and responsive testing

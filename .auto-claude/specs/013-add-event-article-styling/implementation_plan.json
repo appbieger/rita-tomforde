@@ -37,54 +37,59 @@
           "subtask_id": "2.1",
           "title": "Add base .event styles",
           "description": "Add CSS rules for the .event class with proper card styling including background, border, border-radius, padding, and spacing between events. Use existing design tokens.",
-          "status": "pending",
+          "status": "completed",
           "acceptance_criteria": [
             "Event articles have card-like appearance with background, border, and rounded corners",
             "Proper spacing between multiple event articles",
             "Uses existing CSS custom properties (--color-*, --spacing-*, --radius-*, --shadow-*)"
-          ]
+          ],
+          "notes": "Successfully added CSS rules for .event class with card styling. Includes background-color, border, border-radius, padding, margin-bottom for spacing, and box-shadow. All styling uses existing design tokens (--color-background, --color-border, --radius-md, --spacing-md, --shadow-sm). Follows established patterns from .event-card class. Changes committed to git."
         },
         {
           "subtask_id": "2.2",
           "title": "Add .event heading styles",
           "description": "Style the h3 headings within .event articles to create clear visual hierarchy. The heading contains the event date and title.",
-          "status": "pending",
+          "status": "completed",
           "acceptance_criteria": [
             "Event headings have appropriate font size and weight",
             "Optional accent color to highlight dates/titles",
             "Proper margin below heading"
-          ]
+          ],
+          "notes": "Successfully added CSS styling for .event h3 headings. Includes font-size: var(--font-size-medium), font-weight: var(--font-weight-bold), appropriate line-height: var(--line-height-heading), and margin-bottom: var(--spacing-sm) for proper spacing. Uses existing design tokens throughout. Creates clear visual hierarchy for event dates and titles. Changes committed to git."
         },
         {
           "subtask_id": "2.3",
           "title": "Add .event paragraph styles",
           "description": "Style paragraphs within .event articles containing location, time, and date information. Ensure labels (Ort, Vernissage, Zeit) are visually distinct.",
-          "status": "pending",
+          "status": "completed",
           "acceptance_criteria": [
             "Paragraphs have appropriate line-height and spacing",
             "Strong elements (labels) are visually distinct",
             "Last paragraph has no bottom margin"
-          ]
+          ],
+          "notes": "Successfully added CSS styling for .event paragraphs and strong elements. Paragraphs include line-height: var(--line-height-base) and margin-bottom: var(--spacing-sm) for proper spacing. Strong elements (labels like Ort, Vernissage, Zeit) styled with font-weight: var(--font-weight-bold) and color: var(--color-accent) for visual distinction. Last paragraph has margin-bottom: 0 to prevent extra spacing. All styling uses existing design tokens. Changes committed to git."
         },
         {
           "subtask_id": "2.4",
           "title": "Add hover/focus states",
           "description": "Add subtle interactive states to event cards for better UX, following patterns from photo-gallery-item hover states.",
-          "status": "pending",
+          "status": "completed",
           "acceptance_criteria": [
             "Subtle hover effect (shadow or transform)",
             "Smooth transition using existing transition variables"
-          ]
+          ],
+          "notes": "Successfully added subtle interactive states to event cards. Includes transition property for smooth animations (transform and box-shadow using --transition-fast), hover and focus-within states with translateY(-4px) lift effect, and shadow upgrade from --shadow-sm to --shadow-md. Implementation follows the exact pattern from .photo-gallery-item hover states. All styling uses existing design tokens. Changes committed to git (commit 7c47e1f)."
         },
         {
           "subtask_id": "2.5",
           "title": "Add responsive styles",
           "description": "Add media queries to adjust event card styling for mobile and tablet breakpoints following existing patterns (767px, 1024px).",
-          "status": "pending",
+          "status": "completed",
           "acceptance_criteria": [
             "Event cards look good on mobile (< 768px)",
             "Appropriate padding/spacing adjustments for smaller screens"
-          ]
+          ],
+          "notes": "Successfully added responsive media queries for .event cards following established breakpoint patterns (767px, 1024px). Mobile styles (max-width: 767px) reduce padding and margin-bottom from var(--spacing-md) to var(--spacing-sm), and reduce h3 font-size from var(--font-size-medium) to var(--font-size-base) for better mobile readability. Desktop styles (min-width: 1024px) increase padding from var(--spacing-md) to var(--spacing-lg) for enhanced spacing on larger screens. All styling uses existing design tokens. Changes committed to git (commit 67ef673)."
         }
       ]
     },

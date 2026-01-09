@@ -471,8 +471,9 @@
             "command": "cd /Users/yaron/rita-tomfordede && cat src/index.njk | grep -E 'Galerie|for painting in paintings'",
             "expected": "Contains Galerie section with Nunjucks loop"
           },
-          "status": "pending",
-          "notes": "Section id=galerie with intro text, {% for painting in paintings.paintings %} loop, gallery-grid class, contact CTA for Atelier in Reith"
+          "status": "completed",
+          "notes": "Added Galerie section to src/index.njk with: section id=\"galerie\" for navigation, intro text, data-driven {% for painting in paintings.paintings %} loop with gallery-grid, image cards with lazy loading, availability filter, empty gallery fallback message, and contact CTA for Atelier in Reith. Verification passed - grep finds Galerie and loop. Committed as 9bd1dc2.",
+          "updated_at": "2026-01-09T13:26:54.237968+00:00"
         },
         {
           "id": "subtask-5-3",
@@ -488,8 +489,9 @@
             "command": "cd /Users/yaron/rita-tomfordede && ls src/images/gallery/",
             "expected": "Contains at least one image file"
           },
-          "status": "pending",
-          "notes": "Copy .auto-claude/specs/001-*/attachments/Bild*.jpeg to src/images/gallery/. Create placeholder images for remaining slots."
+          "status": "completed",
+          "notes": "Copied provided attachment image (Bild 09.01.26 um 12.17.jpeg) to src/images/gallery/painting-1.jpg. Created SVG placeholder images for painting-2 through painting-6 with elegant German text. Updated paintings.json to reference the SVG placeholders. Verification passed - gallery folder contains 6 image files. Committed as cc21ad8.",
+          "updated_at": "2026-01-09T13:28:35.504635+00:00"
         }
       ]
     },
@@ -517,8 +519,9 @@
             "command": "cd /Users/yaron/rita-tomfordede && cat src/js/main.js | grep -E 'hamburger|toggle|menu'",
             "expected": "Contains hamburger menu toggle code"
           },
-          "status": "pending",
-          "notes": "Add event listener for hamburger button to toggle mobile nav visibility"
+          "status": "completed",
+          "notes": "Created src/js/main.js with comprehensive mobile hamburger menu toggle functionality. Includes: hamburger button click handler, overlay creation for backdrop, menu close on nav link click/overlay click/Escape key, window resize handling above 768px breakpoint, smooth scroll fallback for older browsers. All code encapsulated in IIFE with strict mode. Verification passed - grep finds hamburger/toggle/menu keywords. Committed as 59fd5b5.",
+          "updated_at": "2026-01-09T13:30:10.416202+00:00"
         },
         {
           "id": "subtask-6-2",
@@ -835,6 +838,6 @@
   "status": "in_progress",
   "planStatus": "in_progress",
   "updated_at": "2026-01-09T13:00:58.919Z",
-  "last_updated": "2026-01-09T13:25:46.335455+00:00",
+  "last_updated": "2026-01-09T13:30:10.416215+00:00",
   "recoveryNote": "Task recovered from stuck state at 2026-01-09T13:00:58.859Z"
 }

@@ -1,0 +1,20 @@
+{
+  "discovered_files": {
+    "src/css/styles.css": {
+      "description": "Main CSS file with design tokens (CSS custom properties) including colors (--color-accent: #FF1493), spacing (--spacing-*), typography, and consistent patterns. 782 lines with organized sections for reset, layout, navigation, hero, content sections, and photo gallery.",
+      "category": "architecture",
+      "discovered_at": "2026-01-09T18:16:44.917172+00:00"
+    },
+    "src/index.njk": {
+      "description": ".gallery-cta used at line 171 in the Galerie section. Contains CTA text inviting visitors to see paintings in the atelier and contact for appointments.",
+      "category": "feature",
+      "discovered_at": "2026-01-09T18:16:44.943844+00:00"
+    },
+    "src/gallery.njk": {
+      "description": ".gallery-cta used at line 55 in the Back to Home CTA section. Contains CTA with links to paintings gallery and exhibitions page.",
+      "category": "feature",
+      "discovered_at": "2026-01-09T18:16:44.970515+00:00"
+    }
+  },
+  "last_updated": "2026-01-09T18:16:44.970526+00:00"
+}

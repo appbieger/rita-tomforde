@@ -47,7 +47,7 @@
           "subtask_id": "1.3",
           "title": "Add responsive styles for .gallery-cta",
           "description": "Add responsive adjustments for mobile and tablet viewports to ensure the CTA looks good and remains readable across all screen sizes.",
-          "status": "pending",
+          "status": "completed",
           "acceptance_criteria": [
             "Reduced padding on mobile devices (max-width: 767px)",
             "Appropriate font-size adjustments if needed",

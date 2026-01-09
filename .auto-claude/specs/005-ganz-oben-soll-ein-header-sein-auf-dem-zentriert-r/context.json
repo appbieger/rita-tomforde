@@ -1,0 +1,16 @@
+{
+  "task_description": "Add a hero header at the top of the page with centered 'Rita Tomforde' text and a background image to add visual color to the website.",
+  "scoped_services": [],
+  "files_to_modify": [
+    "src/index.njk",
+    "src/css/styles.css"
+  ],
+  "files_to_reference": [
+    "src/images/gallery/painting-1.jpg"
+  ],
+  "patterns": {
+    "css_approach": "External stylesheet with BEM-like class naming",
+    "hero_section": "Existing .hero section to be enhanced"
+  },
+  "created_at": "2025-01-09T12:00:00Z"
+}

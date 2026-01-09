@@ -1,25 +1,25 @@
 {
   "active": true,
-  "spec": "002-ich-m-chte-das-die-seite-eine-tintcolor-die-ich-ze",
+  "spec": "005-ganz-oben-soll-ein-header-sein-auf-dem-zentriert-r",
   "state": "building",
   "subtasks": {
-    "completed": 0,
-    "total": 1,
+    "completed": 1,
+    "total": 2,
     "in_progress": 1,
     "failed": 0
   },
   "phase": {
     "current": "Implementation",
     "id": 1,
-    "total": 1
+    "total": 2
   },
   "workers": {
     "active": 0,
     "max": 1
   },
   "session": {
-    "number": 1,
-    "started_at": "2026-01-09T15:12:45.120326"
+    "number": 2,
+    "started_at": "2026-01-09T15:55:21.353978"
   },
-  "last_update": "2026-01-09T15:12:45.178445"
+  "last_update": "2026-01-09T15:56:39.912779"
 }

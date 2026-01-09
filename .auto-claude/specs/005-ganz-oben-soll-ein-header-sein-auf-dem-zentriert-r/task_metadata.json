@@ -14,5 +14,15 @@
     "planning": "high",
     "coding": "low",
     "qa": "low"
-  }
+  },
+  "attachedImages": [
+    {
+      "id": "img-1767970018123-sov39x8",
+      "filename": "bg.jpg",
+      "mimeType": "image/jpeg",
+      "size": 272493,
+      "path": "attachments/bg.jpg"
+    }
+  ],
+  "requireReviewBeforeCoding": false
 }

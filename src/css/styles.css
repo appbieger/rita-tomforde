@@ -823,3 +823,26 @@ main {
         gap: var(--spacing-lg);
     }
 }
+
+/* ==========================================================================
+   12. Event Card Responsive Adjustments
+   ========================================================================== */
+
+/* Mobile: Reduce padding for smaller screens */
+@media (max-width: 767px) {
+    .event {
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .event h3 {
+        font-size: var(--font-size-base);
+    }
+}
+
+/* Desktop: Enhanced spacing */
+@media (min-width: 1024px) {
+    .event {
+        padding: var(--spacing-lg);
+    }
+}

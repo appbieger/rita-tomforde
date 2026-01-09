@@ -1,0 +1,132 @@
+{
+  "feature": "Add Event Article Styling",
+  "description": "The .event class used in the Aktuelles (Current Events) section wraps individual event articles but has no CSS styling. Events contain important information about upcoming exhibitions.",
+  "created_at": "2026-01-09T18:15:06.681Z",
+  "updated_at": "2026-01-09T19:16:00.000Z",
+  "status": "in_progress",
+  "planStatus": "approved",
+  "workflow_type": "development",
+  "services_involved": ["css", "eleventy"],
+  "spec_file": "spec.md",
+  "phases": [
+    {
+      "phase_id": "phase-1",
+      "name": "Analysis & Design",
+      "description": "Analyze existing patterns and design the event card styling approach",
+      "subtasks": [
+        {
+          "subtask_id": "1.1",
+          "title": "Document existing design patterns",
+          "description": "Record discoveries about the existing CSS design system including variables, spacing patterns, and similar component styles (event-card, exhibitions-list) to ensure new styling follows established conventions.",
+          "status": "completed",
+          "acceptance_criteria": [
+            "Document CSS custom properties to use (colors, spacing, typography, shadows, radius)",
+            "Identify existing similar patterns (event-card, section-content styles)",
+            "Record responsive breakpoints used in the project"
+          ],
+          "notes": "Documented comprehensive CSS design system including: color variables (primary, accent/tint #FF1493, borders, backgrounds), spacing system (base 1.5rem with xs/sm/md/lg/xl variants), shadows (sm/md/lg), border radius (sm/md/lg), transitions (fast/base), typography (Georgia serif, 5 font sizes), responsive breakpoints (767px, 1024px). Analyzed reference patterns: .event-card (card styling with border, radius, padding), .photo-gallery-item (hover with translateY and shadow upgrade), .exhibitions-list (custom bullets with accent color). Identified .event HTML structure in index.njk with h3 and paragraphs containing strong labels."
+        }
+      ]
+    },
+    {
+      "phase_id": "phase-2",
+      "name": "Implementation",
+      "description": "Implement CSS styling for the .event class",
+      "subtasks": [
+        {
+          "subtask_id": "2.1",
+          "title": "Add base .event styles",
+          "description": "Add CSS rules for the .event class with proper card styling including background, border, border-radius, padding, and spacing between events. Use existing design tokens.",
+          "status": "pending",
+          "acceptance_criteria": [
+            "Event articles have card-like appearance with background, border, and rounded corners",
+            "Proper spacing between multiple event articles",
+            "Uses existing CSS custom properties (--color-*, --spacing-*, --radius-*, --shadow-*)"
+          ]
+        },
+        {
+          "subtask_id": "2.2",
+          "title": "Add .event heading styles",
+          "description": "Style the h3 headings within .event articles to create clear visual hierarchy. The heading contains the event date and title.",
+          "status": "pending",
+          "acceptance_criteria": [
+            "Event headings have appropriate font size and weight",
+            "Optional accent color to highlight dates/titles",
+            "Proper margin below heading"
+          ]
+        },
+        {
+          "subtask_id": "2.3",
+          "title": "Add .event paragraph styles",
+          "description": "Style paragraphs within .event articles containing location, time, and date information. Ensure labels (Ort, Vernissage, Zeit) are visually distinct.",
+          "status": "pending",
+          "acceptance_criteria": [
+            "Paragraphs have appropriate line-height and spacing",
+            "Strong elements (labels) are visually distinct",
+            "Last paragraph has no bottom margin"
+          ]
+        },
+        {
+          "subtask_id": "2.4",
+          "title": "Add hover/focus states",
+          "description": "Add subtle interactive states to event cards for better UX, following patterns from photo-gallery-item hover states.",
+          "status": "pending",
+          "acceptance_criteria": [
+            "Subtle hover effect (shadow or transform)",
+            "Smooth transition using existing transition variables"
+          ]
+        },
+        {
+          "subtask_id": "2.5",
+          "title": "Add responsive styles",
+          "description": "Add media queries to adjust event card styling for mobile and tablet breakpoints following existing patterns (767px, 1024px).",
+          "status": "pending",
+          "acceptance_criteria": [
+            "Event cards look good on mobile (< 768px)",
+            "Appropriate padding/spacing adjustments for smaller screens"
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "phase-3",
+      "name": "Testing & Verification",
+      "description": "Test the implementation and verify it works correctly",
+      "subtasks": [
+        {
+          "subtask_id": "3.1",
+          "title": "Build and visual verification",
+          "description": "Run the Eleventy build process to verify no errors and check that styles are applied correctly.",
+          "status": "pending",
+          "acceptance_criteria": [
+            "npm run build completes successfully",
+            "CSS file is generated without errors",
+            "Event articles are visually styled in the built output"
+          ]
+        },
+        {
+          "subtask_id": "3.2",
+          "title": "Cross-browser and responsive testing",
+          "description": "Verify styles work across the responsive breakpoints by inspecting the generated CSS.",
+          "status": "pending",
+          "acceptance_criteria": [
+            "CSS contains proper media queries",
+            "Styles follow mobile-first or desktop-first approach consistently with existing code"
+          ]
+        }
+      ]
+    }
+  ],
+  "final_acceptance": [
+    "Event articles in Aktuelles section are visually styled as cards",
+    "Event information (date, location, time) is scannable and well-organized",
+    "Styling follows existing design system patterns",
+    "Responsive design works on mobile and desktop",
+    "Build completes without errors"
+  ],
+  "qa_signoff": {
+    "status": "pending",
+    "issues": "",
+    "tests_passed": ""
+  }
+}

@@ -120,3 +120,87 @@ The _site directory will contain:
   - index.html (main page)
   - css/styles.css (stylesheet)
   - js/main.js (JavaScript)
+
+=== SUBTASK 8-2: Dev Server & Section Verification ===
+Date: 2026-01-09
+
+Status: STATIC VERIFICATION COMPLETE
+
+Due to sandbox restrictions (npm/node commands blocked), comprehensive static
+code verification was performed to verify all sections are correctly implemented.
+
+VERIFICATION RESULTS:
+
+✅ Hero Section
+   - Title: "Atelier Rita Tomforde" (src/index.njk, line 11)
+   - Subtitle: "Freischaffende Künstlerin / Malerei"
+   - Image placeholder with aria-label
+
+✅ Navigation (src/_includes/nav.njk)
+   - Logo/title linking to home
+   - 7 navigation links:
+     1. Willkommen (#willkommen)
+     2. Über mich (#ueber-mich)
+     3. Inspiration (#inspiration)
+     4. Dankbarkeit (#dankbarkeit)
+     5. Ausstellungen (#ausstellungen)
+     6. Aktuelles (#aktuelles)
+     7. Galerie (#galerie)
+   - Hamburger menu with aria-controls
+
+✅ 8 Content Sections (src/index.njk):
+   1. Hero (lines 9-17) - Title, subtitle, portrait placeholder
+   2. Willkommen (lines 22-31) - Welcome message
+   3. Über mich (lines 36-49) - Full biography about artistic journey
+   4. Inspiration (lines 54-65) - Artistic themes and motivation
+   5. Dankbarkeit (lines 70-81) - Gratitude for time and studio
+   6. Bisherige Präsentationen (lines 86-108) - Past exhibitions list
+   7. Aktuelles (lines 113-133) - 2 upcoming events (March & May 2026)
+   8. Galerie (lines 138-184) - Data-driven gallery with paintings.json
+
+✅ Footer (src/_includes/footer.njk)
+   - Contact info section with name, location, region
+   - CTA text: "Interessiert an meinen Bildern?"
+   - Copyright with dynamic year
+   - Legal links (Impressum, Datenschutz)
+
+✅ CSS Design System (src/css/styles.css - 1206 lines)
+   - CSS custom properties for design tokens
+   - Base reset and typography
+   - Navigation with mobile hamburger support
+   - Hero section styling
+   - Content section layouts
+   - Gallery grid (responsive 1-4 columns)
+   - Footer styling
+   - Responsive breakpoints (768px, 1024px, 1200px)
+   - Print styles
+
+✅ JavaScript (src/js/main.js)
+   - Mobile navigation toggle
+   - Overlay management
+   - Smooth scroll fallback
+   - Keyboard (Escape) support
+   - Window resize handling
+
+✅ Data Files
+   - src/_data/site.json: Global metadata (name, title, description, contact)
+   - src/_data/paintings.json: 6 paintings (5 available, 1 sold)
+
+✅ Configuration
+   - eleventy.config.js: Passthrough copy for css/js/images
+   - package.json: npm scripts (dev, build, build:prod)
+   - .github/workflows/deploy.yml: GitHub Pages deployment
+
+MANUAL BROWSER VERIFICATION STEPS:
+1. cd to project root
+2. Run: npm run dev
+3. Open: http://localhost:8080/
+4. Verify in browser:
+   [ ] Hero section with "Atelier Rita Tomforde" title visible
+   [ ] Navigation shows all 7 links
+   [ ] Scroll through all 8 sections
+   [ ] Footer shows contact info and legal links
+   [ ] Open DevTools console - verify no JavaScript errors
+   [ ] Test mobile hamburger (resize to <768px width)
+
+=== END SUBTASK 8-2 ===

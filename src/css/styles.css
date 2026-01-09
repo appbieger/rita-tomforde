@@ -608,6 +608,7 @@ main {
     box-shadow: var(--shadow-md);
 }
 
+<<<<<<< HEAD
 /* Über mich section - right-aligned image with text wrap */
 #ueber-mich .hero-image {
     float: right;
@@ -630,6 +631,8 @@ main {
     }
 }
 
+=======
+>>>>>>> auto-claude/021-changeover-to-11ty-eleventy-img
 .hero-image-placeholder {
     display: flex;
     align-items: center;
@@ -661,5 +664,17 @@ main {
         width: 350px;
         height: auto;
     }
+<<<<<<< HEAD
+=======
+
+    .hero-image-wrapper picture,
+    .hero-image-wrapper img {
+        max-width: 350px;
+    }
+
+    .hero-image-placeholder {
+        height: 350px;
+    }
+>>>>>>> auto-claude/021-changeover-to-11ty-eleventy-img
 }
 ```

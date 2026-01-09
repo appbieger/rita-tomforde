@@ -81,9 +81,9 @@
             "command": "cd /Users/yaron/rita-tomfordede && test -d node_modules/@11ty && echo 'OK'",
             "expected": "OK"
           },
-          "status": "pending",
-          "notes": "BLOCKER: npm command is blocked in sandboxed environment. Manual action required: Run 'npm install' in the project directory (/Users/yaron/rita-tomfordede/.worktrees/001-in-diesem-projekt-soll-eine-website-f-r-die-maleri/) to install @11ty/eleventy dependency. After manual npm install, verify with: test -d node_modules/@11ty && echo 'OK'",
-          "updated_at": "2026-01-09T12:57:24.685715+00:00"
+          "status": "completed",
+          "notes": "npm dependencies already installed (node_modules/@11ty exists). Added .gitignore to exclude node_modules and committed package-lock.json for reproducible builds.",
+          "updated_at": "2026-01-09T13:01:54.161244+00:00"
         }
       ]
     },
@@ -816,6 +816,7 @@
   "qa_signoff": null,
   "status": "in_progress",
   "planStatus": "in_progress",
-  "updated_at": "2026-01-09T12:53:59.730Z",
-  "last_updated": "2026-01-09T12:57:24.685722+00:00"
+  "updated_at": "2026-01-09T13:00:58.919Z",
+  "last_updated": "2026-01-09T13:01:54.161251+00:00",
+  "recoveryNote": "Task recovered from stuck state at 2026-01-09T13:00:58.859Z"
 }

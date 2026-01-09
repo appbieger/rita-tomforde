@@ -1,8 +1,102 @@
 {
-  "feature": "ganz oben soll ein header sein auf dem zentriert \"Rita Tomfo...",
-  "description": "ganz oben soll ein header sein auf dem zentriert \"Rita Tomforde\" steht und mit einem Hintergrundbild versehen ist. dadurch soll die Website ein wenig mehr frabe bekommen.",
+  "feature": "Header Banner mit Hintergrundbild",
+  "description": "Add a visually striking hero header with centered 'Rita Tomforde' text and background image",
   "created_at": "2026-01-09T14:16:55.139Z",
-  "updated_at": "2026-01-09T14:16:55.139Z",
-  "status": "pending",
-  "phases": []
+  "updated_at": "2026-01-09T15:05:23.065Z",
+  "status": "human_review",
+  "planStatus": "review",
+  "spec_name": "header-banner-with-background",
+  "workflow_type": "simple",
+  "total_phases": 1,
+  "recommended_workers": 1,
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Implementation",
+      "description": "Add background image and update hero section styling",
+      "depends_on": [],
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Update hero section CSS with background image, overlay, and ensure text readability",
+          "service": "frontend",
+          "status": "completed",
+          "files_to_create": [],
+          "files_to_modify": [
+            "src/css/styles.css"
+          ],
+          "patterns_from": [
+            ".hero",
+            ".hero-title"
+          ],
+          "verification": {
+            "type": "manual",
+            "run": "npm run dev and check hero section displays background image with readable text"
+          },
+          "notes": "Added background image, overlay, and updated text colors for readability. CSS changes committed.",
+          "updated_at": "2026-01-09T14:56:18.963184+00:00"
+        },
+        {
+          "id": "subtask-1-2",
+          "description": "Update hero section HTML - change title to 'Rita Tomforde'",
+          "service": "frontend",
+          "status": "completed",
+          "files_to_create": [],
+          "files_to_modify": [
+            "src/index.njk"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "manual",
+            "run": "Verify hero displays 'Rita Tomforde' centered text"
+          },
+          "notes": "Changed hero title from 'Atelier Rita Tomforde' to 'Rita Tomforde' in src/index.njk",
+          "updated_at": "2026-01-09T14:57:04.728169+00:00"
+        }
+      ]
+    }
+  ],
+  "qa_signoff": {
+    "status": "approved",
+    "qa_session": 1,
+    "issues_found": [],
+    "tests_passed": {},
+    "timestamp": "2026-01-09T15:04:00.718483+00:00",
+    "ready_for_qa_revalidation": false
+  },
+  "metadata": {
+    "created_at": "2025-01-09T15:53:00Z",
+    "complexity": "simple",
+    "estimated_sessions": 1
+  },
+  "last_updated": "2026-01-09T15:04:00.718495+00:00",
+  "qa_iteration_history": [
+    {
+      "iteration": 1,
+      "status": "rejected",
+      "timestamp": "2026-01-09T15:00:39.645177+00:00",
+      "issues": [
+        {
+          "description": "1 critical: CSS background image uses absolute path '/images/gallery/painting-1.jpg' which won't work with pathPrefix '/rita-tomforde/' on GitHub Pages. Fix: change to relative path '../images/gallery/painting-1.jpg'"
+        }
+      ],
+      "duration_seconds": 206.19
+    },
+    {
+      "iteration": 2,
+      "status": "approved",
+      "timestamp": "2026-01-09T15:04:57.494107+00:00",
+      "issues": [],
+      "duration_seconds": 195.05
+    }
+  ],
+  "qa_stats": {
+    "total_iterations": 2,
+    "last_iteration": 2,
+    "last_status": "approved",
+    "issues_by_type": {
+      "unknown": 1
+    }
+  },
+  "recoveryNote": "Task recovered from stuck state at 2026-01-09T15:05:23.065Z"
 }

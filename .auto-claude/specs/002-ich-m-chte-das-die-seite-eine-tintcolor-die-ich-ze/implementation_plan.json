@@ -2,7 +2,7 @@
   "feature": "Central Tint Color System",
   "description": "Add centrally configurable tint color with bright pink as initial value",
   "created_at": "2026-01-09T14:09:19.267Z",
-  "updated_at": "2026-01-09T14:23:19.436Z",
+  "updated_at": "2026-01-09T14:48:27.454Z",
   "status": "human_review",
   "planStatus": "review",
   "spec_name": "central-tint-color",
@@ -68,6 +68,6 @@
     "last_status": "approved",
     "issues_by_type": {}
   },
-  "stagedAt": "2026-01-09T14:23:19.436Z",
+  "stagedAt": "2026-01-09T14:48:27.454Z",
   "stagedInMainProject": true
 }

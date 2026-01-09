@@ -1,0 +1,71 @@
+{
+  "feature": "Central Tint Color System",
+  "description": "Add centrally configurable tint color with bright pink as initial value",
+  "created_at": "2026-01-09T14:09:19.267Z",
+  "updated_at": "2026-01-09T14:16:01.587Z",
+  "status": "human_review",
+  "planStatus": "review",
+  "spec_name": "central-tint-color",
+  "workflow_type": "simple",
+  "total_phases": 1,
+  "recommended_workers": 1,
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Implementation",
+      "description": "Add central tint color CSS variable with bright pink value",
+      "depends_on": [],
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Add --color-tint CSS variable to :root and wire it to --color-accent",
+          "service": "frontend",
+          "status": "completed",
+          "files_to_create": [],
+          "files_to_modify": [
+            "src/css/styles.css"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "manual",
+            "run": "npm run dev and verify accent elements display bright pink color"
+          },
+          "notes": "Added --color-tint: #FF1493 CSS variable to :root and wired --color-accent to use var(--color-tint). All accent elements across the site will now display bright pink color and can be changed from a single location.",
+          "updated_at": "2026-01-09T14:13:23.982184+00:00"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "complexity": "simple",
+    "estimated_sessions": 1
+  },
+  "last_updated": "2026-01-09T14:15:52.576712+00:00",
+  "qa_signoff": {
+    "status": "approved",
+    "qa_session": 0,
+    "issues_found": [
+      {
+        "description": "None - implementation is correct and follows all requirements"
+      }
+    ],
+    "tests_passed": {},
+    "timestamp": "2026-01-09T14:15:52.576693+00:00",
+    "ready_for_qa_revalidation": false
+  },
+  "qa_iteration_history": [
+    {
+      "iteration": 1,
+      "status": "approved",
+      "timestamp": "2026-01-09T14:16:01.569930+00:00",
+      "issues": [],
+      "duration_seconds": 144.66
+    }
+  ],
+  "qa_stats": {
+    "total_iterations": 1,
+    "last_iteration": 1,
+    "last_status": "approved",
+    "issues_by_type": {}
+  }
+}

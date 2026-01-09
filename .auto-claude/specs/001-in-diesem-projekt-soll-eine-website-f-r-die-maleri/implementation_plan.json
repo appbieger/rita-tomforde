@@ -315,8 +315,9 @@
             "command": "cd /Users/yaron/rita-tomfordede && cat src/index.njk | grep -E 'layout.*base|Atelier Rita Tomforde'",
             "expected": "Contains layout: base.njk and hero text"
           },
-          "status": "pending",
-          "notes": "Frontmatter: layout: base.njk, title. Hero: Atelier Rita Tomforde, Freischaffende K\u00fcnstlerin / Malerei, portrait placeholder"
+          "status": "completed",
+          "notes": "Created src/index.njk with frontmatter (layout: base.njk, title: Willkommen) and hero section containing Atelier Rita Tomforde title, Freischaffende K\u00fcnstlerin / Malerei subtitle, and portrait placeholder. Verification passed - file contains layout: base.njk and Atelier Rita Tomforde. Committed with hash 4474e67.",
+          "updated_at": "2026-01-09T13:16:47.053430+00:00"
         },
         {
           "id": "subtask-4-2",
@@ -827,6 +828,6 @@
   "status": "in_progress",
   "planStatus": "in_progress",
   "updated_at": "2026-01-09T13:00:58.919Z",
-  "last_updated": "2026-01-09T13:15:30.563611+00:00",
+  "last_updated": "2026-01-09T13:16:47.053437+00:00",
   "recoveryNote": "Task recovered from stuck state at 2026-01-09T13:00:58.859Z"
 }

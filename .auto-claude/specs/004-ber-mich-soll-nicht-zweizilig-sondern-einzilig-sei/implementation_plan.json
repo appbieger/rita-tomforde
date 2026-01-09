@@ -1,0 +1,40 @@
+{
+  "feature": "Über mich soll nicht zweizilig sondern einzilig sein",
+  "description": "Prevent 'Über mich' navigation item from wrapping to two lines",
+  "created_at": "2026-01-09T14:12:28.630Z",
+  "updated_at": "2026-01-09T14:12:30.417Z",
+  "status": "in_progress",
+  "planStatus": "complete",
+  "spec_name": "fix-ueber-mich-navigation-wrapping",
+  "workflow_type": "simple",
+  "total_phases": 1,
+  "recommended_workers": 1,
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Implementation",
+      "description": "Add white-space: nowrap to nav menu links",
+      "depends_on": [],
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Add white-space: nowrap to .nav-menu a selector in styles.css",
+          "service": "main",
+          "status": "pending",
+          "files_to_create": [],
+          "files_to_modify": ["src/css/styles.css"],
+          "patterns_from": [],
+          "verification": {
+            "type": "manual",
+            "run": "Open the website and verify 'Über mich' displays on a single line in the navigation"
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "created_at": "2026-01-09T14:12:28.630Z",
+    "complexity": "simple",
+    "estimated_sessions": 1
+  }
+}

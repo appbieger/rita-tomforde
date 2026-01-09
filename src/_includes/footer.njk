@@ -4,8 +4,10 @@
             <div class="footer-contact">
                 <h3>Kontakt</h3>
                 <p class="contact-name">{{ site.contact.name }}</p>
-                <p class="contact-location">Atelier in {{ site.contact.location }}</p>
-                <p class="contact-region">{{ site.contact.region }}</p>
+                <p class="contact-address">{{ site.contact.address }}, {{ site.contact.city }}</p>
+                <p class="contact-phone">Tel: <a href="tel:{{ site.contact.phone | replace(' ', '') }}">{{ site.contact.phone }}</a></p>
+                <p class="contact-whatsapp">WhatsApp: <a href="https://wa.me/49{{ site.contact.whatsapp | replace(' ', '') | replace('0', '', 1) }}" target="_blank" rel="noopener">{{ site.contact.whatsapp }}</a></p>
+                <p class="contact-instagram"><a href="{{ site.contact.instagram }}" target="_blank" rel="noopener">Instagram</a></p>
             </div>
 
             <div class="footer-info">

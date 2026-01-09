@@ -167,6 +167,12 @@ a:focus {
     color: var(--color-accent);
 }
 
+a:focus-visible {
+    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+    border-radius: var(--radius-sm);
+}
+
 ul, ol {
     margin-bottom: var(--spacing-md);
     padding-left: var(--spacing-md);

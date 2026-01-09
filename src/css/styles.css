@@ -603,41 +603,6 @@ main {
     box-shadow: var(--shadow-md);
 }
 
-<<<<<<< HEAD
-.hero-image-wrapper picture,
-.hero-image-wrapper img {
-    display: block;
-    max-width: 300px;
-    height: auto;
-    margin: 0 auto;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md);
-}
-
-/* Über mich section - right-aligned image with text wrap */
-#ueber-mich .hero-image {
-    float: right;
-    margin: 0 0 var(--spacing-md) var(--spacing-md);
-}
-
-#ueber-mich .section-content::after {
-    content: '';
-    display: table;
-    clear: both;
-}
-
-/* Responsive: on mobile, image is full-width above text */
-@media (max-width: 767px) {
-    #ueber-mich .hero-image {
-        float: none;
-        display: block;
-        margin: 0 auto var(--spacing-md) auto;
-        max-width: 250px;
-    }
-}
-
-=======
->>>>>>> auto-claude/022-text-flie-t-noch-nicht-ums-bid-drumrum-und-die-ber
 .hero-image-placeholder {
     display: flex;
     align-items: center;
@@ -667,14 +632,11 @@ main {
         width: 350px;
         height: auto;
     }
-<<<<<<< HEAD
-=======
 
     .hero-image-wrapper picture,
     .hero-image-wrapper img {
         max-width: 350px;
     }
->>>>>>> auto-claude/022-text-flie-t-noch-nicht-ums-bid-drumrum-und-die-ber
 
     .hero-image-placeholder {
         height: 350px;
@@ -696,8 +658,6 @@ main {
 }
 
 /* ==========================================================================
-<<<<<<< HEAD
-=======
    9.2 Über mich Section - Image with Text Wrap
    ========================================================================== */
 
@@ -731,7 +691,6 @@ main {
 }
 
 /* ==========================================================================
->>>>>>> auto-claude/022-text-flie-t-noch-nicht-ums-bid-drumrum-und-die-ber
    10. Content Sections
    ========================================================================== */
 

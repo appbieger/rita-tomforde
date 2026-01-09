@@ -856,3 +856,181 @@ main {
         gap: var(--spacing-lg);
     }
 }
+
+/* ==========================================================================
+   12. Responsive Media Queries - Tablet (768px)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+    /* Typography adjustments for tablet */
+    :root {
+        --font-size-large: 2.5rem;      /* 40px */
+        --font-size-xlarge: 3rem;       /* 48px */
+    }
+
+    /* Container padding increase */
+    .container {
+        --container-padding: calc(var(--spacing-unit) * 1.5);
+    }
+
+    /* Section spacing increase */
+    .section {
+        padding-top: calc(var(--spacing-section) * 1.25);
+        padding-bottom: calc(var(--spacing-section) * 1.25);
+    }
+
+    /* Content section adjustments */
+    .content-section {
+        padding: calc(var(--spacing-section) * 1.25) 0;
+    }
+
+    /* Two-column layout utility */
+    .grid-2-col {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    /* Flexbox row layout for tablet and up */
+    .flex-row-tablet {
+        display: flex;
+        flex-direction: row;
+        gap: var(--spacing-lg);
+    }
+
+    /* Text alignment utilities for tablet */
+    .text-left-tablet {
+        text-align: left;
+    }
+
+    .text-center-tablet {
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   13. Responsive Media Queries - Desktop (1024px)
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+    /* Typography adjustments for desktop */
+    :root {
+        --font-size-large: 2.75rem;     /* 44px */
+        --font-size-xlarge: 3.5rem;     /* 56px */
+        --spacing-section: calc(var(--spacing-unit) * 4); /* 96px */
+    }
+
+    /* Container padding for desktop */
+    .container {
+        --container-padding: calc(var(--spacing-unit) * 2);
+    }
+
+    /* Section spacing for desktop */
+    .section {
+        padding-top: var(--spacing-section);
+        padding-bottom: var(--spacing-section);
+    }
+
+    /* Content section adjustments */
+    .content-section {
+        padding: var(--spacing-section) 0;
+    }
+
+    /* Three-column layout utility */
+    .grid-3-col {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    /* Four-column layout utility */
+    .grid-4-col {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    /* Larger spacing between sections */
+    main > .section + .section,
+    main > .content-section + .content-section {
+        margin-top: 0;
+    }
+
+    /* Text alignment utilities for desktop */
+    .text-left-desktop {
+        text-align: left;
+    }
+
+    .text-center-desktop {
+        text-align: center;
+    }
+
+    /* Hide on desktop utility */
+    .hide-desktop {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   14. Large Desktop (1200px+)
+   ========================================================================== */
+
+@media (min-width: 1200px) {
+    /* Container max width already set in :root */
+
+    /* Additional spacing for large screens */
+    :root {
+        --spacing-section: calc(var(--spacing-unit) * 4.5); /* 108px */
+    }
+
+    /* Wider content areas */
+    .section-content {
+        max-width: 900px;
+    }
+
+    .container-narrow {
+        max-width: 850px;
+    }
+}
+
+/* ==========================================================================
+   15. Print Styles
+   ========================================================================== */
+
+@media print {
+    /* Hide navigation and interactive elements */
+    .site-header,
+    .hamburger,
+    .nav-overlay {
+        display: none;
+    }
+
+    /* Remove shadows and transforms */
+    * {
+        box-shadow: none !important;
+        transform: none !important;
+    }
+
+    /* Ensure text is black on white */
+    body {
+        color: #000;
+        background: #fff;
+    }
+
+    /* Show links */
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+
+    /* Page breaks */
+    .section,
+    .content-section {
+        page-break-inside: avoid;
+    }
+
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+}

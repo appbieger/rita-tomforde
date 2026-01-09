@@ -2,7 +2,7 @@
   "feature": "Über mich soll nicht zweizilig sondern einzilig sein",
   "description": "Prevent 'Über mich' navigation item from wrapping to two lines",
   "created_at": "2026-01-09T14:12:28.630Z",
-  "updated_at": "2026-01-09T18:37:06.859Z",
+  "updated_at": "2026-01-09T20:05:47.022Z",
   "status": "done",
   "planStatus": "completed",
   "spec_name": "fix-ueber-mich-navigation-wrapping",

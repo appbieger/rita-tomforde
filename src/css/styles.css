@@ -354,6 +354,12 @@ main {
     z-index: var(--z-fixed);
 }
 
+.hamburger:focus-visible {
+    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+    border-radius: var(--radius-sm);
+}
+
 .hamburger-line {
     display: block;
     width: 24px;

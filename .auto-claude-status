@@ -1,25 +1,25 @@
 {
   "active": true,
-  "spec": "007-in-dem-projekt-https-github-com-tannerdolby-eleven",
+  "spec": "013-add-event-article-styling",
   "state": "building",
   "subtasks": {
-    "completed": 9,
-    "total": 10,
+    "completed": 0,
+    "total": 0,
     "in_progress": 1,
     "failed": 0
   },
   "phase": {
-    "current": "Build & Integration Verification",
+    "current": "Testing & Verification",
     "id": null,
-    "total": 3
+    "total": 2
   },
   "workers": {
     "active": 0,
     "max": 1
   },
   "session": {
-    "number": 11,
-    "started_at": "2026-01-09T16:54:14.739084"
+    "number": 8,
+    "started_at": "2026-01-09T19:15:11.168864"
   },
-  "last_update": "2026-01-09T17:13:11.307401"
+  "last_update": "2026-01-09T19:30:33.830822"
 }

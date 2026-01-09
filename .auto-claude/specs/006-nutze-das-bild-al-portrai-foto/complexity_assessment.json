@@ -1,0 +1,70 @@
+{
+  "complexity": "simple",
+  "workflow_type": "feature",
+  "confidence": 0.95,
+  "reasoning": "Replace a placeholder div with an actual portrait image. The CSS styling for .hero-image already exists, so this only requires copying the image to the correct location and updating the template HTML. Single-file change with no dependencies or integrations.",
+
+  "analysis": {
+    "scope": {
+      "estimated_files": 2,
+      "estimated_services": 1,
+      "is_cross_cutting": false,
+      "notes": "Only index.njk needs modification. Image file needs to be copied to src/images/portraits/."
+    },
+    "integrations": {
+      "external_services": [],
+      "new_dependencies": [],
+      "research_needed": false,
+      "notes": "No external services or new dependencies required."
+    },
+    "infrastructure": {
+      "docker_changes": false,
+      "database_changes": false,
+      "config_changes": false,
+      "notes": "No infrastructure changes needed. Static image serving already configured in Eleventy."
+    },
+    "knowledge": {
+      "patterns_exist": true,
+      "research_required": false,
+      "unfamiliar_tech": [],
+      "notes": "CSS already has .hero-image class with proper styling. Just need to swap placeholder for actual img tag."
+    },
+    "risk": {
+      "level": "low",
+      "concerns": [],
+      "notes": "Simple image swap with no breaking change potential. Image format and sizing are standard."
+    }
+  },
+
+  "recommended_phases": [
+    "discovery",
+    "quick_spec",
+    "validation"
+  ],
+
+  "flags": {
+    "needs_research": false,
+    "needs_self_critique": false,
+    "needs_infrastructure_setup": false
+  },
+
+  "validation_recommendations": {
+    "risk_level": "low",
+    "skip_validation": false,
+    "minimal_mode": true,
+    "test_types_required": ["unit"],
+    "security_scan_required": false,
+    "staging_deployment_required": false,
+    "reasoning": "Simple image swap task with existing CSS support. Only needs build verification to ensure image renders correctly. No security implications."
+  },
+
+  "implementation_notes": {
+    "attached_image": "attachments/Bild 09.01.26 um 12.17.jpeg",
+    "target_location": "src/images/portraits/",
+    "template_file": "src/index.njk",
+    "css_class": "hero-image",
+    "current_placeholder": ".hero-image-placeholder div in hero section"
+  },
+
+  "created_at": "2026-01-09T12:30:00.000Z"
+}

@@ -1,0 +1,320 @@
+{
+  "integrations_researched": [
+    {
+      "name": "@11ty/eleventy-img",
+      "type": "library",
+      "verified_package": {
+        "name": "@11ty/eleventy-img",
+        "install_command": "npm install @11ty/eleventy-img",
+        "version": "^6.0.4",
+        "verified": true
+      },
+      "api_patterns": {
+        "imports": [
+          "const Image = require('@11ty/eleventy-img');",
+          "import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';"
+        ],
+        "initialization": "eleventyConfig.addPlugin(eleventyImageTransformPlugin, { formats: ['webp', 'jpeg'], widths: ['auto'] });",
+        "key_functions": [
+          "Image(src, options) - async function for image processing",
+          "Image.generateHTML(metadata, attributes) - generate <picture> element",
+          "eleventyImageTransformPlugin - auto-transform <img> tags"
+        ],
+        "shortcode_example": "async function imageShortcode(src, alt, widths = [300, 480, 640, 1024], sizes = '(min-width: 400px) 33.3vw, 100vw') { let metadata = await Image(src, { widths, formats: ['webp', 'jpeg'], outputDir: './_site/img/' }); return Image.generateHTML(metadata, { alt, sizes, loading: 'lazy', decoding: 'async' }); }",
+        "verified_against": "https://www.11ty.dev/docs/plugins/image/"
+      },
+      "configuration": {
+        "env_vars": [],
+        "config_files": ["eleventy.config.js"],
+        "dependencies": [],
+        "options": {
+          "formats": ["webp", "jpeg", "avif", "png", "svg"],
+          "widths": "[300, 480, 640, 1024] or ['auto']",
+          "outputDir": "./_site/img/",
+          "urlPath": "/img/",
+          "svgShortCircuit": "true - skip raster for SVG",
+          "transformOnRequest": "true - dev optimization"
+        }
+      },
+      "infrastructure": {
+        "requires_docker": false,
+        "requires_external_service": false,
+        "notes": "Runs at build-time, uses Sharp library internally for image processing"
+      },
+      "gotchas": [
+        "Requires Node 18+ for v6.0.0+",
+        "avif format is most expensive to process (adds build time)",
+        "Alt text is required - shortcode should validate this",
+        "Images are processed at build time, not runtime",
+        "Remote URLs are cached locally via eleventy-fetch",
+        "Current project uses Eleventy v3.0.0 which supports the Image Transform Plugin"
+      ],
+      "research_sources": [
+        "https://www.npmjs.com/package/@11ty/eleventy-img",
+        "https://www.11ty.dev/docs/plugins/image/",
+        "https://github.com/11ty/eleventy-img/releases"
+      ]
+    },
+    {
+      "name": "Eleventy (11ty)",
+      "type": "framework",
+      "verified_package": {
+        "name": "@11ty/eleventy",
+        "install_command": "npm install @11ty/eleventy",
+        "version": "^3.0.0 (current project version)",
+        "verified": true
+      },
+      "api_patterns": {
+        "imports": [],
+        "initialization": "module.exports = function(eleventyConfig) { return { dir: { input: 'src', output: '_site' } }; };",
+        "key_functions": [
+          "eleventyConfig.addShortcode(name, callback)",
+          "eleventyConfig.addPairedShortcode(name, callback)",
+          "eleventyConfig.addPassthroughCopy(path)",
+          "eleventyConfig.addPlugin(plugin, options)",
+          "eleventyConfig.addFilter(name, callback)",
+          "eleventyConfig.addNunjucksAsyncShortcode(name, callback)"
+        ],
+        "verified_against": "https://www.11ty.dev/docs/"
+      },
+      "configuration": {
+        "env_vars": ["ELEVENTY_ENV"],
+        "config_files": ["eleventy.config.js", ".eleventy.js"],
+        "dependencies": []
+      },
+      "infrastructure": {
+        "requires_docker": false,
+        "requires_external_service": false
+      },
+      "gotchas": [
+        "Current project already uses Eleventy v3.0.0",
+        "Reference project uses v2.0.1 - may have minor API differences",
+        "v3 supports both CommonJS and ESM config files",
+        "Image plugin shortcodes should be registered as async Nunjucks shortcodes"
+      ],
+      "research_sources": [
+        "https://www.11ty.dev/docs/",
+        "https://www.npmjs.com/package/@11ty/eleventy"
+      ]
+    },
+    {
+      "name": "Gallery Data Structure",
+      "type": "data_schema",
+      "verified_package": {
+        "name": "N/A - JSON data file",
+        "install_command": "N/A",
+        "version": "N/A",
+        "verified": true
+      },
+      "api_patterns": {
+        "imports": [],
+        "initialization": "Create _data/gallery.json file",
+        "key_functions": [],
+        "data_structure": {
+          "title": "string - Image title",
+          "date": "string - Date of the image",
+          "credit": "string - Photo credit attribution",
+          "linkToAuthor": "string - URL to original photo/author",
+          "src": "string - Image filename",
+          "alt": "string - Alt text description (required)",
+          "imgDir": "string - Directory where image is located",
+          "widths": "array - Responsive widths [320, 640, 1024]",
+          "sizes": "string - Sizes attribute for responsive images",
+          "class": "string - CSS class for the image",
+          "width": "number - Fallback image width",
+          "height": "number - Fallback image height"
+        },
+        "example": {
+          "title": "Highway covered in water",
+          "date": "October 20, 2020",
+          "credit": "Photo by Josh Hild",
+          "linkToAuthor": "https://www.pexels.com/photo/...",
+          "src": "highway-water.jpg",
+          "alt": "Skybridge over highway covered in water",
+          "imgDir": "/images/"
+        },
+        "verified_against": "https://github.com/tannerdolby/eleventy-photo-gallery/blob/master/README.md"
+      },
+      "configuration": {
+        "env_vars": [],
+        "config_files": ["src/_data/gallery.json"],
+        "dependencies": []
+      },
+      "infrastructure": {
+        "requires_docker": false,
+        "requires_external_service": false
+      },
+      "gotchas": [
+        "Data is available in templates via 'gallery' variable",
+        "Image metadata can also be defined in frontmatter",
+        "imgDir should match the actual image directory path"
+      ],
+      "research_sources": [
+        "https://github.com/tannerdolby/eleventy-photo-gallery"
+      ]
+    },
+    {
+      "name": "Sample Images from Reference Repository",
+      "type": "assets",
+      "verified_package": {
+        "name": "N/A - Image assets",
+        "install_command": "Download from https://github.com/tannerdolby/eleventy-photo-gallery/tree/master/src/images",
+        "version": "N/A",
+        "verified": true
+      },
+      "api_patterns": {
+        "imports": [],
+        "initialization": "Copy images to src/images/ directory",
+        "key_functions": [],
+        "available_images": [
+          "benches.jpg",
+          "boardwalk.jpg",
+          "business-center.jpg",
+          "empty-road.jpg",
+          "gas-station.jpg",
+          "glass-jar.jpg",
+          "highrises-night.jpg",
+          "highway-water.jpg",
+          "light-streaks.jpg",
+          "music-hall.jpg",
+          "terrace-window.jpg",
+          "water-drop.jpg"
+        ],
+        "verified_against": "https://github.com/tannerdolby/eleventy-photo-gallery/tree/master/src/images"
+      },
+      "configuration": {
+        "env_vars": [],
+        "config_files": [],
+        "dependencies": []
+      },
+      "infrastructure": {
+        "requires_docker": false,
+        "requires_external_service": false
+      },
+      "gotchas": [
+        "12 base images available in reference repository",
+        "Images are high-quality photos from Pexels (free to use)",
+        "eleventy-img will generate responsive variants at build time",
+        "Original images should be placed in src/images/",
+        "No need to manually create responsive variants - the plugin handles this"
+      ],
+      "research_sources": [
+        "https://github.com/tannerdolby/eleventy-photo-gallery/tree/master/src/images"
+      ]
+    }
+  ],
+  "optional_integrations": [
+    {
+      "name": "eleventy-plugin-metagen",
+      "type": "library",
+      "verified_package": {
+        "name": "eleventy-plugin-metagen",
+        "install_command": "npm install eleventy-plugin-metagen",
+        "version": "^1.8.3",
+        "verified": true
+      },
+      "purpose": "Generates meta tags for social sharing and SEO",
+      "recommendation": "Optional - useful for social media preview cards"
+    },
+    {
+      "name": "@11ty/eleventy-navigation",
+      "type": "library",
+      "verified_package": {
+        "name": "@11ty/eleventy-navigation",
+        "install_command": "npm install @11ty/eleventy-navigation",
+        "version": "^0.3.3",
+        "verified": true
+      },
+      "purpose": "Navigation menu generation and breadcrumbs",
+      "recommendation": "Optional - only if gallery needs complex navigation"
+    },
+    {
+      "name": "sass",
+      "type": "library",
+      "verified_package": {
+        "name": "sass",
+        "install_command": "npm install sass",
+        "version": "^1.39.0",
+        "verified": true
+      },
+      "purpose": "SCSS preprocessing for stylesheets",
+      "recommendation": "Optional - reference project uses SCSS, but current project may use plain CSS"
+    },
+    {
+      "name": "clean-css",
+      "type": "library",
+      "verified_package": {
+        "name": "clean-css",
+        "install_command": "npm install clean-css",
+        "version": "^4.2.3",
+        "verified": true
+      },
+      "purpose": "CSS minification for production builds",
+      "recommendation": "Optional - useful for production optimization"
+    },
+    {
+      "name": "terser",
+      "type": "library",
+      "verified_package": {
+        "name": "terser",
+        "install_command": "npm install terser",
+        "version": "^5.7.2",
+        "verified": true
+      },
+      "purpose": "JavaScript minification for production builds",
+      "recommendation": "Optional - useful for production optimization"
+    }
+  ],
+  "current_project_analysis": {
+    "framework": "Eleventy v3.0.0",
+    "template_engine": "Nunjucks (.njk)",
+    "directory_structure": {
+      "input": "src",
+      "output": "_site",
+      "includes": "src/_includes",
+      "data": "src/_data"
+    },
+    "existing_templates": [
+      "src/index.njk",
+      "src/_includes/base.njk",
+      "src/_includes/footer.njk",
+      "src/_includes/nav.njk"
+    ],
+    "existing_passthrough_copies": [
+      "src/css",
+      "src/images",
+      "src/js"
+    ],
+    "path_prefix": "/rita-tomforde/"
+  },
+  "unverified_claims": [],
+  "recommendations": [
+    "Use @11ty/eleventy-img v6.0.4 (latest stable) - compatible with Eleventy v3.0.0",
+    "Use the Image Transform Plugin approach (eleventyImageTransformPlugin) as it's the recommended modern approach",
+    "Alternative: Use async Nunjucks shortcode for more control over image output",
+    "Download the 12 sample images from the reference repository's src/images directory",
+    "Create gallery.json data file with image metadata following the documented schema",
+    "Add gallery.njk template for the gallery page",
+    "Optional: Add individual image detail pages (feature.njk pattern)",
+    "CSS Grid is used in reference project for gallery layout - can be adapted or simplified",
+    "Consider adding lazy loading and async decoding attributes for performance"
+  ],
+  "implementation_notes": {
+    "minimum_required_packages": [
+      "@11ty/eleventy-img"
+    ],
+    "files_to_create": [
+      "src/_data/gallery.json",
+      "src/gallery.njk",
+      "src/images/*.jpg (downloaded from reference repo)"
+    ],
+    "files_to_modify": [
+      "eleventy.config.js (add image shortcode or transform plugin)",
+      "src/css/*.css (add gallery styles)"
+    ],
+    "reference_repository": "https://github.com/tannerdolby/eleventy-photo-gallery",
+    "reference_branch": "master"
+  },
+  "context7_libraries_used": [],
+  "created_at": "2025-01-09T00:00:00Z"
+}

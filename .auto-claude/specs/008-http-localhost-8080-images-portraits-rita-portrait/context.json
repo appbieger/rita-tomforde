@@ -1,0 +1,17 @@
+{
+  "task_description": "Fix broken portrait image path by adding missing /rita-tomforde/ base path prefix to the image URL in src/index.njk",
+  "scoped_services": ["frontend"],
+  "files_to_modify": ["src/index.njk"],
+  "files_to_reference": [],
+  "patterns": {
+    "base_path": "/rita-tomforde/",
+    "image_paths": "Must include base path prefix"
+  },
+  "service_contexts": {
+    "frontend": {
+      "framework": "Nunjucks templates",
+      "key_file": "src/index.njk"
+    }
+  },
+  "created_at": "2026-01-09T16:04:28.703Z"
+}

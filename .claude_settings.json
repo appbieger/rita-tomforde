@@ -1,0 +1,34 @@
+{
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true
+  },
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Read(./**)",
+      "Write(./**)",
+      "Edit(./**)",
+      "Glob(./**)",
+      "Grep(./**)",
+      "Read(/Users/yaron/rita-tomfordede/.worktrees/007-in-dem-projekt-https-github-com-tannerdolby-eleven/**)",
+      "Write(/Users/yaron/rita-tomfordede/.worktrees/007-in-dem-projekt-https-github-com-tannerdolby-eleven/**)",
+      "Edit(/Users/yaron/rita-tomfordede/.worktrees/007-in-dem-projekt-https-github-com-tannerdolby-eleven/**)",
+      "Glob(/Users/yaron/rita-tomfordede/.worktrees/007-in-dem-projekt-https-github-com-tannerdolby-eleven/**)",
+      "Grep(/Users/yaron/rita-tomfordede/.worktrees/007-in-dem-projekt-https-github-com-tannerdolby-eleven/**)",
+      "Read(/Users/yaron/rita-tomfordede/.worktrees/007-in-dem-projekt-https-github-com-tannerdolby-eleven/.auto-claude/specs/007-in-dem-projekt-https-github-com-tannerdolby-eleven/**)",
+      "Write(/Users/yaron/rita-tomfordede/.worktrees/007-in-dem-projekt-https-github-com-tannerdolby-eleven/.auto-claude/specs/007-in-dem-projekt-https-github-com-tannerdolby-eleven/**)",
+      "Edit(/Users/yaron/rita-tomfordede/.worktrees/007-in-dem-projekt-https-github-com-tannerdolby-eleven/.auto-claude/specs/007-in-dem-projekt-https-github-com-tannerdolby-eleven/**)",
+      "Bash(*)",
+      "WebFetch(*)",
+      "WebSearch(*)",
+      "mcp__context7__resolve-library-id(*)",
+      "mcp__context7__get-library-docs(*)",
+      "mcp__graphiti-memory__search_nodes(*)",
+      "mcp__graphiti-memory__search_facts(*)",
+      "mcp__graphiti-memory__add_episode(*)",
+      "mcp__graphiti-memory__get_episodes(*)",
+      "mcp__graphiti-memory__get_entity_edge(*)"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "project_type": "single",
+  "services": {
+    "main": {
+      "name": "main",
+      "path": ".",
+      "tech_stack": ["javascript", "eleventy", "nunjucks", "css"],
+      "framework": "Eleventy v3.0.0",
+      "port": 8080,
+      "dev_command": "npm run dev",
+      "build_command": "npm run build",
+      "test_command": null,
+      "key_directories": {
+        "src": "Source templates and assets",
+        "src/_data": "JSON data files",
+        "src/_includes": "Nunjucks partials/layouts",
+        "src/css": "CSS stylesheets",
+        "src/images": "Static images",
+        "_site": "Build output"
+      }
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": null,
+    "ci": "GitHub Actions",
+    "deployment": "GitHub Pages"
+  },
+  "conventions": {
+    "template_engine": "nunjucks",
+    "css_methodology": "custom-properties",
+    "pathPrefix": "/rita-tomforde/",
+    "language": "german"
+  },
+  "entry_points": {
+    "config": "eleventy.config.js",
+    "main_page": "src/index.njk",
+    "base_layout": "src/_includes/base.njk"
+  }
+}

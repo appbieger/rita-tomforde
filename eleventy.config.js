@@ -1,4 +1,31 @@
+const Image = require("@11ty/eleventy-img");
+
+// Image shortcode for responsive image generation
+async function imageShortcode(src, alt, widths = [300, 600, 900], sizes = "(min-width: 400px) 33.3vw, 100vw") {
+  // Validate alt text for accessibility
+  if (!alt) {
+    throw new Error(`Missing alt text for image: ${src}`);
+  }
+
+  let metadata = await Image(src, {
+    widths: widths,
+    formats: ["webp", "jpeg"],
+    outputDir: "./_site/img/",
+    urlPath: "/rita-tomforde/img/"
+  });
+
+  return Image.generateHTML(metadata, {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async"
+  });
+}
+
 module.exports = function(eleventyConfig) {
+  // Register image shortcode for responsive images
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+
   // Passthrough copy for static assets
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/images");

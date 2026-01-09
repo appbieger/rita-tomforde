@@ -909,3 +909,40 @@ main {
 .footer-nav a:focus {
     color: var(--color-accent);
 }
+
+/* ==========================================================================
+   13. Footer Mobile Responsive Styles
+   ========================================================================== */
+
+@media (max-width: 767px) {
+    /* Center all footer content on mobile */
+    .footer-contact,
+    .footer-info,
+    .footer-bottom {
+        text-align: center;
+    }
+
+    /* Reduce padding on mobile for better use of space */
+    .site-footer {
+        padding: var(--spacing-lg) 0;
+    }
+
+    /* Adjust gap for mobile */
+    .footer-content {
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* Center footer navigation on mobile */
+    .footer-nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Adjust spacing in footer-bottom for mobile */
+    .footer-bottom {
+        gap: var(--spacing-sm);
+        margin-top: var(--spacing-md);
+        padding-top: var(--spacing-md);
+    }
+}

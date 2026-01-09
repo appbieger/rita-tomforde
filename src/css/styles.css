@@ -702,6 +702,14 @@ main {
     margin-bottom: 0;
 }
 
+.event h3 {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    line-height: var(--line-height-heading);
+    margin-bottom: var(--spacing-sm);
+}
+
 /* ==========================================================================
    11. Photo Gallery
    ========================================================================== */

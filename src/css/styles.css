@@ -710,6 +710,20 @@ main {
     margin-bottom: var(--spacing-sm);
 }
 
+.event p {
+    line-height: var(--line-height-base);
+    margin-bottom: var(--spacing-sm);
+}
+
+.event p:last-child {
+    margin-bottom: 0;
+}
+
+.event strong {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-accent);
+}
+
 /* ==========================================================================
    11. Photo Gallery
    ========================================================================== */

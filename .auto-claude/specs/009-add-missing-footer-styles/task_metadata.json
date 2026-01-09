@@ -1,0 +1,13 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "ui_ux_improvements",
+  "ideaId": "uiux-001",
+  "rationale": "An unstyled footer severely impacts the professional appearance of the site. The footer contains important contact information and legal links that users expect to find easily. Without styling, the footer content appears jumbled and unformatted.",
+  "category": "ui_ux",
+  "uiuxCategory": "visual",
+  "affectedFiles": [
+    "src/css/styles.css",
+    "src/_includes/footer.njk"
+  ],
+  "problemSolved": "Footer renders with browser defaults - no background color, no proper spacing, no layout structure. Footer content (contact info, CTA, copyright, legal links) displays as plain unstyled text."
+}

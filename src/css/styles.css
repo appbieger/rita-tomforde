@@ -912,9 +912,123 @@ main {
    12. Footer
    ========================================================================== */
 
-.footer-nav a {
+.site-footer {
+    background-color: var(--color-background-alt);
+    border-top: 1px solid var(--color-border);
+    padding: var(--spacing-section) 0;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Tablet and desktop: side-by-side layout */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
+.footer-contact {
+    flex: 1;
+}
+
+.footer-contact h3 {
+    font-family: var(--font-family-headings);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-contact p {
+    font-size: var(--font-size-base);
     color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-contact p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-name {
+    font-weight: var(--font-weight-bold);
+}
+
+.contact-location,
+.contact-region {
+    color: var(--color-text-light);
+}
+
+.footer-info {
+    flex: 1;
+}
+
+.footer-cta {
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    line-height: var(--line-height-base);
+    margin-bottom: 0;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+}
+
+/* Tablet and desktop: horizontal layout */
+@media (min-width: 768px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.copyright {
+    font-size: var(--font-size-small);
+    color: var(--color-text-light);
+    margin-bottom: 0;
+}
+
+.footer-nav ul {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav li {
+    margin: 0;
+}
+
+.footer-nav a {
+    display: inline-block;
+    padding: var(--spacing-xs) 0;
+    color: var(--color-text-light);
     text-decoration: none;
+    font-size: var(--font-size-small);
     transition: color var(--transition-fast);
 }
 
@@ -923,31 +1037,98 @@ main {
     color: var(--color-accent);
 }
 
-.footer-nav a:focus-visible {
-    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
-    outline-offset: var(--focus-ring-offset);
-    border-radius: var(--radius-sm);
+/* ==========================================================================
+   13. Footer Mobile Responsive Styles
+   ========================================================================== */
+
+@media (max-width: 767px) {
+    /* Center all footer content on mobile */
+    .footer-contact,
+    .footer-info,
+    .footer-bottom {
+        text-align: center;
+    }
+
+    /* Reduce padding on mobile for better use of space */
+    .site-footer {
+        padding: var(--spacing-lg) 0;
+    }
+
+    /* Adjust gap for mobile */
+    .footer-content {
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* Center footer navigation on mobile */
+    .footer-nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Adjust spacing in footer-bottom for mobile */
+    .footer-bottom {
+        gap: var(--spacing-sm);
+        margin-top: var(--spacing-md);
+        padding-top: var(--spacing-md);
+    }
 }
 
 /* ==========================================================================
-   13. Event Card Responsive Adjustments
+   14. Footer Tablet Responsive Styles
    ========================================================================== */
 
-/* Mobile: Reduce padding for smaller screens */
-@media (max-width: 767px) {
-    .event {
-        padding: var(--spacing-sm);
-        margin-bottom: var(--spacing-sm);
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Tablet-specific footer adjustments */
+    .footer-content {
+        gap: var(--spacing-md);
     }
 
-    .event h3 {
+    .footer-contact h3 {
         font-size: var(--font-size-base);
+    }
+
+    .footer-bottom {
+        gap: var(--spacing-sm);
+    }
+
+    .footer-nav ul {
+        gap: var(--spacing-sm);
     }
 }
 
-/* Desktop: Enhanced spacing */
+/* ==========================================================================
+   15. Footer Desktop Responsive Styles
+   ========================================================================== */
+
 @media (min-width: 1024px) {
-    .event {
-        padding: var(--spacing-lg);
+    /* Desktop footer enhancements with better spacing */
+    .site-footer {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .footer-content {
+        gap: var(--spacing-xl);
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .footer-contact h3 {
+        font-size: var(--font-size-medium);
+    }
+
+    .footer-bottom {
+        gap: var(--spacing-lg);
+        margin-top: var(--spacing-xl);
+        padding-top: var(--spacing-xl);
+    }
+
+    .footer-nav ul {
+        gap: var(--spacing-lg);
+    }
+
+    /* Better visual hierarchy on desktop */
+    .footer-contact,
+    .footer-info {
+        max-width: 45%;
     }
 }

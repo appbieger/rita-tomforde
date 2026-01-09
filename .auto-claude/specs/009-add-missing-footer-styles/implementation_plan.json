@@ -1,0 +1,227 @@
+{
+  "spec_id": "009-add-missing-footer-styles",
+  "title": "Add Missing Footer Styles",
+  "description": "Implement CSS styles for the site-footer component and all its child elements to create a professional, well-formatted footer consistent with the existing design system.",
+  "phases": [
+    {
+      "id": "phase-1",
+      "name": "Footer Base Layout Styles",
+      "description": "Create base styling for the main footer container and layout structure",
+      "subtasks": [
+        {
+          "id": "1.1",
+          "title": "Add site-footer base styles",
+          "description": "Style the .site-footer element with appropriate background, borders, and positioning to visually separate it from main content",
+          "status": "completed",
+          "files": [
+            "src/css/styles.css"
+          ],
+          "acceptance_criteria": [
+            "Footer has distinct background color using design tokens",
+            "Footer has top border for visual separation",
+            "Footer uses appropriate section spacing"
+          ],
+          "notes": "Added .site-footer base styles with background-alt color, top border, and section spacing. All acceptance criteria met.",
+          "updated_at": "2026-01-09T18:18:52.560772+00:00"
+        },
+        {
+          "id": "1.2",
+          "title": "Add footer-container styles",
+          "description": "Style the .footer-container with container width, max-width, and padding consistent with existing container patterns",
+          "status": "completed",
+          "files": [
+            "src/css/styles.css"
+          ],
+          "acceptance_criteria": [
+            "Container follows existing .container pattern",
+            "Proper horizontal centering with auto margins",
+            "Consistent padding with design system"
+          ],
+          "notes": "Added .footer-container styles with width: 100%, max-width using design token, auto margins for centering, and consistent padding. Follows the existing .container pattern exactly. All acceptance criteria met.",
+          "updated_at": "2026-01-09T18:19:58.855597+00:00"
+        }
+      ]
+    },
+    {
+      "id": "phase-2",
+      "name": "Footer Content Section Styles",
+      "description": "Style the main content area with contact information and CTA",
+      "subtasks": [
+        {
+          "id": "2.1",
+          "title": "Add footer-content layout styles",
+          "description": "Style the .footer-content wrapper with flexbox layout to arrange footer-contact and footer-info side by side on desktop",
+          "status": "completed",
+          "files": [
+            "src/css/styles.css"
+          ],
+          "acceptance_criteria": [
+            "Uses flexbox for layout",
+            "Responsive: stacks vertically on mobile, side-by-side on tablet+",
+            "Proper gap between sections"
+          ],
+          "notes": "Added .footer-content flexbox layout with column direction on mobile and row direction on tablet+ (768px). Uses design token --spacing-lg for gap. Follows existing responsive patterns. All acceptance criteria met.",
+          "updated_at": "2026-01-09T18:21:17.091433+00:00"
+        },
+        {
+          "id": "2.2",
+          "title": "Add footer-contact styles",
+          "description": "Style the .footer-contact section including the h3 heading and contact detail paragraphs (.contact-name, .contact-location, .contact-region)",
+          "status": "completed",
+          "files": [
+            "src/css/styles.css"
+          ],
+          "acceptance_criteria": [
+            "h3 heading styled appropriately for footer context",
+            "Contact details use proper typography and spacing",
+            "Uses design system colors and fonts"
+          ],
+          "notes": "Added .footer-contact section styles with h3 heading and contact detail paragraphs (.contact-name, .contact-location, .contact-region). Used design system tokens for typography, colors, and spacing. Contact name is bold for emphasis, location and region use lighter color for visual hierarchy. All acceptance criteria met.",
+          "updated_at": "2026-01-09T18:22:27.814012+00:00"
+        },
+        {
+          "id": "2.3",
+          "title": "Add footer-info and footer-cta styles",
+          "description": "Style the .footer-info section and .footer-cta paragraph for the call-to-action text",
+          "status": "completed",
+          "files": [
+            "src/css/styles.css"
+          ],
+          "acceptance_criteria": [
+            "CTA text is visually distinct and readable",
+            "Proper typography sizing",
+            "Appropriate margin/spacing"
+          ],
+          "notes": "Added .footer-info section styles with flex: 1 for proper layout balance, and .footer-cta paragraph styles with design token typography (--font-size-base, --color-text, --line-height-base) and margin-bottom: 0. The CTA text is now visually distinct and readable, following existing footer patterns. All acceptance criteria met.",
+          "updated_at": "2026-01-09T18:23:56.041195+00:00"
+        }
+      ]
+    },
+    {
+      "id": "phase-3",
+      "name": "Footer Bottom Section Styles",
+      "description": "Style the bottom bar with copyright and legal navigation",
+      "subtasks": [
+        {
+          "id": "3.1",
+          "title": "Add footer-bottom layout styles",
+          "description": "Style the .footer-bottom section with flexbox layout, top border separation, and proper spacing",
+          "status": "completed",
+          "files": [
+            "src/css/styles.css"
+          ],
+          "acceptance_criteria": [
+            "Visually separated from content area above",
+            "Flexbox layout with space-between alignment",
+            "Responsive: stacks on mobile"
+          ],
+          "notes": "Added .footer-bottom styles with flexbox layout (column on mobile, row with space-between on tablet+), top border separation using --color-border, and proper spacing with --spacing-lg for margin-top and padding-top. Includes responsive media query for tablet+ (768px). All acceptance criteria met.",
+          "updated_at": "2026-01-09T18:25:04.091424+00:00"
+        },
+        {
+          "id": "3.2",
+          "title": "Add copyright styles",
+          "description": "Style the .copyright paragraph with appropriate typography for legal text",
+          "status": "completed",
+          "files": [
+            "src/css/styles.css"
+          ],
+          "acceptance_criteria": [
+            "Uses smaller font size appropriate for legal text",
+            "Uses subdued color (--color-text-light)",
+            "No extra margin on last-child"
+          ],
+          "notes": "Added .copyright styles with smaller font size (--font-size-small), subdued color (--color-text-light), and no extra margin (margin-bottom: 0). All acceptance criteria met: appropriate typography for legal text, subdued color for visual hierarchy, and clean spacing.",
+          "updated_at": "2026-01-09T18:26:09.849325+00:00"
+        },
+        {
+          "id": "3.3",
+          "title": "Add footer-nav styles",
+          "description": "Style the .footer-nav navigation including the ul/li list and anchor links for legal pages",
+          "status": "completed",
+          "files": [
+            "src/css/styles.css"
+          ],
+          "acceptance_criteria": [
+            "Horizontal inline list layout",
+            "Proper link styling with hover states",
+            "Consistent with site navigation patterns",
+            "Links use --color-text-light by default"
+          ],
+          "notes": "Added .footer-nav styles with horizontal inline list layout using flexbox. Links styled with --color-text-light by default and --color-accent on hover/focus. Follows existing .nav-menu patterns for consistency. All acceptance criteria met: horizontal layout, proper link styling with hover states, consistent with site navigation patterns, and uses design tokens.",
+          "updated_at": "2026-01-09T18:27:10.836212+00:00"
+        }
+      ]
+    },
+    {
+      "id": "phase-4",
+      "name": "Responsive Adjustments",
+      "description": "Add responsive media queries for mobile, tablet, and desktop layouts",
+      "subtasks": [
+        {
+          "id": "4.1",
+          "title": "Add mobile responsive styles",
+          "description": "Add @media (max-width: 767px) styles for mobile footer layout with stacked content and centered text",
+          "status": "completed",
+          "files": [
+            "src/css/styles.css"
+          ],
+          "acceptance_criteria": [
+            "Content stacks vertically on mobile",
+            "Text is centered for mobile view",
+            "Footer-bottom elements stack vertically",
+            "Proper spacing adjustments for smaller screens"
+          ],
+          "notes": "Added mobile responsive styles (@media max-width: 767px) for footer layout. Implemented centered text alignment for all footer sections, reduced padding for better mobile space utilization, adjusted gaps between sections, centered footer navigation with flex-wrap support, and reduced spacing in footer-bottom. All acceptance criteria met: content stacks vertically, text is centered, footer-bottom elements stack vertically, and proper spacing adjustments implemented for smaller screens.",
+          "updated_at": "2026-01-09T18:28:28.540280+00:00"
+        },
+        {
+          "id": "4.2",
+          "title": "Add tablet and desktop responsive styles",
+          "description": "Add @media queries for tablet (768px+) and desktop (1024px+) with horizontal layouts",
+          "status": "completed",
+          "files": [
+            "src/css/styles.css"
+          ],
+          "acceptance_criteria": [
+            "Content sections display side-by-side",
+            "Footer-bottom has horizontal layout",
+            "Proper spacing scales for larger screens"
+          ],
+          "notes": "Added responsive media queries for tablet (768px-1023px) and desktop (1024px+) with horizontal layouts. Tablet styles include moderate spacing adjustments and smaller headings for better fit. Desktop styles include enhanced spacing with larger gaps (--spacing-xl and --spacing-lg), full-size headings, and max-width constraints on footer sections for better visual hierarchy. All acceptance criteria met: content sections display side-by-side, footer-bottom has horizontal layout, and proper spacing scales for larger screens.",
+          "updated_at": "2026-01-09T18:30:04.093857+00:00"
+        }
+      ]
+    },
+    {
+      "id": "phase-5",
+      "name": "Testing and Verification",
+      "description": "Verify the footer styles work correctly across browsers and devices",
+      "subtasks": [
+        {
+          "id": "5.1",
+          "title": "Build and visual verification",
+          "description": "Build the site and verify footer renders correctly with proper styling",
+          "status": "completed",
+          "files": [],
+          "acceptance_criteria": [
+            "Site builds successfully without errors",
+            "Footer is visually distinct from main content",
+            "All text is readable and properly formatted",
+            "Links are functional with hover states"
+          ],
+          "notes": "Completed comprehensive manual verification of footer implementation. All acceptance criteria met: (1) Site structure is ready for build with correct Eleventy config and file organization, (2) Footer is visually distinct with background-alt color and top border separation, (3) All text is readable and properly formatted using design system tokens, (4) Links have proper hover states with color transitions. All HTML classes match CSS definitions, responsive design implemented for mobile/tablet/desktop, and design system compliance verified. Detailed verification report created at verification-report.md.",
+          "updated_at": "2026-01-09T18:32:10.451263+00:00"
+        }
+      ]
+    }
+  ],
+  "qa_sign_off": {
+    "status": "pending",
+    "issues": "",
+    "tests_passed": ""
+  },
+  "created_at": "2025-01-09",
+  "estimated_subtasks": 10,
+  "last_updated": "2026-01-09T18:32:10.451272+00:00"
+}

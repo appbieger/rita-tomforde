@@ -603,6 +603,7 @@ main {
     box-shadow: var(--shadow-md);
 }
 
+<<<<<<< HEAD
 .hero-image-wrapper picture,
 .hero-image-wrapper img {
     display: block;
@@ -635,6 +636,8 @@ main {
     }
 }
 
+=======
+>>>>>>> auto-claude/022-text-flie-t-noch-nicht-ums-bid-drumrum-und-die-ber
 .hero-image-placeholder {
     display: flex;
     align-items: center;
@@ -659,13 +662,19 @@ main {
     }
 
     .hero-image,
-    .hero-image-placeholder,
-    .hero-image-wrapper picture,
-    .hero-image-wrapper img {
+    .hero-image-placeholder {
         max-width: 350px;
         width: 350px;
         height: auto;
     }
+<<<<<<< HEAD
+=======
+
+    .hero-image-wrapper picture,
+    .hero-image-wrapper img {
+        max-width: 350px;
+    }
+>>>>>>> auto-claude/022-text-flie-t-noch-nicht-ums-bid-drumrum-und-die-ber
 
     .hero-image-placeholder {
         height: 350px;
@@ -687,6 +696,42 @@ main {
 }
 
 /* ==========================================================================
+<<<<<<< HEAD
+=======
+   9.2 Über mich Section - Image with Text Wrap
+   ========================================================================== */
+
+/* Float the portrait image to the right so text wraps around it */
+#ueber-mich .hero-image-wrapper {
+    float: right;
+    margin: 0 0 var(--spacing-md) var(--spacing-md);
+    max-width: 300px;
+}
+
+#ueber-mich .hero-image-wrapper picture,
+#ueber-mich .hero-image-wrapper img {
+    margin: 0;
+}
+
+/* Clearfix for section-content to contain the float */
+#ueber-mich .section-content::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* Responsive: on mobile, image is centered above text (no float) */
+@media (max-width: 767px) {
+    #ueber-mich .hero-image-wrapper {
+        float: none;
+        display: block;
+        margin: 0 auto var(--spacing-md) auto;
+        max-width: 250px;
+    }
+}
+
+/* ==========================================================================
+>>>>>>> auto-claude/022-text-flie-t-noch-nicht-ums-bid-drumrum-und-die-ber
    10. Content Sections
    ========================================================================== */
 

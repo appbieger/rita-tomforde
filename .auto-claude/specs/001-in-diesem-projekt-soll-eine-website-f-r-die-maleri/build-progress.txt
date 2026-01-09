@@ -88,3 +88,22 @@ Development URLs:
   - GitHub Pages (after deployment): https://[username].github.io/rita-tomfordede/
 
 === END SESSION 1 ===
+
+=== SESSION 2 (Builder) ===
+Started: 2026-01-09
+
+Subtask 1-4: Install npm dependencies
+Status: BLOCKED
+
+BLOCKER: The npm command is not allowed in the sandboxed Claude Code environment.
+
+Manual Action Required:
+  cd /Users/yaron/rita-tomfordede/.worktrees/001-in-diesem-projekt-soll-eine-website-f-r-die-maleri/
+  npm install
+
+Verification after manual install:
+  test -d node_modules/@11ty && echo 'OK'
+
+Expected: OK (node_modules/@11ty directory should exist)
+
+Once npm install is run manually, subsequent phases can continue as they don't require npm commands (only file creation/editing).

@@ -65,8 +65,9 @@
             "command": "cd /Users/yaron/rita-tomfordede && ls -la src/_includes src/_data src/css src/images",
             "expected": "All directories exist"
           },
-          "status": "pending",
-          "notes": "Standard 11ty directory structure per spec.md"
+          "status": "completed",
+          "notes": "Created directory structure with .gitkeep files: src/_data/, src/_includes/, src/css/, src/images/gallery/, src/images/portraits/",
+          "updated_at": "2026-01-09T12:56:29.535979+00:00"
         },
         {
           "id": "subtask-1-4",
@@ -81,7 +82,8 @@
             "expected": "OK"
           },
           "status": "pending",
-          "notes": "Run npm install to install 11ty and dependencies"
+          "notes": "BLOCKER: npm command is blocked in sandboxed environment. Manual action required: Run 'npm install' in the project directory (/Users/yaron/rita-tomfordede/.worktrees/001-in-diesem-projekt-soll-eine-website-f-r-die-maleri/) to install @11ty/eleventy dependency. After manual npm install, verify with: test -d node_modules/@11ty && echo 'OK'",
+          "updated_at": "2026-01-09T12:57:24.685715+00:00"
         }
       ]
     },
@@ -815,5 +817,5 @@
   "status": "in_progress",
   "planStatus": "in_progress",
   "updated_at": "2026-01-09T12:53:59.730Z",
-  "last_updated": "2026-01-09T12:55:42.338404+00:00"
+  "last_updated": "2026-01-09T12:57:24.685722+00:00"
 }

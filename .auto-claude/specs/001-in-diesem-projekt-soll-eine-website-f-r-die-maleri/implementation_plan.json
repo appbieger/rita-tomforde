@@ -147,8 +147,9 @@
             "command": "cd /Users/yaron/rita-tomfordede && cat src/_includes/nav.njk | grep -E 'nav|Atelier'",
             "expected": "Contains nav element and Atelier text"
           },
-          "status": "pending",
-          "notes": "Include logo/title, section anchor links (#willkommen, #ueber-mich, #galerie, etc), mobile hamburger menu button"
+          "status": "completed",
+          "notes": "Created src/_includes/nav.njk with semantic navigation structure. Includes: site-header container with main-nav element, logo/title using {{ site.name }}, hamburger button with ARIA attributes for mobile menu toggle, nav-menu with anchor links to all 7 sections (willkommen, ueber-mich, inspiration, dankbarkeit, ausstellungen, aktuelles, galerie). All paths use | url filter for GitHub Pages compatibility. German aria-labels for accessibility.",
+          "updated_at": "2026-01-09T13:05:32.815087+00:00"
         },
         {
           "id": "subtask-2-4",
@@ -164,8 +165,9 @@
             "command": "cd /Users/yaron/rita-tomfordede && cat src/_includes/footer.njk | grep -E 'footer|Rita Tomforde'",
             "expected": "Contains footer element"
           },
-          "status": "pending",
-          "notes": "Include contact section, copyright year, optional Impressum/Datenschutz links"
+          "status": "completed",
+          "notes": "Created src/_includes/footer.njk with: semantic footer element, contact section using site.json data (contact.name, contact.location, contact.region), call-to-action text for interested visitors, copyright with dynamic year and {{ site.author }}, footer navigation with Impressum and Datenschutz anchor links using | url filter. Verification passed - footer element detected. Committed to git with hash d140a59.",
+          "updated_at": "2026-01-09T13:06:45.445896+00:00"
         }
       ]
     },
@@ -193,8 +195,9 @@
             "command": "cd /Users/yaron/rita-tomfordede && cat src/css/styles.css | grep -E ':root|--color-|--font-'",
             "expected": "Contains :root with custom properties"
           },
-          "status": "pending",
-          "notes": "Variables: --color-primary (#000), --color-accent (#00d1b2), --font-family (Georgia serif), --spacing-unit (24px). Match silke-siemers.de visual style."
+          "status": "completed",
+          "notes": "Created src/css/styles.css with comprehensive CSS custom properties including: colors (primary, secondary, accent, text variants, background, border), typography (font-family Georgia serif, font-size scale from 13px to 42px using rem units, font-weights, line-heights), spacing (unit-based scale with xs/sm/md/lg/xl/section), layout (container max-width 1200px), transitions, shadows, border-radius, and z-index scale. Verification passed - :root with --color- and --font- properties detected. Committed with hash 68180bf.",
+          "updated_at": "2026-01-09T13:08:20.044369+00:00"
         },
         {
           "id": "subtask-3-2",
@@ -819,6 +822,6 @@
   "status": "in_progress",
   "planStatus": "in_progress",
   "updated_at": "2026-01-09T13:00:58.919Z",
-  "last_updated": "2026-01-09T13:04:10.834575+00:00",
+  "last_updated": "2026-01-09T13:08:20.044374+00:00",
   "recoveryNote": "Task recovered from stuck state at 2026-01-09T13:00:58.859Z"
 }

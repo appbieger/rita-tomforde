@@ -9,7 +9,12 @@
       "description": "Base Nunjucks layout template for all pages. Contains HTML5 structure with lang=\"de\", meta tags (charset, viewport, description, author), title with site.name fallback, CSS link using | url filter, includes for nav.njk and footer.njk partials, and {{ content | safe }} block for page content.",
       "category": "template",
       "discovered_at": "2026-01-09T13:04:15.929132+00:00"
+    },
+    "src/css/styles.css": {
+      "description": "CSS design system with custom properties. Contains :root with design tokens: colors (--color-primary #000, --color-accent #00d1b2, etc.), typography (--font-family Georgia serif, --font-size-base 1rem), spacing (--spacing-unit 1.5rem), layout (--container-max-width 1200px), plus utility variables for transitions, shadows, radii, and z-index scale. Mobile-first approach ready for responsive breakpoints.",
+      "category": "design-system",
+      "discovered_at": "2026-01-09T13:08:25.986228+00:00"
     }
   },
-  "last_updated": "2026-01-09T13:04:15.929154+00:00"
+  "last_updated": "2026-01-09T13:08:25.986239+00:00"
 }

@@ -15,8 +15,24 @@
 - Uses existing design tokens for consistency with the site design system
 - Committed with: "auto-claude: 1.1 - Add the core .gallery-cta CSS class with background, padding, border-radius, text alignment, and margin"
 
+### Subtask 1.2 - Style .gallery-cta typography and links (✓ COMPLETED)
+- Added typography styles for paragraphs within .gallery-cta (lines 797-805)
+  - font-size: var(--font-size-medium) - 1.25rem (20px) for better readability
+  - color: var(--color-text) - readable text color (#333333)
+  - margin-bottom: var(--spacing-md) - proper paragraph spacing (24px)
+  - last-child pseudo-class removes bottom margin from final paragraph
+- Added link styles for .gallery-cta links (lines 807-818)
+  - color: var(--color-accent) - distinctive deep pink color (#FF1493)
+  - text-decoration: underline - clear indication of clickability
+  - font-weight: var(--font-weight-bold) - bold for prominence
+  - transition: color var(--transition-fast) - smooth hover animation
+- Added hover/focus states for links
+  - Hover color changes to primary color (black) for clear feedback
+  - Maintains underline decoration
+- Follows existing pattern from .photo-gallery-credit links
+- Committed with: "auto-claude: 1.2 - Add typography styles for paragraphs and links in .gallery-cta"
+
 ## Next Steps
 
-- Subtask 1.2: Style .gallery-cta typography and links
 - Subtask 1.3: Add responsive styles for .gallery-cta
 - Subtask 2.1: Build and verify visual output

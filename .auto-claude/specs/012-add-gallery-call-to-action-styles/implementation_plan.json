@@ -33,7 +33,7 @@
           "subtask_id": "1.2",
           "title": "Style .gallery-cta typography and links",
           "description": "Add typography styles for paragraphs within .gallery-cta including font size, color, and margin. Style the links to be distinctive with the accent color and appropriate hover states to encourage clicks.",
-          "status": "pending",
+          "status": "completed",
           "acceptance_criteria": [
             "Paragraph text uses appropriate font size (--font-size-base or slightly larger)",
             "Text color is readable (--color-text or --color-text-light)",

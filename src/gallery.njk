@@ -1,0 +1,60 @@
+---
+layout: base.njk
+title: Fotogalerie
+permalink: /gallery/
+---
+
+{# ============================================================================
+   Fotogalerie (Photo Gallery) Header Section
+   ============================================================================ #}
+<section id="fotogalerie" class="content-section">
+    <div class="container">
+        <header class="section-header">
+            <h1 class="section-title">Fotogalerie</h1>
+        </header>
+        <div class="section-content">
+            <p class="gallery-intro">Eine Auswahl inspirierender Fotografien. Klicken Sie auf ein Bild, um es zu vergrößern.</p>
+        </div>
+    </div>
+</section>
+
+{# ============================================================================
+   Photo Gallery Grid Section
+   ============================================================================ #}
+<section class="content-section">
+    <div class="container">
+        {% if gallery.images.length > 0 %}
+        <div class="photo-gallery-grid">
+            {% for image in gallery.images %}
+            <article class="photo-gallery-item">
+                <div class="photo-gallery-image-wrapper">
+                    {% image "src/images/gallery/" + image.src, image.alt %}
+                </div>
+                <div class="photo-gallery-info">
+                    <h3 class="photo-gallery-title">{{ image.title }}</h3>
+                    <p class="photo-gallery-credit">
+                        <a href="{{ image.linkToAuthor }}" target="_blank" rel="noopener noreferrer">
+                            {{ image.credit }}
+                        </a>
+                    </p>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="gallery-empty">Bilder werden bald hinzugefügt.</p>
+        {% endif %}
+    </div>
+</section>
+
+{# ============================================================================
+   Back to Home CTA Section
+   ============================================================================ #}
+<section class="content-section">
+    <div class="container">
+        <div class="gallery-cta">
+            <p>Interessiert an meinen Kunstwerken?</p>
+            <p><a href="{{ '/' | url }}#galerie">Entdecken Sie meine Gemälde</a> oder <a href="{{ '/' | url }}#aktuelles">besuchen Sie meine nächste Ausstellung</a>.</p>
+        </div>
+    </div>
+</section>

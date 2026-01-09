@@ -1,0 +1,88 @@
+{
+  "images": [
+    {
+      "src": "highway-water.jpg",
+      "alt": "Skybridge over highway covered in water",
+      "title": "Highway covered in water",
+      "credit": "Photo by Josh Hild",
+      "linkToAuthor": "https://www.pexels.com/@josh-hild-1270765"
+    },
+    {
+      "src": "boardwalk.jpg",
+      "alt": "Wooden boardwalk through tall grass field",
+      "title": "Boardwalk",
+      "credit": "Photo by Vlad Bagacian",
+      "linkToAuthor": "https://www.pexels.com/@vladbagacian"
+    },
+    {
+      "src": "business-center.jpg",
+      "alt": "Modern glass business center buildings at dusk",
+      "title": "Business Center",
+      "credit": "Photo by Vlad Bagacian",
+      "linkToAuthor": "https://www.pexels.com/@vladbagacian"
+    },
+    {
+      "src": "empty-road.jpg",
+      "alt": "Empty winding road through mountains",
+      "title": "Empty Road",
+      "credit": "Photo by Craig Adderley",
+      "linkToAuthor": "https://www.pexels.com/@thatguycraig000"
+    },
+    {
+      "src": "gas-station.jpg",
+      "alt": "Illuminated gas station at night",
+      "title": "Gas Station",
+      "credit": "Photo by Sourabh",
+      "linkToAuthor": "https://www.pexels.com/@sourabh"
+    },
+    {
+      "src": "glass-jar.jpg",
+      "alt": "Glass jar with fairy lights inside",
+      "title": "Glass Jar",
+      "credit": "Photo from Pexels",
+      "linkToAuthor": "https://www.pexels.com"
+    },
+    {
+      "src": "highrises-night.jpg",
+      "alt": "High-rise buildings lit up at night",
+      "title": "Highrises at Night",
+      "credit": "Photo from Pexels",
+      "linkToAuthor": "https://www.pexels.com"
+    },
+    {
+      "src": "light-streaks.jpg",
+      "alt": "Long exposure light streaks on highway",
+      "title": "Light Streaks",
+      "credit": "Photo from Pexels",
+      "linkToAuthor": "https://www.pexels.com"
+    },
+    {
+      "src": "music-hall.jpg",
+      "alt": "Concert hall interior with red seats",
+      "title": "Music Hall",
+      "credit": "Photo from Pexels",
+      "linkToAuthor": "https://www.pexels.com"
+    },
+    {
+      "src": "terrace-window.jpg",
+      "alt": "Terrace window view with city skyline",
+      "title": "Terrace Window",
+      "credit": "Photo from Pexels",
+      "linkToAuthor": "https://www.pexels.com"
+    },
+    {
+      "src": "water-drop.jpg",
+      "alt": "Close-up of water drop creating ripples",
+      "title": "Water Drop",
+      "credit": "Photo from Pexels",
+      "linkToAuthor": "https://www.pexels.com"
+    },
+    {
+      "src": "benches.jpg",
+      "alt": "Park benches along tree-lined pathway",
+      "title": "Benches",
+      "credit": "Photo from Pexels",
+      "linkToAuthor": "https://www.pexels.com"
+    }
+  ]
+}

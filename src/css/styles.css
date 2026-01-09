@@ -66,6 +66,12 @@
     --z-fixed: 300;
     --z-modal: 400;
     --z-overlay: 500;
+
+    /* Focus / Accessibility */
+    --focus-ring-color: var(--color-accent);
+    --focus-ring-width: 2px;
+    --focus-ring-style: solid;
+    --focus-ring-offset: 2px;
 }
 
 /* ==========================================================================
@@ -160,6 +166,21 @@ a {
 a:hover,
 a:focus {
     color: var(--color-accent);
+}
+
+a:focus-visible {
+    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+    border-radius: var(--radius-sm);
+}
+
+/* Form control focus styles */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
 }
 
 ul, ol {
@@ -269,6 +290,12 @@ main {
     color: var(--color-accent);
 }
 
+.nav-logo:focus-visible {
+    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+    border-radius: var(--radius-sm);
+}
+
 .nav-title {
     font-family: var(--font-family-headings);
     font-size: var(--font-size-medium);
@@ -307,6 +334,12 @@ main {
     color: var(--color-accent);
 }
 
+.nav-menu a:focus-visible {
+    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+    border-radius: var(--radius-sm);
+}
+
 /* Hamburger Menu Button */
 .hamburger {
     display: none;
@@ -320,6 +353,12 @@ main {
     border: none;
     cursor: pointer;
     z-index: var(--z-fixed);
+}
+
+.hamburger:focus-visible {
+    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+    border-radius: var(--radius-sm);
 }
 
 .hamburger-line {
@@ -746,6 +785,11 @@ main {
     box-shadow: var(--shadow-md);
 }
 
+.photo-gallery-item:focus-within {
+    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+}
+
 .photo-gallery-item img,
 .photo-gallery-item picture {
     display: block;
@@ -787,6 +831,12 @@ main {
     color: var(--color-accent);
 }
 
+.photo-gallery-credit a:focus-visible {
+    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+    border-radius: var(--radius-sm);
+}
+
 /* Photo Gallery Empty State */
 .photo-gallery-empty {
     text-align: center;
@@ -813,4 +863,25 @@ main {
         grid-template-columns: repeat(3, 1fr);
         gap: var(--spacing-lg);
     }
+}
+
+/* ==========================================================================
+   12. Footer
+   ========================================================================== */
+
+.footer-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+    color: var(--color-accent);
+}
+
+.footer-nav a:focus-visible {
+    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+    border-radius: var(--radius-sm);
 }

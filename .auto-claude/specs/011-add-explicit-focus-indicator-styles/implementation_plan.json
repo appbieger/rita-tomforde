@@ -1,0 +1,165 @@
+{
+  "feature": "Add Explicit Focus Indicator Styles",
+  "description": "While hover and focus color changes exist for links, there are no explicit :focus outline or ring styles for interactive elements. This makes keyboard navigation difficult as users cannot clearly see which element has focus.",
+  "created_at": "2026-01-09T18:14:59.786Z",
+  "updated_at": "2026-01-09T19:37:00.000Z",
+  "status": "completed",
+  "planStatus": "completed",
+  "workflow_type": "development",
+  "services_involved": ["src/css/styles.css"],
+  "spec_file": "spec.md",
+  "phases": [
+    {
+      "phase_id": "phase-1",
+      "name": "Add Focus Design Tokens",
+      "description": "Add CSS custom properties for focus styles to the design system, ensuring consistency across all focus indicators.",
+      "subtasks": [
+        {
+          "subtask_id": "1.1",
+          "title": "Add focus-related CSS custom properties",
+          "description": "Add design tokens for focus ring color, offset, width, and style to the :root CSS custom properties section. Use a visible color that contrasts well with backgrounds (the accent color or a dedicated focus color).",
+          "status": "completed",
+          "file_path": "src/css/styles.css",
+          "estimated_lines": 10
+        }
+      ]
+    },
+    {
+      "phase_id": "phase-2",
+      "name": "Base Focus Styles",
+      "description": "Add base focus-visible styles for generic interactive elements (links, buttons). Use :focus-visible to show focus indicators only for keyboard navigation, not mouse clicks.",
+      "subtasks": [
+        {
+          "subtask_id": "2.1",
+          "title": "Add base link focus-visible styles",
+          "description": "Update the base anchor (a) styles to include a visible focus ring using :focus-visible. Ensure the existing :focus color change is preserved and augmented with an outline.",
+          "status": "completed",
+          "file_path": "src/css/styles.css",
+          "estimated_lines": 8
+        },
+        {
+          "subtask_id": "2.2",
+          "title": "Add base button and input focus-visible styles",
+          "description": "Add focus-visible styles for buttons, inputs, textareas, and select elements to ensure form controls have visible focus indicators.",
+          "status": "completed",
+          "file_path": "src/css/styles.css",
+          "estimated_lines": 12
+        }
+      ]
+    },
+    {
+      "phase_id": "phase-3",
+      "name": "Navigation Focus Styles",
+      "description": "Add specific focus styles for navigation components including the logo, nav menu links, and hamburger button.",
+      "subtasks": [
+        {
+          "subtask_id": "3.1",
+          "title": "Add nav-logo focus-visible styles",
+          "description": "Add visible focus ring to the navigation logo link (.nav-logo) using :focus-visible with appropriate offset for padding.",
+          "status": "completed",
+          "file_path": "src/css/styles.css",
+          "estimated_lines": 6
+        },
+        {
+          "subtask_id": "3.2",
+          "title": "Add nav-menu link focus-visible styles",
+          "description": "Add visible focus ring to navigation menu links (.nav-menu a) using :focus-visible, ensuring visibility on both desktop and mobile menu states.",
+          "status": "completed",
+          "file_path": "src/css/styles.css",
+          "estimated_lines": 8
+        },
+        {
+          "subtask_id": "3.3",
+          "title": "Add hamburger button focus-visible styles",
+          "description": "Add visible focus ring to the hamburger menu button (.hamburger) using :focus-visible, ensuring the outline is visible against the background.",
+          "status": "completed",
+          "file_path": "src/css/styles.css",
+          "estimated_lines": 6
+        }
+      ]
+    },
+    {
+      "phase_id": "phase-4",
+      "name": "Gallery Focus Styles",
+      "description": "Add focus styles for photo gallery interactive elements.",
+      "subtasks": [
+        {
+          "subtask_id": "4.1",
+          "title": "Add photo gallery item focus styles",
+          "description": "Add visible focus ring to photo gallery items (.photo-gallery-item) for when they contain focusable elements, using :focus-within styles alongside existing transform effect.",
+          "status": "completed",
+          "file_path": "src/css/styles.css",
+          "estimated_lines": 6
+        },
+        {
+          "subtask_id": "4.2",
+          "title": "Add photo gallery credit link focus-visible styles",
+          "description": "Add visible focus ring to photo credit links (.photo-gallery-credit a) using :focus-visible.",
+          "status": "completed",
+          "file_path": "src/css/styles.css",
+          "estimated_lines": 5
+        }
+      ]
+    },
+    {
+      "phase_id": "phase-5",
+      "name": "Footer Focus Styles",
+      "description": "Add focus styles for footer navigation links.",
+      "subtasks": [
+        {
+          "subtask_id": "5.1",
+          "title": "Add footer link focus-visible styles",
+          "description": "Add visible focus ring to footer navigation links (.footer-nav a) using :focus-visible, ensuring visibility against footer background.",
+          "status": "completed",
+          "file_path": "src/css/styles.css",
+          "estimated_lines": 8
+        }
+      ]
+    },
+    {
+      "phase_id": "phase-6",
+      "name": "Testing and Verification",
+      "description": "Build the site and verify all focus indicators work correctly with keyboard navigation.",
+      "subtasks": [
+        {
+          "subtask_id": "6.1",
+          "title": "Build the site and verify CSS compiles",
+          "description": "Run npm run build to ensure the site builds successfully with the new focus styles.",
+          "status": "completed",
+          "file_path": null,
+          "estimated_lines": 0
+        },
+        {
+          "subtask_id": "6.2",
+          "title": "Manual keyboard navigation testing",
+          "description": "Document testing of Tab key navigation through all interactive elements to verify focus indicators are visible and meet WCAG 2.1 requirements (minimum 3:1 contrast ratio for focus indicators).",
+          "status": "completed",
+          "file_path": null,
+          "estimated_lines": 0
+        }
+      ]
+    }
+  ],
+  "final_acceptance": [
+    "All interactive elements (links, buttons) have visible :focus-visible outlines/rings",
+    "Focus indicators use consistent styling from CSS custom properties",
+    "Focus indicators have sufficient contrast (minimum 3:1 ratio per WCAG 2.1)",
+    "Navigation elements (logo, menu links, hamburger) have visible focus states",
+    "Gallery items and credit links have visible focus states",
+    "Footer links have visible focus states",
+    "Site builds successfully with no CSS errors",
+    "Keyboard navigation (Tab, Shift+Tab) works through all focusable elements"
+  ],
+  "notes": [
+    "Using :focus-visible instead of :focus to show outlines only for keyboard navigation, not mouse clicks",
+    "The accent color (--color-tint: #FF1493) provides good visibility for focus rings",
+    "Footer styles don't exist yet in the CSS - will need to add focus styles as part of new footer section or inline with base styles",
+    "The site uses Georgia serif font and a clean white/black color scheme",
+    "Mobile hamburger menu has accessibility features (aria-expanded, escape key handling) but needs visible focus"
+  ],
+  "qa_sign_off": {
+    "status": "pending",
+    "issues": "",
+    "tests_passed": ""
+  }
+}

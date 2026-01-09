@@ -64,7 +64,7 @@
           "subtask_id": "3.2",
           "title": "Add nav-menu link focus-visible styles",
           "description": "Add visible focus ring to navigation menu links (.nav-menu a) using :focus-visible, ensuring visibility on both desktop and mobile menu states.",
-          "status": "pending",
+          "status": "completed",
           "file_path": "src/css/styles.css",
           "estimated_lines": 8
         },
@@ -72,7 +72,7 @@
           "subtask_id": "3.3",
           "title": "Add hamburger button focus-visible styles",
           "description": "Add visible focus ring to the hamburger menu button (.hamburger) using :focus-visible, ensuring the outline is visible against the background.",
-          "status": "pending",
+          "status": "completed",
           "file_path": "src/css/styles.css",
           "estimated_lines": 6
         }
@@ -87,7 +87,7 @@
           "subtask_id": "4.1",
           "title": "Add photo gallery item focus styles",
           "description": "Add visible focus ring to photo gallery items (.photo-gallery-item) for when they contain focusable elements, using :focus-within styles alongside existing transform effect.",
-          "status": "pending",
+          "status": "completed",
           "file_path": "src/css/styles.css",
           "estimated_lines": 6
         },

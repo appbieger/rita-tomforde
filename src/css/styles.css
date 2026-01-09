@@ -816,3 +816,16 @@ main {
     color: var(--color-primary);
     text-decoration: underline;
 }
+
+/* Gallery Call-to-Action Responsive Adjustments */
+@media (max-width: 767px) {
+    .gallery-cta {
+        padding: var(--spacing-md);
+        margin-top: var(--spacing-md);
+    }
+
+    .gallery-cta p {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-sm);
+    }
+}

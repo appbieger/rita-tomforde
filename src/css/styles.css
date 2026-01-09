@@ -15,6 +15,7 @@
     --color-accent: var(--color-tint);
     --color-text: #333333;
     --color-text-light: #666666;
+    --color-text-heavy: #484848;
     --color-background: #ffffff;
     --color-background-alt: #f8f8f8;
     --color-border: #e0e0e0;
@@ -460,13 +461,46 @@ main {
 }
 
 /* ==========================================================================
+   9.1 Hero Section
+   ========================================================================== */
+
+.hero-header {
+    position: relative;
+    padding: var(--spacing-xl) 0;
+    background-image: url('../images/site/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    overflow: hidden;
+    
+}
+
+.hero-header-title {
+    font-size: var(--font-size-xlarge);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-heavy);
+    
+}
+
+.hero-header-subtitle {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-normal);
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-lg);
+   
+}
+
+/* ==========================================================================
    9. Hero Section
    ========================================================================== */
 
 .hero {
     position: relative;
     padding: var(--spacing-xl) 0;
-    background-image: url('../images/gallery/painting-1.jpg');
+    background-image: url('../images/site/bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -482,7 +516,7 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+ /*    background-color: rgba(0, 0, 0, 0.4); */
     z-index: 0;
 }
 

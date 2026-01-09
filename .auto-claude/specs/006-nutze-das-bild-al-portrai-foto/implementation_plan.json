@@ -49,8 +49,8 @@
     "timestamp": "2026-01-09T15:40:04.757271+00:00",
     "ready_for_qa_revalidation": false
   },
-  "status": "human_review",
-  "planStatus": "review",
+  "status": "done",
+  "planStatus": "completed",
   "qa_iteration_history": [
     {
       "iteration": 1,
@@ -66,7 +66,7 @@
     "last_status": "approved",
     "issues_by_type": {}
   },
-  "updated_at": "2026-01-09T15:58:53.006Z",
+  "updated_at": "2026-01-09T18:15:51.355Z",
   "recoveryNote": "Task recovered from stuck state at 2026-01-09T15:53:32.167Z",
   "stagedAt": "2026-01-09T15:58:53.006Z",
   "stagedInMainProject": true

@@ -1,3 +1,3 @@
-feat(hero): add Rita portrait photo to hero section
+feat(hero): add Rita Tomforde portrait to hero section
 
-Replace placeholder div in hero section with portrait photo of Rita Tomforde. Copy image file to `src/images/portraits/rita-portrait.jpg` and update the markup in `src/index.njk`.
+Replace placeholder div with portrait photo of Rita Tomforde in the hero section. Image added at src/images/portraits/rita-portrait.jpg.

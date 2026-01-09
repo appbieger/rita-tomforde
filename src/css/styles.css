@@ -333,6 +333,12 @@ main {
     color: var(--color-accent);
 }
 
+.nav-menu a:focus-visible {
+    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+    border-radius: var(--radius-sm);
+}
+
 /* Hamburger Menu Button */
 .hamburger {
     display: none;

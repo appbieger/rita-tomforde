@@ -830,3 +830,24 @@ main {
         gap: var(--spacing-lg);
     }
 }
+
+/* ==========================================================================
+   12. Footer
+   ========================================================================== */
+
+.footer-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+    color: var(--color-accent);
+}
+
+.footer-nav a:focus-visible {
+    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+    border-radius: var(--radius-sm);
+}

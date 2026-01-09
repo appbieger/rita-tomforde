@@ -1,6 +1,6 @@
 {
   "active": true,
-  "spec": "002-ich-m-chte-das-die-seite-eine-tintcolor-die-ich-ze",
+  "spec": "008-http-localhost-8080-images-portraits-rita-portrait",
   "state": "building",
   "subtasks": {
     "completed": 0,
@@ -19,7 +19,7 @@
   },
   "session": {
     "number": 1,
-    "started_at": "2026-01-09T15:12:45.120326"
+    "started_at": "2026-01-09T17:07:50.875518"
   },
-  "last_update": "2026-01-09T15:12:45.178445"
+  "last_update": "2026-01-09T17:07:50.937162"
 }

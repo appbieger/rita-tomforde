@@ -780,3 +780,16 @@ main {
         gap: var(--spacing-lg);
     }
 }
+
+/* ==========================================================================
+   Gallery Call-to-Action
+   ========================================================================== */
+
+.gallery-cta {
+    background-color: var(--color-background-alt);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    border: 1px solid var(--color-border);
+}

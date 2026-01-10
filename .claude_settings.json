@@ -11,6 +11,7 @@
       "Edit(./**)",
       "Glob(./**)",
       "Grep(./**)",
+<<<<<<< HEAD
       "Read(/Users/yaron/rita-tomfordede/**)",
       "Write(/Users/yaron/rita-tomfordede/**)",
       "Edit(/Users/yaron/rita-tomfordede/**)",
@@ -19,6 +20,16 @@
       "Read(/Users/yaron/rita-tomfordede/.auto-claude/specs/032-bei-dem-kontakt-funktioniert-das-styling-nicht/**)",
       "Write(/Users/yaron/rita-tomfordede/.auto-claude/specs/032-bei-dem-kontakt-funktioniert-das-styling-nicht/**)",
       "Edit(/Users/yaron/rita-tomfordede/.auto-claude/specs/032-bei-dem-kontakt-funktioniert-das-styling-nicht/**)",
+=======
+      "Read(/Users/yaron/rita-tomfordede/.worktrees/032-bei-dem-kontakt-funktioniert-das-styling-nicht/**)",
+      "Write(/Users/yaron/rita-tomfordede/.worktrees/032-bei-dem-kontakt-funktioniert-das-styling-nicht/**)",
+      "Edit(/Users/yaron/rita-tomfordede/.worktrees/032-bei-dem-kontakt-funktioniert-das-styling-nicht/**)",
+      "Glob(/Users/yaron/rita-tomfordede/.worktrees/032-bei-dem-kontakt-funktioniert-das-styling-nicht/**)",
+      "Grep(/Users/yaron/rita-tomfordede/.worktrees/032-bei-dem-kontakt-funktioniert-das-styling-nicht/**)",
+      "Read(/Users/yaron/rita-tomfordede/.worktrees/032-bei-dem-kontakt-funktioniert-das-styling-nicht/.auto-claude/specs/032-bei-dem-kontakt-funktioniert-das-styling-nicht/**)",
+      "Write(/Users/yaron/rita-tomfordede/.worktrees/032-bei-dem-kontakt-funktioniert-das-styling-nicht/.auto-claude/specs/032-bei-dem-kontakt-funktioniert-das-styling-nicht/**)",
+      "Edit(/Users/yaron/rita-tomfordede/.worktrees/032-bei-dem-kontakt-funktioniert-das-styling-nicht/.auto-claude/specs/032-bei-dem-kontakt-funktioniert-das-styling-nicht/**)",
+>>>>>>> auto-claude/032-bei-dem-kontakt-funktioniert-das-styling-nicht
       "Bash(*)",
       "WebFetch(*)",
       "WebSearch(*)",

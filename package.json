@@ -19,6 +19,9 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-img": "^5.0.0"
+    "@11ty/eleventy-img": "^5.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.0.0"
   }
 }

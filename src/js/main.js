@@ -124,11 +124,29 @@
     }
 
     /**
+     * Gallery Lightbox
+     * Initializes GLightbox for gallery image overlay functionality
+     */
+    function initGalleryLightbox() {
+        if (typeof GLightbox === 'undefined') {
+            return;
+        }
+
+        GLightbox({
+            selector: '.glightbox',
+            touchNavigation: true,
+            loop: false,
+            autoplayVideos: false
+        });
+    }
+
+    /**
      * Initialize all functionality when DOM is ready
      */
     function init() {
         initMobileNav();
         initSmoothScroll();
+        initGalleryLightbox();
     }
 
     // Run initialization when DOM is fully loaded

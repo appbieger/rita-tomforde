@@ -3,23 +3,23 @@
   "spec": "031-ich-m-chte-das-die-gallerie-in-einem-grid-angezeig",
   "state": "building",
   "subtasks": {
-    "completed": 2,
+    "completed": 3,
     "total": 9,
     "in_progress": 1,
     "failed": 0
   },
   "phase": {
-    "current": "CSS Class Naming and Border Radius",
+    "current": "Gallery HTML Lightbox Markup",
     "id": null,
-    "total": 2
+    "total": 1
   },
   "workers": {
     "active": 0,
     "max": 1
   },
   "session": {
-    "number": 3,
+    "number": 4,
     "started_at": "2026-01-10T16:46:54.441414"
   },
-  "last_update": "2026-01-10T16:48:42.763617"
+  "last_update": "2026-01-10T16:49:28.008582"
 }

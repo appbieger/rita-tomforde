@@ -27,6 +27,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
 
   // Passthrough copy for static assets
+  // CSS directory includes all modules subdirectories (e.g., css/modules/*.css)
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/js");

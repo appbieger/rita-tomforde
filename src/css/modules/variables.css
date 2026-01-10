@@ -1,0 +1,73 @@
+/* ==========================================================================
+   CSS Custom Properties (Design Tokens)
+
+   This module defines all CSS variables used throughout the site.
+   These should be loaded first in the cascade to ensure availability.
+   ========================================================================== */
+
+:root {
+    /* Colors */
+    --color-primary: #000000;
+    --color-secondary: #ffffff;
+    --color-tint: #FF1493;
+    --color-accent: var(--color-tint);
+    --color-text: #333333;
+    --color-text-light: #666666;
+    --color-text-heavy: #484848;
+    --color-background: #ffffff;
+    --color-background-alt: #f8f8f8;
+    --color-border: #e0e0e0;
+
+    /* Typography */
+    --font-family: 'Georgia', 'Times New Roman', serif;
+    --font-family-headings: 'Georgia', 'Times New Roman', serif;
+    --font-size-small: 0.8125rem;   /* 13px */
+    --font-size-base: 1rem;          /* 16px */
+    --font-size-medium: 1.25rem;     /* 20px */
+    --font-size-large: 2.25rem;      /* 36px */
+    --font-size-xlarge: 2.625rem;    /* 42px */
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+    --line-height-base: 1.6;
+    --line-height-heading: 1.2;
+
+    /* Spacing */
+    --spacing-unit: 1.5rem;          /* 24px */
+    --spacing-xs: calc(var(--spacing-unit) * 0.25);  /* 6px */
+    --spacing-sm: calc(var(--spacing-unit) * 0.5);   /* 12px */
+    --spacing-md: var(--spacing-unit);                /* 24px */
+    --spacing-lg: calc(var(--spacing-unit) * 2);     /* 48px */
+    --spacing-xl: calc(var(--spacing-unit) * 3);     /* 72px */
+    --spacing-section: calc(var(--spacing-unit) * 3); /* 72px */
+
+    /* Layout */
+    --container-max-width: 1200px;
+    --container-padding: var(--spacing-unit);
+
+    /* Transitions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-base: 300ms ease-in-out;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+
+    /* Z-Index Scale */
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal: 400;
+    --z-overlay: 500;
+
+    /* Focus / Accessibility */
+    --focus-ring-color: var(--color-accent);
+    --focus-ring-width: 2px;
+    --focus-ring-style: solid;
+    --focus-ring-offset: 2px;
+}

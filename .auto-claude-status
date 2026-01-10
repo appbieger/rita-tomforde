@@ -1,6 +1,6 @@
 {
   "active": true,
-  "spec": "028-berschriften-wie-ber-mich-sollen-wir-im-text-darun",
+  "spec": "030-die-berschriften-sollenzwar-links-jedoch-mitdem-de",
   "state": "building",
   "subtasks": {
     "completed": 0,
@@ -19,7 +19,7 @@
   },
   "session": {
     "number": 1,
-    "started_at": "2026-01-10T16:20:04.598414"
+    "started_at": "2026-01-10T16:29:27.728173"
   },
-  "last_update": "2026-01-10T16:20:04.657473"
+  "last_update": "2026-01-10T16:29:27.781916"
 }

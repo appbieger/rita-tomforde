@@ -19,7 +19,14 @@
       "dependencies": [],
       "dev_dependencies": [
         "@11ty/eleventy",
-        "@11ty/eleventy-img"
+        "@11ty/eleventy-img",
+        "eslint",
+        "eslint-config-prettier",
+        "globals",
+        "prettier",
+        "stylelint",
+        "stylelint-config-prettier",
+        "stylelint-config-standard"
       ]
     }
   },
@@ -29,5 +36,8 @@
       "deploy.yml"
     ]
   },
-  "conventions": {}
+  "conventions": {
+    "js_linting": "ESLint",
+    "formatting": "Prettier"
+  }
 }

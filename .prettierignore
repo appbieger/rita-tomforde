@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build output
+_site/
+dist/
+
+# 11ty cache
+.cache/
+
+# Auto-claude directory
+.auto-claude/
+
+# Lock files (generated)
+package-lock.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+coverage/
+htmlcov/
+.coverage
+
+# Environment files
+.env
+.env.local

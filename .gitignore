@@ -191,4 +191,4 @@ vicuna-*
 .DS_Store
 
 
-.auto-claude/
+.auto-claude/node_modules/

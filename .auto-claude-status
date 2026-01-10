@@ -1,6 +1,6 @@
 {
   "active": true,
-  "spec": "030-die-berschriften-sollenzwar-links-jedoch-mitdem-de",
+  "spec": "032-bei-dem-kontakt-funktioniert-das-styling-nicht",
   "state": "building",
   "subtasks": {
     "completed": 0,
@@ -19,7 +19,7 @@
   },
   "session": {
     "number": 1,
-    "started_at": "2026-01-10T16:29:27.728173"
+    "started_at": "2026-01-10T16:48:04.637607"
   },
-  "last_update": "2026-01-10T16:29:27.781916"
+  "last_update": "2026-01-10T16:48:04.693356"
 }

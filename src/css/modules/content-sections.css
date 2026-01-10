@@ -206,6 +206,8 @@
     text-decoration: none;
     border-radius: var(--radius-md);
     transition: transform var(--transition-fast), opacity var(--transition-fast);
+    width: auto;
+    height: auto;
 }
 
 .section-content .contact-icon svg {

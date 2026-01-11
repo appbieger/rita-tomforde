@@ -23,7 +23,8 @@
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: var(--spacing-md);
     max-width: var(--container-max-width);
     margin: 0 auto;
     padding: 0 var(--container-padding);
@@ -60,6 +61,8 @@
     gap: var(--spacing-md);
     list-style: none;
     margin: 0;
+    /* Negative left margin compensates for link padding, aligning menu text with section headings */
+    margin-left: calc(-1 * var(--spacing-sm));
     padding: 0;
 }
 
@@ -160,6 +163,8 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
+        /* Reset negative margin for mobile slide-out menu */
+        margin-left: 0;
         padding: calc(var(--spacing-xl) + var(--spacing-lg)) var(--spacing-md) var(--spacing-md);
         background-color: var(--color-background);
         border-left: 1px solid var(--color-border);

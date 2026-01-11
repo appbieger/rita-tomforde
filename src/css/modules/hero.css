@@ -108,6 +108,15 @@
     box-shadow: var(--shadow-md);
 }
 
+.hero-image-wrapper-inspiration picture,
+.hero-image-wrapper-inspiration img {
+    display: block;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto;
+  
+}
+
 .hero-image-placeholder {
     display: flex;
     align-items: center;
@@ -193,6 +202,40 @@
 /* Responsive: on mobile, image is centered above text (no float) */
 @media (max-width: 767px) {
     #ueber-mich .hero-image-wrapper {
+        float: none;
+        display: block;
+        margin: 0 auto var(--spacing-md) auto;
+        max-width: 250px;
+    }
+}
+
+
+/* ==========================================================================
+   Über Mich Section - Image with Text Wrap
+   ========================================================================== */
+
+/* Float the portrait image to the right so text wraps around it */
+#inspiration .hero-image-wrapper-inspiration {
+    float: right;
+    margin: 0 0 var(--spacing-md) var(--spacing-md);
+    max-width: 400px;
+}
+
+#inspiration .hero-image-wrapper-inspiration picture,
+#inspiration .hero-image-wrapper-inspiration img {
+    margin: 0;
+}
+
+/* Clearfix for section-content to contain the float */
+#inspiration .section-content::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* Responsive: on mobile, image is centered above text (no float) */
+@media (max-width: 767px) {
+    #inspirationh .hero-image-wrapper-inspiration {
         float: none;
         display: block;
         margin: 0 auto var(--spacing-md) auto;

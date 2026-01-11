@@ -1,20 +1,16 @@
 {
   "active": true,
-<<<<<<< HEAD
-  "spec": "031-ich-m-chte-das-die-gallerie-in-einem-grid-angezeig",
-=======
-  "spec": "032-bei-dem-kontakt-funktioniert-das-styling-nicht",
->>>>>>> auto-claude/032-bei-dem-kontakt-funktioniert-das-styling-nicht
+  "spec": "033-menue-soll-auf-der-gleichen-vertikalen-abstandsebe",
   "state": "building",
   "subtasks": {
-    "completed": 4,
-    "total": 9,
+    "completed": 0,
+    "total": 1,
     "in_progress": 1,
     "failed": 0
   },
   "phase": {
-    "current": "JavaScript Lightbox Initialization",
-    "id": null,
+    "current": "Implementation",
+    "id": 1,
     "total": 1
   },
   "workers": {
@@ -22,15 +18,8 @@
     "max": 1
   },
   "session": {
-<<<<<<< HEAD
-    "number": 5,
-    "started_at": "2026-01-10T16:46:54.441414"
-  },
-  "last_update": "2026-01-10T16:50:18.645345"
-=======
     "number": 1,
-    "started_at": "2026-01-10T16:48:04.637607"
+    "started_at": "2026-01-11T12:32:51.870196"
   },
-  "last_update": "2026-01-10T16:48:04.693356"
->>>>>>> auto-claude/032-bei-dem-kontakt-funktioniert-das-styling-nicht
+  "last_update": "2026-01-11T12:32:51.928683"
 }

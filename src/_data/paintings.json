@@ -3,56 +3,11 @@
     {
       "id": "painting-1",
       "title": "Blumenwiese",
-      "image": "/images/gallery/painting-1.jpg",
+      "image": "/images/gallery/abstrakte_Blume.JPG",
       "description": "Eine farbenfrohe Darstellung einer Blumenwiese im Sommer",
       "technique": "Acryl auf Leinwand",
       "year": 2024,
       "available": true
-    },
-    {
-      "id": "painting-2",
-      "title": "Abstrakte Hoffnung",
-      "image": "/images/gallery/painting-2.svg",
-      "description": "Ein abstraktes Werk, das Hoffnung und Licht symbolisiert",
-      "technique": "Mixed Media",
-      "year": 2024,
-      "available": true
-    },
-    {
-      "id": "painting-3",
-      "title": "Landschaft im Alten Land",
-      "image": "/images/gallery/painting-3.svg",
-      "description": "Typische Landschaft aus dem Alten Land bei Stade",
-      "technique": "Acryl auf Leinwand",
-      "year": 2023,
-      "available": true
-    },
-    {
-      "id": "painting-4",
-      "title": "Emotionen in Farbe",
-      "image": "/images/gallery/painting-4.svg",
-      "description": "Abstrakte Darstellung von Gefühlen durch Farbspiel",
-      "technique": "Acryl auf Leinwand",
-      "year": 2023,
-      "available": true
-    },
-    {
-      "id": "painting-5",
-      "title": "Frühlingsblumen",
-      "image": "/images/gallery/painting-5.svg",
-      "description": "Zarte Frühlingsblumen in warmen Farbtönen",
-      "technique": "Mixed Media",
-      "year": 2025,
-      "available": true
-    },
-    {
-      "id": "painting-6",
-      "title": "Morgenlicht",
-      "image": "/images/gallery/painting-6.svg",
-      "description": "Das erste Licht des Tages über der Landschaft",
-      "technique": "Acryl auf Leinwand",
-      "year": 2025,
-      "available": false
     }
   ]
 }

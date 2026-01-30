@@ -2,16 +2,26 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-// SVG source for the favicon
+// SVG source for the favicon - RT Monogram (stylized intertwined calligraphic R and T)
 const svgSource = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="4" ry="4" fill="#FF1493"/>
-  <text x="16" y="23" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="bold" fill="#FFFFFF">RT</text>
+  <g fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 8 C10 5 12 4 14 5 C16 6 16 8 14 10 C12 12 10 12 10 12 L10 26"/>
+    <path d="M11 14 Q14 19 16 26"/>
+    <path d="M5 10 Q16 9 26 10"/>
+    <path d="M20 10 L20 26"/>
+  </g>
 </svg>`;
 
-// Higher resolution SVG for better quality at larger sizes
+// Higher resolution SVG for better quality at larger sizes (180x180)
 const svgSourceHiRes = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
   <rect width="180" height="180" rx="22" ry="22" fill="#FF1493"/>
-  <text x="90" y="125" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="100" font-weight="bold" fill="#FFFFFF">RT</text>
+  <g fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M56 45 C56 28 68 22 79 28 C90 34 90 45 79 56 C68 67 56 67 56 67 L56 146"/>
+    <path d="M62 79 Q79 107 90 146"/>
+    <path d="M28 56 Q90 51 146 56"/>
+    <path d="M113 56 L113 146"/>
+  </g>
 </svg>`;
 
 const outputDir = path.join(__dirname, '..', 'src');

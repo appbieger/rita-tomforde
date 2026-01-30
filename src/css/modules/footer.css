@@ -74,6 +74,33 @@
     color: var(--color-text-light);
 }
 
+.contact-address {
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+}
+
+.contact-address:last-child {
+    margin-bottom: 0;
+}
+
+.address-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+    transition: color var(--transition-fast);
+}
+
+.address-link:hover,
+.address-link:focus {
+    color: var(--color-accent);
+}
+
+.address-link:focus-visible {
+    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+    border-radius: var(--radius-sm);
+}
+
 /* ==========================================================================
    Social/Contact Icons
    ========================================================================== */

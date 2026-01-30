@@ -93,5 +93,43 @@
         "raw_diff": "diff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml\nindex 78e232e..0b80d9c 100644\n--- a/.github/workflows/deploy.yml\n+++ b/.github/workflows/deploy.yml\n@@ -17,6 +17,9 @@ concurrency:\n jobs:\n   build-deploy:\n     runs-on: ubuntu-latest\n+    environment:\n+      name: github-pages\n+      url: ${{ steps.deployment.outputs.page_url }}\n     steps:\n       - name: Checkout repository\n         uses: actions/checkout@v4\n@@ -35,11 +38,14 @@ jobs:\n         env:\n           ELEVENTY_ENV: production\n \n-      - name: Deploy to gh-pages\n-        uses: peaceiris/actions-gh-pages@v3\n-        if: github.ref == 'refs/heads/main'\n+      - name: Setup Pages\n+        uses: actions/configure-pages@v5\n+\n+      - name: Upload artifact\n+        uses: actions/upload-pages-artifact@v3\n         with:\n-          github_token: ${{ secrets.GITHUB_TOKEN }}\n-          publish_dir: ./_site\n-          publish_branch: gh-pages\n-          force_orphan: true\n+          path: './_site'\n+\n+      - name: Deploy to GitHub Pages\n+        id: deployment\n+        uses: actions/deploy-pages@v4\n"
       }
     ]
+  },
+  ".stylelintrc.json": {
+    "file_path": ".stylelintrc.json",
+    "baseline_commit": "f11e663e7af451e265bac3b768a5f5ba1a535e97",
+    "baseline_captured_at": "2026-01-30T22:04:16.378334",
+    "baseline_content_hash": "5a05a4f764e72690",
+    "baseline_snapshot_path": "",
+    "task_snapshots": [
+      {
+        "task_id": "039-run-npm-ci",
+        "task_intent": "",
+        "started_at": "2026-01-30T22:04:16.378711",
+        "completed_at": "2026-01-30T22:04:16.379286",
+        "content_hash_before": "5a05a4f764e72690",
+        "content_hash_after": "73a0068d24066a32",
+        "semantic_changes": [],
+        "raw_diff": "diff --git a/.stylelintrc.json b/.stylelintrc.json\nindex 7a47490..0ceca92 100644\n--- a/.stylelintrc.json\n+++ b/.stylelintrc.json\n@@ -1,8 +1,5 @@\n {\n-  \"extends\": [\n-    \"stylelint-config-standard\",\n-    \"stylelint-config-prettier\"\n-  ],\n+  \"extends\": [\"stylelint-config-standard\"],\n   \"rules\": {\n     \"import-notation\": \"string\",\n     \"selector-class-pattern\": null,\n"
+      }
+    ]
+  },
+  "package.json": {
+    "file_path": "package.json",
+    "baseline_commit": "f11e663e7af451e265bac3b768a5f5ba1a535e97",
+    "baseline_captured_at": "2026-01-30T22:04:16.404746",
+    "baseline_content_hash": "000314181324f9f8",
+    "baseline_snapshot_path": "",
+    "task_snapshots": [
+      {
+        "task_id": "039-run-npm-ci",
+        "task_intent": "",
+        "started_at": "2026-01-30T22:04:16.404807",
+        "completed_at": "2026-01-30T22:04:16.404962",
+        "content_hash_before": "000314181324f9f8",
+        "content_hash_after": "fe9b712772819f57",
+        "semantic_changes": [],
+        "raw_diff": "diff --git a/package.json b/package.json\nindex 3b9888e..fbb2ef6 100644\n--- a/package.json\n+++ b/package.json\n@@ -32,7 +32,6 @@\n     \"globals\": \"^15.0.0\",\n     \"prettier\": \"^3.2.0\",\n     \"stylelint\": \"^16.0.0\",\n-    \"stylelint-config-prettier\": \"^9.0.5\",\n     \"stylelint-config-standard\": \"^36.0.0\"\n   }\n }\n"
+      }
+    ]
   }
 }

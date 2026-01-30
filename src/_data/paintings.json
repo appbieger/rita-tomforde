@@ -2,9 +2,198 @@
   "paintings": [
     {
       "id": "painting-1",
-      "title": "Blumenwiese",
+      "title": "Lebensbaum",
+      "image": "/images/gallery/Lebensbaum.JPG",
+      "description": "90 x 70 cm",
+      "technique": "Acryl auf Leinwand",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-2",
+      "title": "Angler mit Hund",
+      "image": "/images/gallery/Angler_mit_Hund.JPG",
+      "description": "70 x 30 cm",
+      "technique": "Acryl auf Leinwand",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-3",
+      "title": "Sonnenuntergang am Meer",
+      "image": "/images/gallery/Sonnenuntergang_am_Meer.JPG",
+      "description": "70 x 50 cm",
+      "technique": "Acryl auf Leinwand",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-4",
+      "title": "Polarlichter",
+      "image": "/images/gallery/Polarlichter.JPG",
+      "description": "60 x 60 cm",
+      "technique": "Acryl auf Leinwand",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-5",
+      "title": "Der Clown",
+      "image": "/images/gallery/Der_Clown.JPG",
+      "description": "35 x 50 cm",
+      "technique": "Acryl auf Leinwand",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-6",
+      "title": "Am Meer",
+      "image": "/images/gallery/Am_Meer.JPG",
+      "description": "100 x 50 cm",
+      "technique": "Acryl auf Leinwand",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-7",
+      "title": "abstrakte Landschaft (Gelbtöne mit angedeutetem Mond)",
+      "image": "/images/gallery/abstrakte_Landschaft .JPG",
+      "description": "60 x 45 cm",
+      "technique": "Acryl auf Leinwand",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-8",
+      "title": "Frieden im Herzen oder Herz in der Hand",
+      "image": "/images/gallery/Frieden_im_Herzen.JPG",
+      "description": "50 x 70 cm",
+      "technique": "Acryl auf Leinwand",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-9",
+      "title": "Toscana-Landschaft 1 mit zwei Ölkrügen im Vordergrund",
+      "image": "/images/gallery/Toscana-Landschaft_1.JPG",
+      "description": "77 x 100 cm",
+      "technique": "Acryl auf Leinwand",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-10",
+      "title": "Toscana-Landschaft 2 mit Mohnblütenfeld",
+      "image": "/images/gallery/Toscana-Landschaft_2.JPG",
+      "description": "80 x 60 cm",
+      "technique": "Acryl auf Leinwand",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-11",
+      "title": "Orchideen",
+      "image": "/images/gallery/Orchideen.jpg",
+      "description": "40 x 40 cm",
+      "technique": "Acryl auf Leinwand mit Holzrahmen",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-12",
+      "title": "Wir gehen nicht allein",
+      "image": "/images/gallery/Wir_gehen_nicht_allein.JPG",
+      "description": "30 x 40 cm",
+      "technique": "Öl auf Leinwand mit Holzrahmen",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-13",
+      "title": "Jelly's 1 (Hintergrund rosé)",
+      "image": "/images/gallery/Jellys_1.JPG",
+      "description": "30 x 40 cm",
+      "technique": "Acryl auf Leinwand",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-14",
+      "title": "Jelly's 2 (Hintergrund blau)",
+      "image": "/images/gallery/Jellys_2.JPG",
+      "description": "30 x 40 cm",
+      "technique": "Acryl auf Leinwand",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-15",
+      "title": "Peace / Frieden 1 (klein ohne Rahmen)",
+      "image": "/images/gallery/Peace_Frieden_1.JPG",
+      "description": "25 x 30 cm",
+      "technique": "Mischtechnik auf Leinwand",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-16",
+      "title": "lila Kreuz",
+      "image": "/images/gallery/lila_Kreuz.JPG",
+      "description": "23 x 28 cm",
+      "technique": "Monotopie auf Papier mit Holzrahmen",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-17",
+      "title": "Abstraktion in blau",
+      "image": "/images/gallery/Abstraktion_in_blau.jpg",
+      "description": "30 x 40 cm",
+      "technique": "Acryl auf Leinwand mit Rahmen, weiß",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-18",
+      "title": "Olivenbaum auf Mallorca",
+      "image": "/images/gallery/Olivenbaum_auf_Mallorca.JPG",
+      "description": "40 x 50 cm",
+      "technique": "Acryl auf Leinwand mit Holzrahmen, weiß",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-19",
+      "title": "abstrakte Blume",
       "image": "/images/gallery/abstrakte_Blume.JPG",
-      "description": "Eine farbenfrohe Darstellung einer Blumenwiese im Sommer",
+      "description": "40 x 50 cm",
+      "technique": "Acryl auf Leinwand",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-20",
+      "title": "weiße Lilie (Symbol für Licht und Hoffnung)",
+      "image": "/images/gallery/weiße_Lilie.jpg",
+      "description": "30 x 40 cm",
+      "technique": "Acryl auf Leinwand mit Holzrahmen, weiß",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-21",
+      "title": "Peace / Frieden 2",
+      "image": "/images/gallery/Peace_Frieden_2.JPG",
+      "description": "30 x 40 cm",
+      "technique": "Mischtechnik auf Leinwand mit Rahmen, weiß",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-22",
+      "title": "abstrakte Dünenlandschaft",
+      "image": "/images/gallery/abstrakte_Duenenlandschaft.JPG",
+      "description": "30 x 70 cm",
       "technique": "Acryl auf Leinwand",
       "year": 2024,
       "available": true

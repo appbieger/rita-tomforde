@@ -1,14 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="4" ry="4" fill="#FF1493"/>
-  <!-- RT Monogram - stylized intertwined calligraphic R and T -->
-  <g fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Cursive R - looped top curving down -->
-    <path d="M10 8 C10 5 12 4 14 5 C16 6 16 8 14 10 C12 12 10 12 10 12 L10 26"/>
-    <!-- R diagonal leg -->
-    <path d="M11 14 Q14 19 16 26"/>
-    <!-- T horizontal bar extending across the design -->
-    <path d="M5 10 Q16 9 26 10"/>
-    <!-- T vertical stem -->
-    <path d="M20 10 L20 26"/>
+  <!-- RT Monogram - elegant intertwined calligraphic R and T for artist Rita Tomforde -->
+  <g fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Decorative flourish at top -->
+    <path d="M6 6 Q8 4 10 5" stroke-width="1.2"/>
+    <!-- Cursive R - elegant loop with bowl and flowing stem -->
+    <path d="M8 7 C8 4 11 3 13 4 C15.5 5.5 15 8 13 10 C11 12 9 11.5 9 11.5 L9 25" stroke-width="2"/>
+    <!-- R diagonal leg with graceful curve -->
+    <path d="M10 13 Q13 17 15.5 25" stroke-width="1.8"/>
+    <!-- T horizontal bar - flowing calligraphic crossbar -->
+    <path d="M4 9 Q10 7.5 16 8 Q22 8.5 27 9" stroke-width="1.6"/>
+    <!-- T vertical stem - elegant descender -->
+    <path d="M21 9 C21 9 20.5 16 21 25" stroke-width="2"/>
+    <!-- Connecting flourish between R and T -->
+    <path d="M15.5 10 Q18 9 21 9" stroke-width="1.2"/>
+    <!-- Decorative tail flourish -->
+    <path d="M21 25 Q23 27 26 26" stroke-width="1.2"/>
   </g>
 </svg>

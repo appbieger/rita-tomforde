@@ -16,7 +16,7 @@ async function imageShortcode(
     widths: widths,
     formats: ['webp', 'jpeg'],
     outputDir: './_site/img/',
-    urlPath: '/rita-tomforde/img/',
+    urlPath: '/img/',
   });
 
   return Image.generateHTML(metadata, {
@@ -50,7 +50,7 @@ module.exports = function (eleventyConfig) {
 
     // Path prefix for GitHub Pages deployment
     // This ensures all URLs work correctly when deployed to https://[username].github.io/rita-tomforde/
-    pathPrefix: '/rita-tomforde/',
+    pathPrefix: '/',
 
     // Directory configuration
     dir: {

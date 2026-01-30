@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Rita Tomforde - Artist Portfolio Website
+   Main CSS Entry Point
+   ========================================================================== */
+
+/*
+   MODULAR CSS ARCHITECTURE
+
+   This file imports all CSS modules in the correct cascade order.
+   The CSS has been split into logical modules following the single
+   responsibility principle for better maintainability and organization.
+
+   📁 MODULE STRUCTURE:
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   Foundation Layer:
+   - modules/variables.css      - Design tokens and CSS custom properties
+   - modules/reset.css          - Base reset and normalization
+   - modules/typography.css     - Typography styles
+   - modules/layout.css         - Layout utilities and containers
+
+   Component Layer:
+   - modules/navigation.css     - Site navigation and menu
+   - modules/hero.css           - Hero sections
+   - modules/content-sections.css - Content section styles
+   - modules/gallery.css        - Photo gallery
+   - modules/footer.css         - Site footer
+
+   ⚠️ IMPORT ORDER MATTERS:
+   Variables must load first as they're used by all other modules.
+   Base styles (reset, typography, layout) load before components.
+   Component order doesn't affect cascade but follows page flow.
+
+   📝 WORKING WITH THIS ARCHITECTURE:
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   To modify existing styles:
+   1. Identify which module owns the component you're styling
+   2. Edit that specific module file (e.g., hero.css for hero sections)
+   3. Use existing CSS custom properties from variables.css
+   4. Follow the naming conventions already in the file
+
+   To add new design tokens:
+   1. Add them to modules/variables.css in the appropriate section
+   2. Use the existing naming convention (--color-*, --spacing-*, etc.)
+   3. Reference them in your component modules with var()
+
+   To create a new component module:
+   1. Create a new file in src/css/modules/ (e.g., modules/cards.css)
+   2. Add a clear comment header describing the module's purpose
+   3. Import it in this file in the appropriate position
+   4. Components should come after foundation styles
+
+   ⚡ PERFORMANCE NOTES:
+   CSS @import creates sequential HTTP requests. This is acceptable for
+   this small portfolio site. For larger projects, consider using a CSS
+   bundler (PostCSS, Vite, etc.) to concatenate modules at build time.
+
+   The Eleventy build copies all CSS files to _site/css/, preserving the
+   modules directory structure, so @import paths remain valid.
+*/
+
+/* ==========================================================================
+   1. Design Tokens - CSS Custom Properties
+   ========================================================================== */
+@import 'modules/variables.css';
+
+/* ==========================================================================
+   2. Base Styles - Reset and Normalization
+   ========================================================================== */
+@import 'modules/reset.css';
+
+/* ==========================================================================
+   3. Typography - Headings, Paragraphs, Links
+   ========================================================================== */
+@import 'modules/typography.css';
+
+/* ==========================================================================
+   4. Layout - Containers and Spacing Utilities
+   ========================================================================== */
+@import 'modules/layout.css';
+
+/* ==========================================================================
+   5. Components - Navigation
+   ========================================================================== */
+@import 'modules/navigation.css';
+
+/* ==========================================================================
+   6. Components - Hero Sections
+   ========================================================================== */
+@import 'modules/hero.css';
+
+/* ==========================================================================
+   7. Components - Content Sections
+   ========================================================================== */
+@import 'modules/content-sections.css';
+
+/* ==========================================================================
+   8. Components - Photo Gallery
+   ========================================================================== */
+@import 'modules/gallery.css';
+
+/* ==========================================================================
+   9. Components - Footer
+   ========================================================================== */
+@import 'modules/footer.css';

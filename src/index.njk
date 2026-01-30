@@ -114,17 +114,17 @@ title: Willkommen
             <h2 class="section-title">Aktuelles</h2>
         </header>
         <div class="section-content">
-            <div class="event-with-flyer">
-                <article class="event">
+            <article class="event event-with-flyer">
+                <div class="event-content">
                     <h3>März 2026: Kultur-Pop-up-Store in Stade</h3>
                     <p><strong>Ort:</strong> <a href="https://maps.google.com/?q=H%C3%B6kerstra%C3%9Fe+33%2C+Stade" class="address-link" target="_blank" rel="noopener" aria-label="Öffne Hökerstraße 33, Stade in Google Maps">Hökerstraße 33, Stade</a></p>
                     <p><strong>Vernissage:</strong> 5. März 2026 ab 17:00 Uhr</p>
                     <p><strong>Öffnungszeiten 06.-31. März:</strong> Mo-Sa 11-17 Uhr, So 14-16 Uhr</p>
-                </article>
+                </div>
                 <div class="flyer-image-wrapper">
                     {% image "src/images/site/flyer/kultur-pop-up_stade_2026.jpg", "Flyer für den Kultur-Pop-up-Store in Stade März 2026" %}
                 </div>
-            </div>
+            </article>
 
             <article class="event">
                 <h3>17. Mai 2026: KreARTiv-Markt am URLA-HUS</h3>
@@ -151,7 +151,7 @@ title: Willkommen
                 {% for painting in paintings.paintings %}
                 {% if painting.available %}
                 <article class="gallery-item" id="{{ painting.id }}">
-                    <a href="{{ painting.image | url }}" class="glightbox" data-gallery="paintings" data-title="{{ painting.title }}" data-description="{{ painting.technique }}, {{ painting.year }}">
+                    <a href="{{ painting.image | url }}" class="glightbox" data-gallery="paintings" data-title="{{ painting.title }}" data-description="{{ painting.technique }}, {{ painting.year }} , {{ painting.description }} ">
                         {% if painting.image.endsWith('.svg') %}
                         <img src="{{ painting.image | url }}" alt="{{ painting.title }}" loading="lazy" class="gallery-item-image">
                         {% else %}
@@ -160,7 +160,7 @@ title: Willkommen
                     </a>
                     <div class="gallery-item-info">
                         <h3 class="gallery-item-title">{{ painting.title }}</h3>
-                        <p class="gallery-item-meta">{{ painting.technique }}, {{ painting.year }}</p>
+                       
                     </div>
                 </article>
                 {% endif %}

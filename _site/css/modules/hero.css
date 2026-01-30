@@ -1,0 +1,244 @@
+/* ==========================================================================
+   Hero Module
+   Hero header, hero content, hero images, responsive adjustments,
+   and über mich section with text wrap
+   ========================================================================== */
+
+/* ==========================================================================
+   Hero Header Section
+   ========================================================================== */
+
+.hero-header {
+    position: relative;
+    padding: var(--spacing-xl) 0;
+    background-image: url('../../images/site/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    overflow: hidden;
+
+}
+
+.hero-header-title {
+    font-size: var(--font-size-xlarge);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-heavy);
+
+}
+
+.hero-header-subtitle {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-normal);
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-lg);
+
+}
+
+/* ==========================================================================
+   Main Hero Section
+   ========================================================================== */
+
+.hero {
+    position: relative;
+    padding: var(--spacing-xl) 0;
+    background-image: url('../../images/site/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Semi-transparent overlay for text readability */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+ /*    background-color: rgba(0, 0, 0, 0.4); */
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.hero-title {
+    font-size: var(--font-size-xlarge);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-secondary);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-normal);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-lg);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hero-image {
+    display: block;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.hero-image-wrapper picture,
+.hero-image-wrapper img {
+    display: block;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.hero-image-wrapper-inspiration picture,
+.hero-image-wrapper-inspiration img {
+    display: block;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto;
+  
+}
+
+.hero-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    background-color: var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-light);
+    font-size: var(--font-size-small);
+}
+
+/* ==========================================================================
+   Hero Responsive Adjustments
+   ========================================================================== */
+
+/* Tablet and above */
+@media (min-width: 768px) {
+    .hero {
+        padding: var(--spacing-xl) 0 calc(var(--spacing-xl) * 1.5);
+    }
+
+    .hero-title {
+        font-size: calc(var(--font-size-xlarge) * 1.2);
+    }
+
+    .hero-image,
+    .hero-image-placeholder {
+        max-width: 350px;
+        width: 350px;
+        height: auto;
+    }
+
+    .hero-image-wrapper picture,
+    .hero-image-wrapper img {
+        max-width: 350px;
+    }
+
+    .hero-image-placeholder {
+        height: 350px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .hero {
+        padding: calc(var(--spacing-xl) * 1.5) 0 calc(var(--spacing-xl) * 2);
+    }
+
+    .hero-title {
+        font-size: calc(var(--font-size-xlarge) * 1.4);
+    }
+
+    .hero-subtitle {
+        font-size: calc(var(--font-size-medium) * 1.1);
+    }
+}
+
+/* ==========================================================================
+   Über Mich Section - Image with Text Wrap
+   ========================================================================== */
+
+/* Float the portrait image to the right so text wraps around it */
+#ueber-mich .hero-image-wrapper {
+    float: right;
+    margin: 0 0 var(--spacing-md) var(--spacing-md);
+    max-width: 300px;
+}
+
+#ueber-mich .hero-image-wrapper picture,
+#ueber-mich .hero-image-wrapper img {
+    margin: 0;
+}
+
+/* Clearfix for section-content to contain the float */
+#ueber-mich .section-content::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* Responsive: on mobile, image is centered above text (no float) */
+@media (max-width: 767px) {
+    #ueber-mich .hero-image-wrapper {
+        float: none;
+        display: block;
+        margin: 0 auto var(--spacing-md) auto;
+        max-width: 250px;
+    }
+}
+
+
+/* ==========================================================================
+   Über Mich Section - Image with Text Wrap
+   ========================================================================== */
+
+/* Float the portrait image to the right so text wraps around it */
+#inspiration .hero-image-wrapper-inspiration {
+    float: right;
+    margin: 0 0 var(--spacing-md) var(--spacing-md);
+    max-width: 400px;
+}
+
+#inspiration .hero-image-wrapper-inspiration picture,
+#inspiration .hero-image-wrapper-inspiration img {
+    margin: 0;
+}
+
+/* Clearfix for section-content to contain the float */
+#inspiration .section-content::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* Responsive: on mobile, image is centered above text (no float) */
+@media (max-width: 767px) {
+    #inspirationh .hero-image-wrapper-inspiration {
+        float: none;
+        display: block;
+        margin: 0 auto var(--spacing-md) auto;
+        max-width: 250px;
+    }
+}

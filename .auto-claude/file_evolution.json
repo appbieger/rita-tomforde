@@ -74,5 +74,24 @@
         "raw_diff": "diff --git a/src/index.njk b/src/index.njk\nindex 88b2a3d..b30d261 100644\n--- a/src/index.njk\n+++ b/src/index.njk\n@@ -114,17 +114,17 @@ title: Willkommen\n             <h2 class=\"section-title\">Aktuelles</h2>\n         </header>\n         <div class=\"section-content\">\n-            <div class=\"event-with-flyer\">\n-                <article class=\"event\">\n+            <article class=\"event event-with-flyer\">\n+                <div class=\"event-content\">\n                     <h3>M\u00e4rz 2026: Kultur-Pop-up-Store in Stade</h3>\n                     <p><strong>Ort:</strong> <a href=\"https://maps.google.com/?q=H%C3%B6kerstra%C3%9Fe+33%2C+Stade\" class=\"address-link\" target=\"_blank\" rel=\"noopener\" aria-label=\"\u00d6ffne H\u00f6kerstra\u00dfe 33, Stade in Google Maps\">H\u00f6kerstra\u00dfe 33, Stade</a></p>\n                     <p><strong>Vernissage:</strong> 5. M\u00e4rz 2026 ab 17:00 Uhr</p>\n                     <p><strong>\u00d6ffnungszeiten 06.-31. M\u00e4rz:</strong> Mo-Sa 11-17 Uhr, So 14-16 Uhr</p>\n-                </article>\n+                </div>\n                 <div class=\"flyer-image-wrapper\">\n                     {% image \"src/images/site/flyer/kultur-pop-up_stade_2026.jpg\", \"Flyer f\u00fcr den Kultur-Pop-up-Store in Stade M\u00e4rz 2026\" %}\n                 </div>\n-            </div>\n+            </article>\n \n             <article class=\"event\">\n                 <h3>17. Mai 2026: KreARTiv-Markt am URLA-HUS</h3>\n"
       }
     ]
+  },
+  ".github/workflows/deploy.yml": {
+    "file_path": ".github/workflows/deploy.yml",
+    "baseline_commit": "035cf50f162299e7aeab361d19525a5d6d07a9b8",
+    "baseline_captured_at": "2026-01-30T21:12:12.344194",
+    "baseline_content_hash": "cf0e3c037c274d52",
+    "baseline_snapshot_path": "",
+    "task_snapshots": [
+      {
+        "task_id": "038-github-pages-l-uft-nicht-durch",
+        "task_intent": "",
+        "started_at": "2026-01-30T21:12:12.344306",
+        "completed_at": "2026-01-30T21:12:12.344866",
+        "content_hash_before": "cf0e3c037c274d52",
+        "content_hash_after": "7a6edd2c590d54df",
+        "semantic_changes": [],
+        "raw_diff": "diff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml\nindex 78e232e..0b80d9c 100644\n--- a/.github/workflows/deploy.yml\n+++ b/.github/workflows/deploy.yml\n@@ -17,6 +17,9 @@ concurrency:\n jobs:\n   build-deploy:\n     runs-on: ubuntu-latest\n+    environment:\n+      name: github-pages\n+      url: ${{ steps.deployment.outputs.page_url }}\n     steps:\n       - name: Checkout repository\n         uses: actions/checkout@v4\n@@ -35,11 +38,14 @@ jobs:\n         env:\n           ELEVENTY_ENV: production\n \n-      - name: Deploy to gh-pages\n-        uses: peaceiris/actions-gh-pages@v3\n-        if: github.ref == 'refs/heads/main'\n+      - name: Setup Pages\n+        uses: actions/configure-pages@v5\n+\n+      - name: Upload artifact\n+        uses: actions/upload-pages-artifact@v3\n         with:\n-          github_token: ${{ secrets.GITHUB_TOKEN }}\n-          publish_dir: ./_site\n-          publish_branch: gh-pages\n-          force_orphan: true\n+          path: './_site'\n+\n+      - name: Deploy to GitHub Pages\n+        id: deployment\n+        uses: actions/deploy-pages@v4\n"
+      }
+    ]
   }
 }

@@ -129,7 +129,9 @@ title: Willkommen
                     {% endif %}
                 </div>
                 <div class="flyer-image-wrapper">
-                    {% image "src" + event.flyer.image, event.flyer.alt %}
+                    <a href="{{ event.flyer.image | url }}" class="glightbox" data-title="{{ event.flyer.alt }}">
+                        {% image "src" + event.flyer.image, event.flyer.alt %}
+                    </a>
                 </div>
                 {% else %}
                 <h3>{{ event.title }}</h3>

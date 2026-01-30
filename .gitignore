@@ -8,3 +8,5 @@
 .worktrees/
 .security-key
 logs/security/
+
+node_modules/

@@ -112,6 +112,16 @@
         "content_hash_after": "5e20d1cb85a24250",
         "semantic_changes": [],
         "raw_diff": "diff --git a/src/index.njk b/src/index.njk\nindex 72fa7a8..56b68b6 100644\n--- a/src/index.njk\n+++ b/src/index.njk\n@@ -114,23 +114,35 @@ title: Willkommen\n             <h2 class=\"section-title\">Aktuelles</h2>\n         </header>\n         <div class=\"section-content\">\n-            <article class=\"event event-with-flyer\">\n+            {% if events.events.length > 0 %}\n+            {% for event in events.events %}\n+            <article class=\"event{% if event.hasFlyer %} event-with-flyer{% endif %}\">\n+                {% if event.hasFlyer %}\n                 <div class=\"event-content\">\n-                    <h3>M\u00e4rz 2026: Kultur-Pop-up-Store in Stade</h3>\n-                    <p><strong>Ort:</strong> <a href=\"https://maps.google.com/?q=H%C3%B6kerstra%C3%9Fe+33%2C+Stade\" class=\"address-link\" target=\"_blank\" rel=\"noopener\" aria-label=\"\u00d6ffne H\u00f6kerstra\u00dfe 33, Stade in Google Maps\">H\u00f6kerstra\u00dfe 33, Stade</a></p>\n-                    <p><strong>Vernissage:</strong> 5. M\u00e4rz 2026 ab 17:00 Uhr</p>\n-                    <p><strong>\u00d6ffnungszeiten 06.-31. M\u00e4rz:</strong> Mo-Sa 11-17 Uhr, So 14-16 Uhr</p>\n+                    <h3>{{ event.title }}</h3>\n+                    <p><strong>Ort:</strong> <a href=\"{{ event.location.mapUrl }}\" class=\"address-link\" target=\"_blank\" rel=\"noopener\" aria-label=\"\u00d6ffne {{ event.location.address }} in Google Maps\">{{ event.location.address }}</a></p>\n+                    {% if event.vernissage %}\n+                    <p><strong>Vernissage:</strong> {{ event.vernissage.date }} {{ event.vernissage.time }}</p>\n+                    {% endif %}\n+                    {% if event.openingHours %}\n+                    <p><strong>\u00d6ffnungszeiten {{ event.openingHours.dates }}:</strong> {{ event.openingHours.hours }}</p>\n+                    {% endif %}\n                 </div>\n                 <div class=\"flyer-image-wrapper\">\n-                    {% image \"src/images/site/flyer/kultur-pop-up_stade_2026.jpg\", \"Flyer f\u00fcr den Kultur-Pop-up-Store in Stade M\u00e4rz 2026\" %}\n+                    {% image \"src\" + event.flyer.image, event.flyer.alt %}\n                 </div>\n+                {% else %}\n+                <h3>{{ event.title }}</h3>\n+                <p><strong>Ort:</strong> <a href=\"{{ event.location.mapUrl }}\" class=\"address-link\" target=\"_blank\" rel=\"noopener\" aria-label=\"\u00d6ffne {{ event.location.address }} in Google Maps\">{{ event.location.address }}</a></p>\n+                {% if event.time %}\n+                <p><strong>Zeit:</strong> {{ event.time }}</p>\n+                {% endif %}\n+                {% endif %}\n             </article>\n-\n-            <article class=\"event\">\n-                <h3>17. Mai 2026: KreARTiv-Markt am URLA-HUS</h3>\n-                <p><strong>Ort:</strong> <a href=\"https://maps.google.com/?q=Ohrel+bei+Anderlingen\" class=\"address-link\" target=\"_blank\" rel=\"noopener\" aria-label=\"\u00d6ffne Ohrel bei Anderlingen in Google Maps\">Ohrel bei Anderlingen</a></p>\n-                <p><strong>Zeit:</strong> 11-17 Uhr</p>\n-            </article>\n+            {% endfor %}\n+            {% else %}\n+            <p class=\"events-empty\">Momentan sind keine aktuellen Veranstaltungen geplant.</p>\n+            {% endif %}\n         </div>\n     </div>\n </section>\n"
+      },
+      {
+        "task_id": "052-beim-kicken-auf-das-flyer-bild-soll-sich-das-im-vo",
+        "task_intent": "",
+        "started_at": "2026-01-31T00:17:14.465128",
+        "completed_at": "2026-01-31T00:17:14.466950",
+        "content_hash_before": "5e20d1cb85a24250",
+        "content_hash_after": "829227a10a806e7c",
+        "semantic_changes": [],
+        "raw_diff": "diff --git a/src/index.njk b/src/index.njk\nindex 56b68b6..a14d062 100644\n--- a/src/index.njk\n+++ b/src/index.njk\n@@ -129,7 +129,9 @@ title: Willkommen\n                     {% endif %}\n                 </div>\n                 <div class=\"flyer-image-wrapper\">\n-                    {% image \"src\" + event.flyer.image, event.flyer.alt %}\n+                    <a href=\"{{ event.flyer.image | url }}\" class=\"glightbox\" data-title=\"{{ event.flyer.alt }}\">\n+                        {% image \"src\" + event.flyer.image, event.flyer.alt %}\n+                    </a>\n                 </div>\n                 {% else %}\n                 <h3>{{ event.title }}</h3>\n"
       }
     ]
   },
@@ -925,6 +935,16 @@
         "content_hash_after": "1151c1f7a00f6e36",
         "semantic_changes": [],
         "raw_diff": "diff --git a/src/favicon.svg b/src/favicon.svg\nnew file mode 100644\nindex 0000000..35b3fe1\n--- /dev/null\n+++ b/src/favicon.svg\n@@ -0,0 +1,14 @@\n+<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\">\n+  <rect width=\"32\" height=\"32\" rx=\"4\" ry=\"4\" fill=\"#FF1493\"/>\n+  <!-- RT Monogram - stylized intertwined calligraphic R and T -->\n+  <g fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n+    <!-- Cursive R - looped top curving down -->\n+    <path d=\"M10 8 C10 5 12 4 14 5 C16 6 16 8 14 10 C12 12 10 12 10 12 L10 26\"/>\n+    <!-- R diagonal leg -->\n+    <path d=\"M11 14 Q14 19 16 26\"/>\n+    <!-- T horizontal bar extending across the design -->\n+    <path d=\"M5 10 Q16 9 26 10\"/>\n+    <!-- T vertical stem -->\n+    <path d=\"M20 10 L20 26\"/>\n+  </g>\n+</svg>\n"
+      },
+      {
+        "task_id": "051-nutze-rt-logo-svg-f-r-favicon-und-das-bild-hier-al",
+        "task_intent": "",
+        "started_at": "2026-01-31T00:20:41.148446",
+        "completed_at": "2026-01-31T00:20:41.148642",
+        "content_hash_before": "1151c1f7a00f6e36",
+        "content_hash_after": "b75261ed362b19ff",
+        "semantic_changes": [],
+        "raw_diff": "diff --git a/src/favicon.svg b/src/favicon.svg\nindex 35b3fe1..ce23c09 100644\n--- a/src/favicon.svg\n+++ b/src/favicon.svg\n@@ -1,14 +1,20 @@\n <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\">\n   <rect width=\"32\" height=\"32\" rx=\"4\" ry=\"4\" fill=\"#FF1493\"/>\n-  <!-- RT Monogram - stylized intertwined calligraphic R and T -->\n-  <g fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n-    <!-- Cursive R - looped top curving down -->\n-    <path d=\"M10 8 C10 5 12 4 14 5 C16 6 16 8 14 10 C12 12 10 12 10 12 L10 26\"/>\n-    <!-- R diagonal leg -->\n-    <path d=\"M11 14 Q14 19 16 26\"/>\n-    <!-- T horizontal bar extending across the design -->\n-    <path d=\"M5 10 Q16 9 26 10\"/>\n-    <!-- T vertical stem -->\n-    <path d=\"M20 10 L20 26\"/>\n+  <!-- RT Monogram - elegant intertwined calligraphic R and T for artist Rita Tomforde -->\n+  <g fill=\"none\" stroke=\"#FFFFFF\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n+    <!-- Decorative flourish at top -->\n+    <path d=\"M6 6 Q8 4 10 5\" stroke-width=\"1.2\"/>\n+    <!-- Cursive R - elegant loop with bowl and flowing stem -->\n+    <path d=\"M8 7 C8 4 11 3 13 4 C15.5 5.5 15 8 13 10 C11 12 9 11.5 9 11.5 L9 25\" stroke-width=\"2\"/>\n+    <!-- R diagonal leg with graceful curve -->\n+    <path d=\"M10 13 Q13 17 15.5 25\" stroke-width=\"1.8\"/>\n+    <!-- T horizontal bar - flowing calligraphic crossbar -->\n+    <path d=\"M4 9 Q10 7.5 16 8 Q22 8.5 27 9\" stroke-width=\"1.6\"/>\n+    <!-- T vertical stem - elegant descender -->\n+    <path d=\"M21 9 C21 9 20.5 16 21 25\" stroke-width=\"2\"/>\n+    <!-- Connecting flourish between R and T -->\n+    <path d=\"M15.5 10 Q18 9 21 9\" stroke-width=\"1.2\"/>\n+    <!-- Decorative tail flourish -->\n+    <path d=\"M21 25 Q23 27 26 26\" stroke-width=\"1.2\"/>\n   </g>\n </svg>\n"
       }
     ]
   },
@@ -1020,6 +1040,82 @@
         "content_hash_after": "6800260aff81cf30",
         "semantic_changes": [],
         "raw_diff": "diff --git a/src/css/styles.css b/src/css/styles.css\nindex b812640..5fcabb1 100644\n--- a/src/css/styles.css\n+++ b/src/css/styles.css\n@@ -104,3 +104,8 @@\n    9. Components - Footer\n    ========================================================================== */\n @import 'modules/footer.css';\n+\n+/* ==========================================================================\n+   10. Print Styles - Print Stylesheet\n+   ========================================================================== */\n+@import 'modules/print.css';\n"
+      }
+    ]
+  },
+  "src/_data/site.json": {
+    "file_path": "src/_data/site.json",
+    "baseline_commit": "1a2ade757216f2a00fafb784d8904d7fad6d3e0b",
+    "baseline_captured_at": "2026-01-31T00:17:24.109891",
+    "baseline_content_hash": "82d9fcc7222c5ae4",
+    "baseline_snapshot_path": "",
+    "task_snapshots": [
+      {
+        "task_id": "050-f-ge-email-zur-kontakt-page-hinzu",
+        "task_intent": "",
+        "started_at": "2026-01-31T00:17:24.109990",
+        "completed_at": "2026-01-31T00:17:24.110656",
+        "content_hash_before": "82d9fcc7222c5ae4",
+        "content_hash_after": "b0affb315e98e61a",
+        "semantic_changes": [],
+        "raw_diff": "diff --git a/src/_data/site.json b/src/_data/site.json\nindex 548d31c..11cdabd 100644\n--- a/src/_data/site.json\n+++ b/src/_data/site.json\n@@ -9,6 +9,7 @@\n     \"address\": \"Reith 29\",\n     \"city\": \"21698 Brest\",\n     \"phone\": \"0151 23260291\",\n+    \"email\": \"ritatomforde@gmail.com\",\n     \"whatsapp\": \"0151 23260291\",\n     \"instagram\": \"https://www.instagram.com/ritatomforde/\"\n   }\n"
+      }
+    ]
+  },
+  "src/kontakt.njk": {
+    "file_path": "src/kontakt.njk",
+    "baseline_commit": "1a2ade757216f2a00fafb784d8904d7fad6d3e0b",
+    "baseline_captured_at": "2026-01-31T00:17:24.136164",
+    "baseline_content_hash": "b665c57d2bc3bf3e",
+    "baseline_snapshot_path": "",
+    "task_snapshots": [
+      {
+        "task_id": "050-f-ge-email-zur-kontakt-page-hinzu",
+        "task_intent": "",
+        "started_at": "2026-01-31T00:17:24.136230",
+        "completed_at": "2026-01-31T00:17:24.136404",
+        "content_hash_before": "b665c57d2bc3bf3e",
+        "content_hash_after": "545d4045c1af09e8",
+        "semantic_changes": [],
+        "raw_diff": "diff --git a/src/kontakt.njk b/src/kontakt.njk\nindex ac8bc5f..382b034 100644\n--- a/src/kontakt.njk\n+++ b/src/kontakt.njk\n@@ -36,6 +36,10 @@ permalink: /kontakt/\n                     {% include \"icons/instagram.njk\" %}\n                     <span>Instagram</span>\n                 </a>\n+                <a href=\"mailto:{{ site.contact.email }}\" class=\"contact-icon contact-icon--email\" aria-label=\"E-Mail: {{ site.contact.email }}\">\n+                    {% include \"icons/email.njk\" %}\n+                    <span>E-Mail</span>\n+                </a>\n             </div>\n \n             <p>Interessiert an meinen Bildern? Kontaktieren Sie mich gerne.</p>\n"
+      }
+    ]
+  },
+  "src/css/modules/layout.css": {
+    "file_path": "src/css/modules/layout.css",
+    "baseline_commit": "1a2ade757216f2a00fafb784d8904d7fad6d3e0b",
+    "baseline_captured_at": "2026-01-31T00:20:41.123764",
+    "baseline_content_hash": "2be7376d98542cae",
+    "baseline_snapshot_path": "",
+    "task_snapshots": [
+      {
+        "task_id": "051-nutze-rt-logo-svg-f-r-favicon-und-das-bild-hier-al",
+        "task_intent": "",
+        "started_at": "2026-01-31T00:20:41.123852",
+        "completed_at": "2026-01-31T00:20:41.124424",
+        "content_hash_before": "2be7376d98542cae",
+        "content_hash_after": "a48825832c83aef0",
+        "semantic_changes": [],
+        "raw_diff": "diff --git a/src/css/modules/layout.css b/src/css/modules/layout.css\nindex 2b7326f..035c178 100644\n--- a/src/css/modules/layout.css\n+++ b/src/css/modules/layout.css\n@@ -2,6 +2,14 @@\n    Layout\n    ========================================================================== */\n \n+/* Body background */\n+body {\n+    background-image: url('/images/site/watercolor-bg.png');\n+    background-size: cover;\n+    background-position: center;\n+    background-attachment: fixed;\n+}\n+\n /* Container */\n .container {\n     width: 100%;\n"
+      }
+    ]
+  },
+  "src/images/site/watercolor-bg.png": {
+    "file_path": "src/images/site/watercolor-bg.png",
+    "baseline_commit": "1a2ade757216f2a00fafb784d8904d7fad6d3e0b",
+    "baseline_captured_at": "2026-01-31T00:20:41.175726",
+    "baseline_content_hash": "e3b0c44298fc1c14",
+    "baseline_snapshot_path": "",
+    "task_snapshots": [
+      {
+        "task_id": "051-nutze-rt-logo-svg-f-r-favicon-und-das-bild-hier-al",
+        "task_intent": "",
+        "started_at": "2026-01-31T00:20:41.175785",
+        "completed_at": "2026-01-31T00:20:41.182219",
+        "content_hash_before": "e3b0c44298fc1c14",
+        "content_hash_after": "fd53936275714115",
+        "semantic_changes": [],
+        "raw_diff": "diff --git a/src/images/site/watercolor-bg.png b/src/images/site/watercolor-bg.png\nnew file mode 100644\nindex 0000000..2ea8e05\nBinary files /dev/null and b/src/images/site/watercolor-bg.png differ\n"
       }
     ]
   }

@@ -2,14 +2,7 @@
    Layout
    ========================================================================== */
 
-/* Body background */
-body {
-    background-image: url('/images/site/watercolor-bg.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
+ 
 /* Container */
 .container {
     width: 100%;

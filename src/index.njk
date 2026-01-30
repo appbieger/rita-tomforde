@@ -114,23 +114,35 @@ title: Willkommen
             <h2 class="section-title">Aktuelles</h2>
         </header>
         <div class="section-content">
-            <article class="event event-with-flyer">
+            {% if events.events.length > 0 %}
+            {% for event in events.events %}
+            <article class="event{% if event.hasFlyer %} event-with-flyer{% endif %}">
+                {% if event.hasFlyer %}
                 <div class="event-content">
-                    <h3>März 2026: Kultur-Pop-up-Store in Stade</h3>
-                    <p><strong>Ort:</strong> <a href="https://maps.google.com/?q=H%C3%B6kerstra%C3%9Fe+33%2C+Stade" class="address-link" target="_blank" rel="noopener" aria-label="Öffne Hökerstraße 33, Stade in Google Maps">Hökerstraße 33, Stade</a></p>
-                    <p><strong>Vernissage:</strong> 5. März 2026 ab 17:00 Uhr</p>
-                    <p><strong>Öffnungszeiten 06.-31. März:</strong> Mo-Sa 11-17 Uhr, So 14-16 Uhr</p>
+                    <h3>{{ event.title }}</h3>
+                    <p><strong>Ort:</strong> <a href="{{ event.location.mapUrl }}" class="address-link" target="_blank" rel="noopener" aria-label="Öffne {{ event.location.address }} in Google Maps">{{ event.location.address }}</a></p>
+                    {% if event.vernissage %}
+                    <p><strong>Vernissage:</strong> {{ event.vernissage.date }} {{ event.vernissage.time }}</p>
+                    {% endif %}
+                    {% if event.openingHours %}
+                    <p><strong>Öffnungszeiten {{ event.openingHours.dates }}:</strong> {{ event.openingHours.hours }}</p>
+                    {% endif %}
                 </div>
                 <div class="flyer-image-wrapper">
-                    {% image "src/images/site/flyer/kultur-pop-up_stade_2026.jpg", "Flyer für den Kultur-Pop-up-Store in Stade März 2026" %}
+                    {% image "src" + event.flyer.image, event.flyer.alt %}
                 </div>
+                {% else %}
+                <h3>{{ event.title }}</h3>
+                <p><strong>Ort:</strong> <a href="{{ event.location.mapUrl }}" class="address-link" target="_blank" rel="noopener" aria-label="Öffne {{ event.location.address }} in Google Maps">{{ event.location.address }}</a></p>
+                {% if event.time %}
+                <p><strong>Zeit:</strong> {{ event.time }}</p>
+                {% endif %}
+                {% endif %}
             </article>
-
-            <article class="event">
-                <h3>17. Mai 2026: KreARTiv-Markt am URLA-HUS</h3>
-                <p><strong>Ort:</strong> <a href="https://maps.google.com/?q=Ohrel+bei+Anderlingen" class="address-link" target="_blank" rel="noopener" aria-label="Öffne Ohrel bei Anderlingen in Google Maps">Ohrel bei Anderlingen</a></p>
-                <p><strong>Zeit:</strong> 11-17 Uhr</p>
-            </article>
+            {% endfor %}
+            {% else %}
+            <p class="events-empty">Momentan sind keine aktuellen Veranstaltungen geplant.</p>
+            {% endif %}
         </div>
     </div>
 </section>

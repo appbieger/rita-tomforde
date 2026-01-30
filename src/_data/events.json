@@ -1,0 +1,38 @@
+{
+  "events": [
+    {
+      "id": "event-1",
+      "title": "März 2026: Kultur-Pop-up-Store in Stade",
+      "location": {
+        "name": "Kultur-Pop-up-Store",
+        "address": "Hökerstraße 33, Stade",
+        "mapUrl": "https://maps.google.com/?q=H%C3%B6kerstra%C3%9Fe+33%2C+Stade"
+      },
+      "vernissage": {
+        "date": "5. März 2026",
+        "time": "ab 17:00 Uhr"
+      },
+      "openingHours": {
+        "dates": "06.-31. März",
+        "hours": "Mo-Sa 11-17 Uhr, So 14-16 Uhr"
+      },
+      "hasFlyer": true,
+      "flyer": {
+        "image": "/images/site/flyer/kultur-pop-up_stade_2026.jpg",
+        "alt": "Flyer für den Kultur-Pop-up-Store in Stade März 2026"
+      }
+    },
+    {
+      "id": "event-2",
+      "title": "17. Mai 2026: KreARTiv-Markt am URLA-HUS",
+      "location": {
+        "name": "URLA-HUS",
+        "address": "Ohrel bei Anderlingen",
+        "mapUrl": "https://maps.google.com/?q=Ohrel+bei+Anderlingen"
+      },
+      "date": "17. Mai 2026",
+      "time": "11-17 Uhr",
+      "hasFlyer": false
+    }
+  ]
+}

@@ -6,6 +6,26 @@ module.exports = [
   // JavaScript recommended rules
   js.configs.recommended,
 
+  // Ignore build output directory
+  {
+    ignores: ['_site/**/*'],
+  },
+
+  // Configuration for ESLint config file itself
+  {
+    files: ['eslint.config.js'],
+    languageOptions: {
+      ecmaVersion: 2022,
+      sourceType: 'commonjs',
+      globals: {
+        ...globals.node,
+      },
+    },
+    rules: {
+      'no-console': 'off',
+    },
+  },
+
   // Configuration for Node.js files (Eleventy config)
   {
     files: ['eleventy.config.js'],
@@ -30,6 +50,7 @@ module.exports = [
       sourceType: 'script',
       globals: {
         ...globals.browser,
+        GLightbox: 'readonly', // GLightbox library global
       },
     },
     rules: {

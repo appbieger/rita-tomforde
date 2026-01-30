@@ -1,0 +1,243 @@
+/* ==========================================================================
+   Print Module
+   Optimized print styles for portfolio website
+   Provides clean, readable output for printing painting information and contact details
+   ========================================================================== */
+
+@media print {
+    /* ==========================================================================
+       General Print Optimizations
+       ========================================================================== */
+
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+    }
+
+    /* ==========================================================================
+       Page Layout
+       ========================================================================== */
+
+    @page {
+        margin: 2cm;
+        size: auto;
+    }
+
+    /* Remove unnecessary spacing */
+    .container,
+    .footer-container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* ==========================================================================
+       Typography
+       ========================================================================== */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+        font-weight: bold;
+    }
+
+    h1 {
+        font-size: 24pt;
+    }
+
+    h2 {
+        font-size: 18pt;
+    }
+
+    h3 {
+        font-size: 14pt;
+    }
+
+    p,
+    blockquote {
+        orphans: 3;
+        widows: 3;
+    }
+
+    /* ==========================================================================
+       Links
+       ========================================================================== */
+
+    a {
+        text-decoration: underline;
+        color: #000;
+    }
+
+    /* Show URLs after links for reference */
+    a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 10pt;
+        color: #666;
+    }
+
+    /* Don't show URLs for anchor links */
+    a[href^="#"]::after {
+        content: "";
+    }
+
+    /* ==========================================================================
+       Hide Interactive/Navigation Elements
+       ========================================================================== */
+
+    /* Hide site navigation */
+    .site-header,
+    .main-nav,
+    .nav-menu,
+    .hamburger {
+        display: none !important;
+    }
+
+    /* Hide footer social icons and interactive elements */
+    .contact-icons,
+    .footer-nav {
+        display: none !important;
+    }
+
+    /* Hide any buttons or form elements */
+    button,
+    input,
+    textarea,
+    select {
+        display: none !important;
+    }
+
+    /* ==========================================================================
+       Content Sections
+       ========================================================================== */
+
+    /* Hero section adjustments */
+    .hero-header {
+        padding: 0 0 1cm;
+        border-bottom: 2px solid #000;
+        margin-bottom: 1cm;
+    }
+
+    .hero-header-title {
+        font-size: 28pt;
+        margin-bottom: 0.5cm;
+    }
+
+    .hero-header-subtitle {
+        font-size: 14pt;
+    }
+
+    /* Content sections */
+    .content-section {
+        page-break-inside: avoid;
+        margin-bottom: 1cm;
+    }
+
+    .section-title {
+        border-bottom: 1px solid #000;
+        padding-bottom: 0.2cm;
+        margin-bottom: 0.5cm;
+    }
+
+    /* ==========================================================================
+       Gallery Items
+       ========================================================================== */
+
+    .gallery-grid {
+        display: block;
+    }
+
+    .gallery-item {
+        page-break-inside: avoid;
+        margin-bottom: 1cm;
+        border: 1px solid #ccc;
+        padding: 0.5cm;
+    }
+
+    .gallery-item img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 0.3cm;
+    }
+
+    .gallery-item-title,
+    .gallery-item-info {
+        font-size: 11pt;
+        margin-bottom: 0.2cm;
+    }
+
+    /* ==========================================================================
+       Footer Content
+       ========================================================================== */
+
+    .site-footer {
+        page-break-before: avoid;
+        border-top: 2px solid #000;
+        padding-top: 0.5cm;
+        margin-top: 1cm;
+    }
+
+    .footer-content {
+        display: block;
+    }
+
+    .footer-contact,
+    .footer-info {
+        margin-bottom: 0.5cm;
+    }
+
+    .footer-contact h3 {
+        font-size: 14pt;
+        margin-bottom: 0.3cm;
+    }
+
+    .footer-contact p,
+    .footer-info p {
+        font-size: 11pt;
+        margin-bottom: 0.2cm;
+    }
+
+    /* Show contact information clearly */
+    .contact-name {
+        font-weight: bold;
+        font-size: 12pt;
+    }
+
+    /* Hide copyright and bottom nav in print */
+    .footer-bottom,
+    .copyright {
+        display: none !important;
+    }
+
+    /* ==========================================================================
+       Utility Classes
+       ========================================================================== */
+
+    /* Force page breaks */
+    .page-break-before {
+        page-break-before: always;
+    }
+
+    .page-break-after {
+        page-break-after: always;
+    }
+
+    .page-break-avoid {
+        page-break-inside: avoid;
+    }
+}

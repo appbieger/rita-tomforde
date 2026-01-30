@@ -28,6 +28,7 @@
     "declaration-empty-line-before": null,
     "comment-whitespace-inside": "always",
     "color-function-notation": "legacy",
-    "alpha-value-notation": "number"
+    "alpha-value-notation": "number",
+    "no-descending-specificity": null
   }
 }

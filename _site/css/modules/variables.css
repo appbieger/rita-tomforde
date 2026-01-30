@@ -7,14 +7,14 @@
 
 :root {
     /* Colors */
-    --color-primary: #000000;
-    --color-secondary: #ffffff;
+    --color-primary: #000;
+    --color-secondary: #fff;
     --color-tint: #FF1493;
     --color-accent: var(--color-tint);
-    --color-text: #333333;
-    --color-text-light: #666666;
+    --color-text: #333;
+    --color-text-light: #666;
     --color-text-heavy: #484848;
-    --color-background: #ffffff;
+    --color-background: #fff;
     --color-background-alt: #f8f8f8;
     --color-border: #e0e0e0;
 

@@ -30,7 +30,7 @@
 }
 
 /* Tablet and desktop: side-by-side layout */
-@media (min-width: 768px) {
+@media (width >= 768px) {
     .footer-content {
         flex-direction: row;
         justify-content: space-between;
@@ -72,33 +72,6 @@
 .contact-location,
 .contact-region {
     color: var(--color-text-light);
-}
-
-.contact-address {
-    font-size: var(--font-size-base);
-    color: var(--color-text);
-    margin-bottom: var(--spacing-xs);
-}
-
-.contact-address:last-child {
-    margin-bottom: 0;
-}
-
-.address-link {
-    color: var(--color-primary);
-    text-decoration: underline;
-    transition: color var(--transition-fast);
-}
-
-.address-link:hover,
-.address-link:focus {
-    color: var(--color-accent);
-}
-
-.address-link:focus-visible {
-    outline: var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
-    outline-offset: var(--focus-ring-offset);
-    border-radius: var(--radius-sm);
 }
 
 /* ==========================================================================
@@ -197,7 +170,7 @@
 }
 
 /* Tablet and desktop: horizontal layout */
-@media (min-width: 768px) {
+@media (width >= 768px) {
     .footer-bottom {
         flex-direction: row;
         justify-content: space-between;
@@ -246,7 +219,7 @@
    Responsive Adjustments - Mobile
    ========================================================================== */
 
-@media (max-width: 767px) {
+@media (width <= 767px) {
     /* Center all footer content on mobile */
     .footer-contact,
     .footer-info,
@@ -288,7 +261,7 @@
    Responsive Adjustments - Tablet
    ========================================================================== */
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (width >= 768px) and (width <= 1023px) {
     /* Tablet-specific footer adjustments */
     .footer-content {
         gap: var(--spacing-md);
@@ -311,7 +284,7 @@
    Responsive Adjustments - Desktop
    ========================================================================== */
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
     /* Desktop footer enhancements with better spacing */
     .site-footer {
         padding: var(--spacing-xl) 0;

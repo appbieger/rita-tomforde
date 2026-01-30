@@ -40,6 +40,52 @@
 }
 
 /* ==========================================================================
+   Event Article Styling
+   ========================================================================== */
+
+.event {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.event:last-child {
+    margin-bottom: 0;
+}
+
+.event:hover,
+.event:focus-within {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.event h3 {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    line-height: var(--line-height-heading);
+    margin-bottom: var(--spacing-sm);
+}
+
+.event p {
+    line-height: var(--line-height-base);
+    margin-bottom: var(--spacing-sm);
+}
+
+.event p:last-child {
+    margin-bottom: 0;
+}
+
+.event strong {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-accent);
+}
+
+/* ==========================================================================
    Section Content
    ========================================================================== */
 
@@ -141,52 +187,6 @@
 }
 
 /* ==========================================================================
-   Event Article Styling
-   ========================================================================== */
-
-.event {
-    background-color: var(--color-background);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-    box-shadow: var(--shadow-sm);
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.event:last-child {
-    margin-bottom: 0;
-}
-
-.event:hover,
-.event:focus-within {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-}
-
-.event h3 {
-    font-size: var(--font-size-medium);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text);
-    line-height: var(--line-height-heading);
-    margin-bottom: var(--spacing-sm);
-}
-
-.event p {
-    line-height: var(--line-height-base);
-    margin-bottom: var(--spacing-sm);
-}
-
-.event p:last-child {
-    margin-bottom: 0;
-}
-
-.event strong {
-    font-weight: var(--font-weight-bold);
-    color: var(--color-accent);
-}
-
-/* ==========================================================================
    Contact Icons for Kontakt Page
    Displays icons with text labels (different from footer icon-only style)
    ========================================================================== */
@@ -279,7 +279,7 @@
 }
 
 /* Responsive: Stack vertically on mobile */
-@media (max-width: 767px) {
+@media (width <= 767px) {
     .event.event-with-flyer {
         flex-direction: column;
         gap: var(--spacing-md);

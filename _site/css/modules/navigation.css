@@ -61,6 +61,7 @@
     gap: var(--spacing-md);
     list-style: none;
     margin: 0;
+
     /* Negative left margin compensates for link padding, aligning menu text with section headings */
     margin-left: calc(-1 * var(--spacing-sm));
     padding: 0;
@@ -148,9 +149,12 @@
    Mobile Navigation
    ========================================================================== */
 
-@media (max-width: 767px) {
+@media (width <= 767px) {
     .hamburger {
         display: flex;
+
+        /* Ensure hamburger stays above overlay */
+        z-index: var(--z-modal);
     }
 
     .nav-menu {
@@ -163,6 +167,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
+
         /* Reset negative margin for mobile slide-out menu */
         margin-left: 0;
         padding: calc(var(--spacing-xl) + var(--spacing-lg)) var(--spacing-md) var(--spacing-md);
@@ -172,6 +177,9 @@
         transform: translateX(100%);
         transition: transform var(--transition-base);
         overflow-y: auto;
+
+        /* Ensure menu stays above overlay */
+        z-index: var(--z-fixed);
     }
 
     .nav-menu.is-active {
@@ -210,23 +218,13 @@
         opacity: 1;
         visibility: visible;
     }
-
-    /* Ensure hamburger stays above overlay */
-    .hamburger {
-        z-index: var(--z-modal);
-    }
-
-    /* Ensure menu stays above overlay */
-    .nav-menu {
-        z-index: var(--z-fixed);
-    }
 }
 
 /* ==========================================================================
    Desktop: Push last nav item to right
    ========================================================================== */
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
     .nav-menu li:last-child {
         margin-left: auto;
     }
@@ -236,7 +234,7 @@
    Tablet Navigation Adjustments
    ========================================================================== */
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (width >= 768px) and (width <= 1023px) {
     .nav-menu {
         gap: var(--spacing-sm);
     }
@@ -251,7 +249,7 @@
    Desktop Navigation Enhancements
    ========================================================================== */
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
     .nav-title {
         font-size: var(--font-size-medium);
     }

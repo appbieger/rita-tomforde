@@ -30,7 +30,7 @@
 }
 
 /* Tablet and desktop: side-by-side layout */
-@media (min-width: 768px) {
+@media (width >= 768px) {
     .footer-content {
         flex-direction: row;
         justify-content: space-between;
@@ -170,7 +170,7 @@
 }
 
 /* Tablet and desktop: horizontal layout */
-@media (min-width: 768px) {
+@media (width >= 768px) {
     .footer-bottom {
         flex-direction: row;
         justify-content: space-between;
@@ -219,7 +219,7 @@
    Responsive Adjustments - Mobile
    ========================================================================== */
 
-@media (max-width: 767px) {
+@media (width <= 767px) {
     /* Center all footer content on mobile */
     .footer-contact,
     .footer-info,
@@ -261,7 +261,7 @@
    Responsive Adjustments - Tablet
    ========================================================================== */
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (width >= 768px) and (width <= 1023px) {
     /* Tablet-specific footer adjustments */
     .footer-content {
         gap: var(--spacing-md);
@@ -284,7 +284,7 @@
    Responsive Adjustments - Desktop
    ========================================================================== */
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
     /* Desktop footer enhancements with better spacing */
     .site-footer {
         padding: var(--spacing-xl) 0;

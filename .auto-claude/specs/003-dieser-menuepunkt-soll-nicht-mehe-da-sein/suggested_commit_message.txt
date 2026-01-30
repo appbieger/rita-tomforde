@@ -1,3 +1,0 @@
-feat(nav): remove logo text from navigation
-
-Remove the "Atelier Rita Tomforde" branding text from the navigation bar to streamline the UI. The logo text is no longer displayed per user request.

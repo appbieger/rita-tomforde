@@ -1,3 +1,0 @@
-feat(portfolio): initialize Rita Tomforde artist portfolio with 11ty
-
-Set up complete portfolio website for German painter Rita Tomforde using 11ty static site generator. Website includes design replication and GitHub Pages deployment configuration.

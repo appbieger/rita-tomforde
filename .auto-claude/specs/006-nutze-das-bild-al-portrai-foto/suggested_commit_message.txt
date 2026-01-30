@@ -1,3 +1,0 @@
-feat(hero): add Rita Tomforde portrait to hero section
-
-Replace placeholder div with portrait photo of Rita Tomforde in the hero section. Image added at src/images/portraits/rita-portrait.jpg.

@@ -165,7 +165,7 @@ title: Willkommen
                 {% for painting in paintings.paintings %}
                 {% if painting.available %}
                 <article class="gallery-item" id="{{ painting.id }}">
-                    <a href="{{ painting.image | url }}" class="glightbox" data-gallery="paintings" data-title="{{ painting.title }}" data-description="{{ painting.technique }}, {{ painting.year }} , {{ painting.description }} ">
+                    <a href="{{ painting.image | url }}" class="glightbox" data-gallery="paintings" data-title="{{ painting.title }}" data-description="{{ painting.technique }}, {{ painting.description }} ">
                         {% if painting.image.endsWith('.svg') %}
                         <img src="{{ painting.image | url }}" alt="{{ painting.title }}" loading="lazy" class="gallery-item-image">
                         {% else %}

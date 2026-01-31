@@ -58,7 +58,7 @@ module.exports = function (eleventyConfig) {
 
     // Path prefix for GitHub Pages deployment
     // This ensures all URLs work correctly when deployed to https://[username].github.io/rita-tomforde/
-    pathPrefix: '/',
+    pathPrefix: '/rita-tomforde/',
 
     // Directory configuration
     dir: {

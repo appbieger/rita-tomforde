@@ -4,11 +4,6 @@ Portfolio website for German painter Rita Tomforde - built with Eleventy (11ty).
 
 ## Quick Start
 
-**IMPORTANT**: This project uses a git worktree. Run all commands from this directory:
-
-```bash
-cd /Users/yaron/rita-tomfordede/.worktrees/001-in-diesem-projekt-soll-eine-website-f-r-die-maleri
-```
 
 ### Install Dependencies
 

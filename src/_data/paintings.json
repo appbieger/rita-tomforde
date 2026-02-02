@@ -9,21 +9,13 @@
       "year": 2024,
       "available": true
     },
-    {
-      "id": "painting-2",
-      "title": "Angler mit Hund",
-      "image": "/images/gallery/Angler_mit_Hund.JPG",
-      "description": "70 x 30 cm",
-      "technique": "Acryl auf Leinwand",
-      "year": 2024,
-      "available": true
-    },
+     
     {
       "id": "painting-3",
-      "title": "Sonnenuntergang am Meer",
-      "image": "/images/gallery/Sonnenuntergang_am_Meer.JPG",
-      "description": "70 x 50 cm",
-      "technique": "Acryl auf Leinwand",
+      "title": "Möwe im Hafen",
+      "image": "/images/gallery/Moewe_im_Hafen.JPG",
+      "description": "40 x 50 cm",
+      "technique": "Acryl auf Leinwand mit Rahmen, weiß",
       "year": 2024,
       "available": true
     },
@@ -195,6 +187,15 @@
       "image": "/images/gallery/abstrakte_Duenenlandschaft.JPG",
       "description": "30 x 70 cm",
       "technique": "Acryl auf Leinwand",
+      "year": 2024,
+      "available": true
+    },
+    {
+      "id": "painting-23",
+      "title": "Segelboot",
+      "image": "/images/gallery/Segelboot_1.JPG",
+      "description": "30 x 40 cm",
+      "technique": "Acryl auf Leinwand mit Holzrahmen, natur",
       "year": 2024,
       "available": true
     }

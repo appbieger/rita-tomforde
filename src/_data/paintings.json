@@ -134,7 +134,7 @@
       "description": "30 x 40 cm",
       "technique": "Acryl auf Leinwand mit Rahmen, weiß",
       "year": 2024,
-      "available": true
+      "available": false
     },
     {
       "id": "painting-18",
@@ -188,7 +188,7 @@
       "description": "30 x 40 cm",
       "technique": "Acryl auf Leinwand mit Holzrahmen, natur",
       "year": 2024,
-      "available": true
+      "available": false
     },
     {
        "id": "painting-24",
@@ -197,6 +197,27 @@
      "description": "70 x 50 cm",
       "technique": "Acryl auf Leinwand",
        "year": 2024,
+       "available": true
+     },
+    {
+       "id": "painting-25",
+       "title": "Jellys",
+       "image": "/images/gallery/Jettys.JPG", 
+       "year": 2026,
+       "available": true
+     },
+    {
+       "id": "painting-26",
+       "title": "Oktopus",
+       "image": "/images/gallery/Oktopus.JPG", 
+       "year": 2026,
+       "available": true
+     },
+    {
+       "id": "painting-27",
+       "title": "Tiefer See abstakt",
+       "image": "/images/gallery/Tiefer_See_abstakt.JPG", 
+       "year": 2026,
        "available": true
      }
 

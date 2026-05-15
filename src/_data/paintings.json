@@ -109,6 +109,13 @@
       "year": 2024,
       "available": true
     },
+     {
+       "id": "painting-25",
+       "title": "Jelly's 3 (Hintergrund grün)",
+       "image": "/images/gallery/Jellys_3.JPG", 
+       "year": 2026,
+       "available": true
+     },
     {
       "id": "painting-15",
       "title": "Peace / Frieden 1 (klein ohne Rahmen)",
@@ -199,13 +206,7 @@
        "year": 2024,
        "available": true
      },
-    {
-       "id": "painting-25",
-       "title": "Jellys",
-       "image": "/images/gallery/Jettys.JPG", 
-       "year": 2026,
-       "available": true
-     },
+   
     {
        "id": "painting-26",
        "title": "Oktopus",

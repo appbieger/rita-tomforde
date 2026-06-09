@@ -1,6 +1,6 @@
 {
-    "search.exclude": {
-        "**/.auto-claude": true,
-        "**/.worktrees": true
-    }
+  "search.exclude": {
+    "**/.auto-claude": true,
+    "**/.worktrees": true
+  }
 }

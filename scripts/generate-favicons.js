@@ -52,19 +52,13 @@ async function generateFavicons() {
 
   // Generate ICO file (contains both 16x16 and 32x32)
   // ICO format: header + entries + image data
-  const png16 = await sharp(Buffer.from(svgSource))
-    .resize(16, 16)
-    .png()
-    .toBuffer();
+  const png16 = await sharp(Buffer.from(svgSource)).resize(16, 16).png().toBuffer();
 
-  const png32 = await sharp(Buffer.from(svgSource))
-    .resize(32, 32)
-    .png()
-    .toBuffer();
+  const png32 = await sharp(Buffer.from(svgSource)).resize(32, 32).png().toBuffer();
 
   const icoBuffer = createIco([
     { size: 16, data: png16 },
-    { size: 32, data: png32 }
+    { size: 32, data: png32 },
   ]);
 
   fs.writeFileSync(path.join(outputDir, 'favicon.ico'), icoBuffer);
@@ -72,29 +66,26 @@ async function generateFavicons() {
 
   // Create site.webmanifest
   const webmanifest = {
-    "name": "Rita Tomforde",
-    "short_name": "RT",
-    "icons": [
+    name: 'Rita Tomforde',
+    short_name: 'RT',
+    icons: [
       {
-        "src": "/favicon-32x32.png",
-        "sizes": "32x32",
-        "type": "image/png"
+        src: '/favicon-32x32.png',
+        sizes: '32x32',
+        type: 'image/png',
       },
       {
-        "src": "/apple-touch-icon.png",
-        "sizes": "180x180",
-        "type": "image/png"
-      }
+        src: '/apple-touch-icon.png',
+        sizes: '180x180',
+        type: 'image/png',
+      },
     ],
-    "theme_color": "#FF1493",
-    "background_color": "#FFFBF9",
-    "display": "standalone"
+    theme_color: '#FF1493',
+    background_color: '#FFFBF9',
+    display: 'standalone',
   };
 
-  fs.writeFileSync(
-    path.join(outputDir, 'site.webmanifest'),
-    JSON.stringify(webmanifest, null, 2)
-  );
+  fs.writeFileSync(path.join(outputDir, 'site.webmanifest'), JSON.stringify(webmanifest, null, 2));
   console.log('Created site.webmanifest');
 
   console.log('All favicons generated successfully!');
@@ -112,7 +103,7 @@ function createIco(images) {
   const numImages = images.length;
 
   // Calculate total size
-  let totalSize = headerSize + (entrySize * numImages);
+  let totalSize = headerSize + entrySize * numImages;
   for (const img of images) {
     totalSize += img.data.length;
   }
@@ -121,33 +112,33 @@ function createIco(images) {
   let offset = 0;
 
   // ICONDIR header
-  buffer.writeUInt16LE(0, offset);      // Reserved (must be 0)
+  buffer.writeUInt16LE(0, offset); // Reserved (must be 0)
   offset += 2;
-  buffer.writeUInt16LE(1, offset);      // Image type: 1 = ICO
+  buffer.writeUInt16LE(1, offset); // Image type: 1 = ICO
   offset += 2;
-  buffer.writeUInt16LE(numImages, offset);  // Number of images
+  buffer.writeUInt16LE(numImages, offset); // Number of images
   offset += 2;
 
   // Calculate data offsets
-  let dataOffset = headerSize + (entrySize * numImages);
+  let dataOffset = headerSize + entrySize * numImages;
 
   // ICONDIRENTRY for each image
   for (const img of images) {
-    buffer.writeUInt8(img.size === 256 ? 0 : img.size, offset);  // Width (0 = 256)
+    buffer.writeUInt8(img.size === 256 ? 0 : img.size, offset); // Width (0 = 256)
     offset += 1;
-    buffer.writeUInt8(img.size === 256 ? 0 : img.size, offset);  // Height (0 = 256)
+    buffer.writeUInt8(img.size === 256 ? 0 : img.size, offset); // Height (0 = 256)
     offset += 1;
-    buffer.writeUInt8(0, offset);       // Color palette (0 = no palette)
+    buffer.writeUInt8(0, offset); // Color palette (0 = no palette)
     offset += 1;
-    buffer.writeUInt8(0, offset);       // Reserved
+    buffer.writeUInt8(0, offset); // Reserved
     offset += 1;
-    buffer.writeUInt16LE(1, offset);    // Color planes
+    buffer.writeUInt16LE(1, offset); // Color planes
     offset += 2;
-    buffer.writeUInt16LE(32, offset);   // Bits per pixel
+    buffer.writeUInt16LE(32, offset); // Bits per pixel
     offset += 2;
-    buffer.writeUInt32LE(img.data.length, offset);  // Image size
+    buffer.writeUInt32LE(img.data.length, offset); // Image size
     offset += 4;
-    buffer.writeUInt32LE(dataOffset, offset);       // Image offset
+    buffer.writeUInt32LE(dataOffset, offset); // Image offset
     offset += 4;
 
     dataOffset += img.data.length;

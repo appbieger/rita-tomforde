@@ -9,7 +9,7 @@
       "year": 2024,
       "available": true
     },
-     
+
     {
       "id": "painting-3",
       "title": "Möwe im Hafen",
@@ -109,13 +109,13 @@
       "year": 2024,
       "available": true
     },
-     {
-       "id": "painting-25",
-       "title": "Jelly's 3 (Hintergrund grün)",
-       "image": "/images/gallery/Jellys_3.JPG", 
-       "year": 2026,
-       "available": true
-     },
+    {
+      "id": "painting-25",
+      "title": "Jelly's 3 (Hintergrund grün)",
+      "image": "/images/gallery/Jellys_3.JPG",
+      "year": 2026,
+      "available": true
+    },
     {
       "id": "painting-15",
       "title": "Peace / Frieden 1 (klein ohne Rahmen)",
@@ -198,29 +198,28 @@
       "available": false
     },
     {
-       "id": "painting-24",
-       "title": "Sonnenuntergang am Meer",
-       "image": "/images/gallery/Sonnenuntergang_am_Meer.JPG",
-     "description": "70 x 50 cm",
+      "id": "painting-24",
+      "title": "Sonnenuntergang am Meer",
+      "image": "/images/gallery/Sonnenuntergang_am_Meer.JPG",
+      "description": "70 x 50 cm",
       "technique": "Acryl auf Leinwand",
-       "year": 2024,
-       "available": true
-     },
-   
-    {
-       "id": "painting-26",
-       "title": "Oktopus",
-       "image": "/images/gallery/Oktopus.JPG", 
-       "year": 2026,
-       "available": true
-     },
-    {
-       "id": "painting-27",
-       "title": "Tiefer See abstakt",
-       "image": "/images/gallery/Tiefer_See_abstrakt.JPG", 
-       "year": 2026,
-       "available": true
-     }
+      "year": 2024,
+      "available": true
+    },
 
+    {
+      "id": "painting-26",
+      "title": "Oktopus",
+      "image": "/images/gallery/Oktopus.JPG",
+      "year": 2026,
+      "available": true
+    },
+    {
+      "id": "painting-27",
+      "title": "Tiefer See abstakt",
+      "image": "/images/gallery/Tiefer_See_abstrakt.JPG",
+      "year": 2026,
+      "available": true
+    }
   ]
 }

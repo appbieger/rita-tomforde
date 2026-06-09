@@ -6,9 +6,9 @@ module.exports = [
   // JavaScript recommended rules
   js.configs.recommended,
 
-  // Ignore build output directory
+  // Ignore generated and local-only directories
   {
-    ignores: ['_site/**/*'],
+    ignores: ['_site/**/*', '.worktrees/**/*', 'node_modules/**/*'],
   },
 
   // Configuration for ESLint config file itself
@@ -39,6 +39,21 @@ module.exports = [
     rules: {
       // Node.js specific rules
       'no-console': 'off', // Allow console in build scripts
+    },
+  },
+
+  // Configuration for Node.js helper scripts
+  {
+    files: ['scripts/**/*.js'],
+    languageOptions: {
+      ecmaVersion: 2022,
+      sourceType: 'commonjs',
+      globals: {
+        ...globals.node,
+      },
+    },
+    rules: {
+      'no-console': 'off',
     },
   },
 

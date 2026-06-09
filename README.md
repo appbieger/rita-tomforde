@@ -4,7 +4,6 @@ Portfolio website for German painter Rita Tomforde - built with Eleventy (11ty).
 
 ## Quick Start
 
-
 ### Install Dependencies
 
 ```bash

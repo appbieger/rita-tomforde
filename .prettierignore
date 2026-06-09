@@ -10,6 +10,7 @@ dist/
 
 # Auto-claude directory
 .auto-claude/
+.worktrees/
 
 # Lock files (generated)
 package-lock.json

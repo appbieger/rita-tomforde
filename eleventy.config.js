@@ -36,6 +36,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/css');
   eleventyConfig.addPassthroughCopy('src/images');
   eleventyConfig.addPassthroughCopy('src/js');
+  eleventyConfig.addPassthroughCopy({
+    'node_modules/glightbox/dist/css/glightbox.min.css': 'vendor/glightbox/glightbox.min.css',
+    'node_modules/glightbox/dist/js/glightbox.min.js': 'vendor/glightbox/glightbox.min.js',
+  });
 
   // Favicon files
   eleventyConfig.addPassthroughCopy('src/favicon.svg');

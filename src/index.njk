@@ -101,6 +101,15 @@ title: Willkommen
                 <li>Ausstellung auf dem Kunsthandwerksmarkt in Brest</li>
                 <li>Mehrere Ausstellungen auf den KreARTiv-Märkten am URLA-HUS in Ohrel</li>
             </ul>
+
+            {% if events.pastEvents and events.pastEvents.length > 0 %}
+            <p>Präsentationen 2026:</p>
+            <ul class="exhibitions-list">
+                {% for event in events.pastEvents %}
+                <li>{{ event.title }}{% if event.location %}, {{ event.location.name }}{% endif %}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
         </div>
     </div>
 </section>
@@ -165,7 +174,15 @@ title: Willkommen
                 {% for painting in paintings.paintings %}
                 {% if painting.available %}
                 <article class="gallery-item" id="{{ painting.id }}">
-                    <a href="{{ painting.image | url }}" class="glightbox" data-gallery="paintings" data-title="{{ painting.title }}" data-description="{{ painting.technique }}, {{ painting.description }} ">
+                    {% set paintingDetails = "" %}
+                    {% if painting.technique and painting.description %}
+                    {% set paintingDetails = painting.technique + ", " + painting.description %}
+                    {% elif painting.technique %}
+                    {% set paintingDetails = painting.technique %}
+                    {% elif painting.description %}
+                    {% set paintingDetails = painting.description %}
+                    {% endif %}
+                    <a href="{{ painting.image | url }}" class="glightbox" data-gallery="paintings" data-title="{{ painting.title }}" data-description="{{ paintingDetails }}">
                         {% if painting.image.endsWith('.svg') %}
                         <img src="{{ painting.image | url }}" alt="{{ painting.title }}" loading="lazy" class="gallery-item-image">
                         {% else %}

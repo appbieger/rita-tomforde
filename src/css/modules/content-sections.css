@@ -87,6 +87,25 @@
   color: var(--color-accent);
 }
 
+.event-schedule {
+  line-height: var(--line-height-base);
+  margin-bottom: var(--spacing-sm);
+}
+
+.event-schedule ul {
+  list-style: none;
+  margin: var(--spacing-xs) 0 0;
+  padding-left: 0;
+}
+
+.event-schedule li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.event-schedule li:last-child {
+  margin-bottom: 0;
+}
+
 /* ==========================================================================
    Section Content
    ========================================================================== */

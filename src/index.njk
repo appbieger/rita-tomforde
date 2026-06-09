@@ -106,7 +106,7 @@ title: Willkommen
             <p>Präsentationen 2026:</p>
             <ul class="exhibitions-list">
                 {% for event in events.pastEvents %}
-                <li>{{ event.title }}{% if event.location %}, {{ event.location.name }}{% endif %}</li>
+                <li>{{ event.title }}</li>
                 {% endfor %}
             </ul>
             {% endif %}
@@ -147,6 +147,19 @@ title: Willkommen
                 <p><strong>Ort:</strong> <a href="{{ event.location.mapUrl }}" class="address-link" target="_blank" rel="noopener" aria-label="Öffne {{ event.location.address }} in Google Maps">{{ event.location.address }}</a></p>
                 {% if event.time %}
                 <p><strong>Zeit:</strong> {{ event.time }}</p>
+                {% endif %}
+                {% if event.schedule %}
+                <div class="event-schedule">
+                    <strong>Zeit:</strong>
+                    <ul>
+                        {% for item in event.schedule %}
+                        <li>{{ item.label }}: {{ item.time }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                {% if event.openingHours %}
+                <p><strong>Öffnungszeiten:</strong> {{ event.openingHours.hours }}</p>
                 {% endif %}
                 {% endif %}
             </article>

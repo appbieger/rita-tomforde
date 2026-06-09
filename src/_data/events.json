@@ -1,9 +1,43 @@
 {
-  "events": [],
+  "events": [
+    {
+      "id": "event-3",
+      "title": "7. und 8. November 2026: Kunsthandwerkermarkt Hemmoor",
+      "location": {
+        "name": "Kunsthandwerkermarkt Hemmoor",
+        "address": "An der Pferdebahn 55, 21745 Hemmoor",
+        "mapUrl": "https://maps.google.com/?q=An+der+Pferdebahn+55%2C+21745+Hemmoor"
+      },
+      "schedule": [
+        {
+          "label": "Samstag, 07.11.2026",
+          "time": "13-18 Uhr"
+        },
+        {
+          "label": "Sonntag, 08.11.2026",
+          "time": "11-17 Uhr"
+        }
+      ],
+      "hasFlyer": false
+    },
+    {
+      "id": "event-4",
+      "title": "4. Oktober bis 14. November 2027: Einzelausstellung im Café im Goebenhaus",
+      "location": {
+        "name": "Café im Goebenhaus",
+        "address": "Wasser West 21, 21682 Stade",
+        "mapUrl": "https://maps.google.com/?q=Wasser+West+21%2C+21682+Stade"
+      },
+      "openingHours": {
+        "hours": "Dienstags bis sonntags 9-18 Uhr, montags Ruhetag"
+      },
+      "hasFlyer": false
+    }
+  ],
   "pastEvents": [
     {
       "id": "event-1",
-      "title": "März 2026: Kultur-Pop-up-Store in Stade",
+      "title": "Gemeinschaftsausstellung im März 2026 im Kultur-Pop-up-Store in Stade",
       "location": {
         "name": "Kultur-Pop-up-Store",
         "address": "Hökerstraße 33, Stade",
@@ -22,18 +56,6 @@
         "image": "/images/site/flyer/kultur-pop-up_stade_2026.jpg",
         "alt": "Flyer für den Kultur-Pop-up-Store in Stade März 2026"
       }
-    },
-    {
-      "id": "event-2",
-      "title": "17. Mai 2026: KreARTiv-Markt am URLA-HUS",
-      "location": {
-        "name": "URLA-HUS",
-        "address": "Ohrel bei Anderlingen",
-        "mapUrl": "https://maps.google.com/?q=Ohrel+bei+Anderlingen"
-      },
-      "date": "17. Mai 2026",
-      "time": "11-17 Uhr",
-      "hasFlyer": false
     }
   ]
 }

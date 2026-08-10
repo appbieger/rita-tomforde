@@ -63,3 +63,5 @@ The site automatically deploys to GitHub Pages when pushing to the `main` branch
 - **Templating**: Nunjucks
 - **Styling**: Vanilla CSS with custom properties
 - **Deployment**: GitHub Actions → GitHub Pages
+
+GO
